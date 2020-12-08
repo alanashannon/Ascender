@@ -6,6 +6,7 @@ class Api::SessionsController < ApplicationController
         if @user.nil?
             render json: ['Invalid credentials'], status: 401
         else
+            debugger
             login(@user)
             render '/api/users/show'
         end
@@ -13,12 +14,12 @@ class Api::SessionsController < ApplicationController
 
     #logout
     def destroy
+        debugger
         if logged_in?
             logout!
-            redirect_to api_session_url
+            render json: {}
         else 
             render json: ["No current user"], status: 404
-            # render json: user.errors.full_messages
         end
     end
 end

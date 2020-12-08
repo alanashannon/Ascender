@@ -7,24 +7,6 @@ import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
-    // const preloadedState = {
-    //     entities: {
-    //         users: { 
-    //             1: {
-    //                 id: 1, 
-    //                 name: "Alana", 
-    //                 email: "alana@aa.io", 
-    //                 location: "sf"
-    //             }
-    //         }
-    //     },
-    //     session: {
-    //         id: null,
-    //     },
-    //     errors: {
-    //         session: ["No current user"]
-    //     }
-    // }
     const store = configureStore(); 
     
     //TESTING ONLY
