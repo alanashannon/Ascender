@@ -18,6 +18,7 @@ class Api::SessionsController < ApplicationController
             redirect_to api_session_url
         else 
             render json: ["No current user"], status: 404
+            # render json: user.errors.full_messages
         end
     end
 end
