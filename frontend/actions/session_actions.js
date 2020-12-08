@@ -20,6 +20,14 @@ const receiveErrors = (errors) => ({
 });
 
 //thunk actions
+export const signup = (user) => dispatch => (
+    SessionAPIUtil.signup(user)
+        .then(user => (dispatch(receiveCurrentUser(user))
+    ), error => (
+        dispatch(receiveErrors(error.responseJSON))
+    ))
+);
+
 export const login = (user) => dispatch => (
     SessionAPIUtil.login(user)
         .then(user => (dispatch(receiveCurrentUser(user))
@@ -31,12 +39,4 @@ export const login = (user) => dispatch => (
 export const logout = () => dispatch => (
     SessionAPIUtil.logout()
         .then(user => dispatch(logoutCurrentUser()))
-);
-
-export const signup = (user) => disppatch => (
-    SessionAPIUtil.signup(user)
-        .then(user => (dispatch(receiveCurrentUser(user))
-    ), error => (
-        dispatch(receiveErrors(error.responseJSON))
-    ))
 );
