@@ -28,6 +28,10 @@ class SessionForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
+                    <label>Name
+                        <input type="text" value={this.state.name} onChange={this.handleInput('name')}/>
+                    </label>
+                    <br/>
                     <label>Email
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')}/>
                     </label>
@@ -37,8 +41,12 @@ class SessionForm extends React.Component {
                     </label>
                     <br/>
                     <input type="submit" value={this.props.formType}/>
+                    <br/>
+                    {this.props.link}
                 </form>
             </div>
         )
     }
 }
+
+export default SessionForm; 
