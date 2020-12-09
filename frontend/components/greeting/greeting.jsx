@@ -5,8 +5,6 @@ const Greeting = ({ currentUser, logout }) => {
     const newSession = () => (
         <nav>
             <Link to="/login">Log In</Link>
-            {/* <br />
-            <Link to="/signup">Sign Up</Link> */}
         </nav>
     );
     const greetingMessage = () => (
