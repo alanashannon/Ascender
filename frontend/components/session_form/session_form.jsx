@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
                     <br/>
                     <input type="submit" value={this.props.formType}/>
                     <br/>
-                    {this.props.link}
+                    New to Flying Start? {this.props.link}
                 </form>
             </div>
         )
