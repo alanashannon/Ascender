@@ -40,3 +40,9 @@ export const logout = () => dispatch => (
     SessionAPIUtil.logout()
         .then(user => dispatch(logoutCurrentUser()))
 );
+
+export const clearErrors = () => {
+    return (dispatch) => {
+        return dispatch(receiveErrors([]));
+    }
+}

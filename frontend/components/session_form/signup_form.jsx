@@ -13,6 +13,10 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -32,13 +36,13 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <div>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <div key={`error-${i}`}>
                         {error}
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         )
     }
 

@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
+    componentDidMount() {
+        this.props.clearErrors(); 
+    }
+
     handleSubmit(e) {
         e.preventDefault(); 
         const user = Object.assign({}, this.state);
@@ -22,6 +26,20 @@ class SessionForm extends React.Component {
         })
     };
 
+    handleDemoSubmit(e) {
+        e.preventDefault(); 
+
+        let demoEmail = 'demo@user.com';
+        let demoPassword = 'password'
+        // const demoUser = Object.assign({}, demoEmail, demo)
+        // this.props.processForm(demoUser); 
+        this.setState({
+            email: '',
+            password: ''
+        },
+        () => this.demoUser(demoEmail, demoPassword))
+    }
+
     handleInput(field) {
         return (e) => {
             this.setState({[field]: e.currentTarget.value})
@@ -30,13 +48,13 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <div>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <div key={`error-${i}`}>
                         {error}
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         )
     }
 
@@ -49,10 +67,10 @@ class SessionForm extends React.Component {
                     <br/> 
                     <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')}/>
                     <br/>
-                    <div>
-                        {this.renderErrors()}
-                    </div>
+                    {this.renderErrors()}
                     <input type="submit" value={this.props.formType}/>
+                    <br/>
+                    <input type="submit" value="Demo Login" onClick={this.handleDemoSubmit}/>
                     <br/>
                     New to Flying Start? {this.props.link}
                 </form>
