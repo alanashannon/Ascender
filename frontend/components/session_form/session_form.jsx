@@ -28,10 +28,6 @@ class SessionForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
-                    <label>Name
-                        <input type="text" value={this.state.name} onChange={this.handleInput('name')}/>
-                    </label>
-                    <br/>
                     <label>Email
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')}/>
                     </label>
@@ -50,3 +46,4 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm; 
+
