@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this); 
     }
 
     componentDidMount() {
@@ -28,17 +29,12 @@ class SessionForm extends React.Component {
 
     handleDemoSubmit(e) {
         e.preventDefault(); 
-
-        let demoEmail = 'demo@user.com';
-        let demoPassword = 'password'
-        // const demoUser = Object.assign({}, demoEmail, demo)
-        // this.props.processForm(demoUser); 
-        this.setState({
-            email: '',
-            password: ''
-        },
-        () => this.demoUser(demoEmail, demoPassword))
-    }
+        let demoUser = {
+            email: 'demo@user.com', 
+            password: 'password'
+        };
+        this.props.processForm(demoUser); 
+    };
 
     handleInput(field) {
         return (e) => {
