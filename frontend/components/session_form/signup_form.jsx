@@ -6,7 +6,8 @@ class SignupForm extends React.Component {
         this.state = {
             name: "",
             email: "",
-            password: ""
+            password: "",
+            errors: []
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,6 +30,18 @@ class SignupForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
     render() {
         return (
             <div>
@@ -46,6 +59,7 @@ class SignupForm extends React.Component {
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                     </label>
                     <br />
+                    {this.renderErrors()}
                     <input type="submit" value={this.props.formType} />
                     <br />
                     Have an account? {this.props.link}

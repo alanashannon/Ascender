@@ -5,7 +5,8 @@ class SessionForm extends React.Component {
         super(props); 
         this.state = {
             email: "", 
-            password: ""
+            password: "",
+            errors: []
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -25,6 +26,18 @@ class SessionForm extends React.Component {
         return (e) => {
             this.setState({[field]: e.currentTarget.value})
         }
+    };
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -40,6 +53,7 @@ class SessionForm extends React.Component {
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
                     </label>
                     <br/>
+                    {this.renderErrors()}
                     <input type="submit" value={this.props.formType}/>
                     <br/>
                     New to Flying Start? {this.props.link}
