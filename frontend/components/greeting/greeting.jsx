@@ -9,7 +9,9 @@ const Greeting = ({ currentUser, logout }) => {
     );
     const greetingMessage = () => (
         <nav className="logged-in-menu">
-            <img src="https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-2.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=9a943d81556e01b3c5eb748ea31c4880" alt="icon"/>
+            <div className="icon">
+                <img src="https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-2.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=9a943d81556e01b3c5eb748ea31c4880" alt="icon" />
+            </div>
             <br/>
             <div className="dropdown-nav">
                 <div className="account-list">
