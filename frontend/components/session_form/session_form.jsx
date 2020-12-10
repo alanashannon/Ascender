@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
                     <br/>
                     <input type="submit" value="Demo Login" onClick={this.handleDemoSubmit}/>
                     <br/>
-                    New to Flying Start? {this.props.link}
+                    New to Ascender? {this.props.link}
                 </form>
             </div>
         )

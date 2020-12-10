@@ -9,7 +9,7 @@ const App = () => (
     <div>
         <header>
             <Link to="/">
-                <h1>Flying Start</h1>
+                <h1>Ascender</h1>
             </Link>
             <GreetingContainer /> 
         </header>
