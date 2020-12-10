@@ -54,3 +54,36 @@
     background-color: #015738;
 }
 
+.submit-button-demo {
+    border-bottom: 1px solid lightgray;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    background-color:#028858;
+    color: white;
+    border: 1px solid #028858;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-weight: 300;
+    align-content: stretch;
+    width: 100%;
+}
+
+.submit-button-demo:hover {
+    cursor: pointer;
+    background-color: #015738;
+}
+
+.login-footer {
+    font-size: 14px;
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+}
+
+.errors {
+    color: red; 
+    font-size: 14px;
+}
+

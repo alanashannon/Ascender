@@ -4,9 +4,9 @@
 }
 
 .header { 
-    display: inline-flexbox;
+    display: flexbox;
     // justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 10px; 
     border-bottom: 1px solid lightgray;
@@ -21,27 +21,38 @@
     font-family: Baruta;
     font-size: 25px;
     font-weight: bold; 
-    margin: 0 auto;
-
-
+    margin: 0; 
 }
 
 .login-nav-link {
     display: flex; 
+    // float: right;
     justify-content: flex-end;
     align-items: center;
-    padding-left: 43%; 
+    // padding-left: 43%; 
     margin-right: 10px;
     font-size: 14px; 
     
 }
 
-// .logged-in-greeting {
-//     display: flex; 
-//     justify-content: space-around;
-//     align-items: center;
-//     margin-left: 40%; 
-//     margin-right: 10px;
-//     font-size: 14px; 
-// }
+header img {
+    border-radius: 20px;
+}
+
+.logged-in-greeting {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 40%; 
+    margin-right: 10px;
+    font-size: 14px; 
+}
+
+.logged-in-greeting img:hover {
+    cursor: pointer;
+}
+
+.logged-in-greeting a:hover {
+    cursor: pointer;
+}
 

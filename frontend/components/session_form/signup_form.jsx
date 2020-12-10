@@ -62,7 +62,9 @@ class SignupForm extends React.Component {
                     </div>
                     <input className="submit-button" type="submit" value={this.props.formType} />
                     <br />
-                    Have an account? {this.props.link}
+                    <div className="signup-footer">
+                        Have an account? {this.props.link}
+                    </div>
                 </form>
             </div>
         )

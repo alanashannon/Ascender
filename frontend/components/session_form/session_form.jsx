@@ -68,9 +68,11 @@ class SessionForm extends React.Component {
                     </div>
                     <input className="submit-button" type="submit" value={this.props.formType}/>
                     <br/>
-                    <input className="submit-button" type="submit" value="Demo Login" onClick={this.handleDemoSubmit}/>
+                    <input className="submit-button-demo" type="submit" value="Demo Login" onClick={this.handleDemoSubmit}/>
                     <br/>
-                    New to Ascender? {this.props.link}
+                    <div className="login-footer">
+                        New to Ascender? {this.props.link}
+                    </div>
                 </form>
             </div>
         )
