@@ -56,8 +56,8 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="login-box">
-                <form onSubmit={this.handleSubmit}>
+            <div className="login-page">
+                <form className="login-box" onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
                     <input className="form-input" type="text" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')}/>
                     <br/> 

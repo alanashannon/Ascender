@@ -48,8 +48,8 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signin-box">
-                <form onSubmit={this.handleSubmit}>
+            <div className="signin-page">
+                <form className="signin-box" onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
                     <input className="form-input" type="text" value={this.state.name} placeholder="Name" onChange={this.handleInput('name')} />
                     <br />
