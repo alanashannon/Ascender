@@ -4,10 +4,9 @@
 }
 
 .header { 
-    display: flex;
-    // background-color: red;
-    justify-content: flex-end;
-    flex-direction: row;
+    display: inline-flexbox;
+    // justify-content: center;
+    flex-direction: column;
     align-items: center;
     padding: 10px; 
     border-bottom: 1px solid lightgray;
@@ -20,7 +19,6 @@
     text-decoration: none;
     color: #2bd11c;
     font-family: Baruta;
-    // background-color: green;
     font-size: 25px;
     font-weight: bold; 
     margin: 0 auto;
@@ -28,10 +26,20 @@
 }
 
 .login-nav-link {
-    // display: flex; 
-    justify-content: space-between;
+    display: flex; 
+    justify-content: flex-end;
     align-items: center;
-    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-
+    padding-left: 43%; 
+    margin-right: 10px;
+    font-size: 14px; 
 }
+
+// .logged-in-greeting {
+//     display: flex; 
+//     justify-content: space-around;
+//     align-items: center;
+//     margin-left: 40%; 
+//     margin-right: 10px;
+//     font-size: 14px; 
+// }
 
