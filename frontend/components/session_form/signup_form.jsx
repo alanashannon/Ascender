@@ -48,17 +48,19 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="signin-box">
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
-                    <input type="text" value={this.state.name} placeholder="Name" onChange={this.handleInput('name')} />
+                    <input className="form-input" type="text" value={this.state.name} placeholder="Name" onChange={this.handleInput('name')} />
                     <br />
-                    <input type="text" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')} />
+                    <input className="form-input" type="text" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')} />
                     <br />
-                    <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')} />
+                    <input className="form-input" type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')} />
                     <br />
-                    {this.renderErrors()}
-                    <input type="submit" value={this.props.formType} />
+                    <div className="errors">
+                        {this.renderErrors()}
+                    </div>
+                    <input className="submit-button" type="submit" value={this.props.formType} />
                     <br />
                     Have an account? {this.props.link}
                 </form>
