@@ -15,7 +15,7 @@ user3 = User.create!(name: 'Steven Isserlis', email: 'monkey@aa.io', password: '
 user4 = User.create!(name: 'Mstislav Rostropovich', email: 'cello@aa.io', password: 'password', location: 'Yonkers, NY', biography: 'Spreading love and happiness')
 user5 = User.create!(name: 'Janos Starker', email: 'janos@aa.io', password: 'password', location: 'Cleveland, OH', biography: 'Helping non-profits is my passion!')
 user6 = User.create!(name: 'Sol Gabetta', email: 'catgirl@aa.io', password: 'password', location: 'London', biography: 'Former ballet dancer, currently a photographer')
-user7 = User.create!(name: 'Jacqueline DuPre', email: 'password123@aa.io', password: 'password', location: 'Los Angeles', biography: 'I have written many novels, looking to be published')
+user7 = User.create!(name: 'Jacqueline DuPre', email: 'password123@aa.io', password: 'password', location: 'New York', biography: 'I am a freelance writer for the New Yorker, looking to publish my first book!')
 user8 = User.create!(name: 'Pieter Wispelwey', email: 'wisps@aa.io', password: 'password', location: 'Amsterdam', biography: 'I love to paint, anywhere and anything')
 user9 = User.create!(name: 'Mischa Maisky', email: 'cellist@aa.io', password: 'password', location: 'Dallas', biography: 'I have a million startup ideas, let me tell you just a few')
 user10 = User.create!(name: 'Pablo Casals', email: 'pablo@aa.io', password: 'password', location: 'Puerto Rico', biography: 'An aspiring filmmaker')
@@ -127,18 +127,18 @@ project7 = Project.create!(title: "Women in Music Commission",
     faq: '', 
     risks: 'Covid-19 has prevented us from being able to rehearse and perform')
 
-project8 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
+project8 = Project.create!(title: "Incorporating Music Education into the Bard Prison Initiative", 
+    campaign: 'I have spent years researching music education and believe it can be a powerful tool that can be used to better the American prison system. I have concluded my study and am looking to publish my findings', 
+    funding_goal: 2000,
+    amount_pledged: 1175,
+    end_date: Date.new(2021,3,1),
+    location: 'Kingston, NY', 
+    description: "After performing in prisons and seeing the impact that the Bard Prison Initiative has had, I feel very passionate about using music education to better our society", 
     author_id: 7,
     category_id: 8, #publishing
     updates: '', 
     faq: '', 
-    risks: '')
+    risks: 'Not reaching our funding goal is our primary concern')
 
 project9 = Project.create!(title: "Stalinist Russia in Retrospect", 
     campaign: 'I will be playing a recital of music from the Stalin era, interspersed with personal stories from my experience of that time', 
