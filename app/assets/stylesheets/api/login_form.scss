@@ -7,7 +7,6 @@
 }
 
 .login-box {
-    display: flexbox;
     width: 350px; 
     padding: 25px; 
     background-color: rgb(255, 255, 255); 
@@ -19,7 +18,6 @@
     font-size: 30px; 
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
     font-weight: 300;
-    
 }
 
 .form-input {
@@ -47,6 +45,10 @@
     font-weight: 300;
     align-content: stretch;
     width: 100%;
+}
+
+.submit-button:focus {
+    outline: none; 
 }
 
 .submit-button:hover {
@@ -83,6 +85,9 @@
 }
 
 .errors {
+    display: flexbox;
+    align-content: center;
+    padding-bottom: 14px;
     color: red; 
     font-size: 14px;
 }

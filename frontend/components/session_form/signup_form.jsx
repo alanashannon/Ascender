@@ -50,7 +50,7 @@ class SignupForm extends React.Component {
         return (
             <div className="signin-page">
                 <form className="signin-box" onSubmit={this.handleSubmit}>
-                    <h2>{this.props.formType}</h2>
+                    <h2>Sign up</h2>
                     <input className="form-input" type="text" value={this.state.name} placeholder="Name" onChange={this.handleInput('name')} />
                     <br />
                     <input className="form-input" type="text" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')} />
