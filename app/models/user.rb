@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
     attr_reader :password 
 
+    has_many :projects, 
+        foreign_key: :author_id, 
+        class_name: :Project 
+
     before_validation :ensure_session_token
     
     #SPIRE methods
