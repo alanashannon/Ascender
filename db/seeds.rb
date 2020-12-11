@@ -12,8 +12,8 @@ Project.destroy_all
 user1 = User.create!(name: 'Demo User', email: 'demo@user.com', password: 'password', location: 'San Francisco', biography: 'I am a San Francisco-based engineer')
 user2 = User.create!(name: 'Alisa Weilerstein', email: 'cellista@aa.io', password: 'password', location: 'San Francisco', biography: 'Hello, I love making things out of whatever I can get my hands on')
 user3 = User.create!(name: 'Steven Isserlis', email: 'monkey@aa.io', password: 'password', location: 'San Francisco', biography: 'Lover of art of any kind')
-user4 = User.create!(name: 'Mstislav Rostropovich', email: 'cello@aa.io', password: 'password', location: 'Yonkers, NY', biography: 'Spreading love and happiness')
-user5 = User.create!(name: 'Janos Starker', email: 'janos@aa.io', password: 'password', location: 'Cleveland, OH', biography: 'Helping non-profits is my passion!')
+user4 = User.create!(name: 'Mstislav Rostropovich', email: 'cello@aa.io', password: 'password', location: 'Washington, DC', biography: 'Spreading love and happiness')
+user5 = User.create!(name: 'Janos Starker', email: 'janos@aa.io', password: 'password', location: 'Bloomington, IN', biography: 'Helping non-profits is my passion!')
 user6 = User.create!(name: 'Sol Gabetta', email: 'catgirl@aa.io', password: 'password', location: 'London', biography: 'Former ballet dancer, currently a photographer')
 user7 = User.create!(name: 'Jacqueline DuPre', email: 'password123@aa.io', password: 'password', location: 'New York', biography: 'I am a freelance writer for the New Yorker, looking to publish my first book!')
 user8 = User.create!(name: 'Pieter Wispelwey', email: 'wisps@aa.io', password: 'password', location: 'Amsterdam', biography: 'I love to paint, anywhere and anything')
@@ -36,33 +36,33 @@ user12 = User.create!(name: 'Paul Tortelier', email: 'torti@aa.io', password: 'p
 
 
 #projects
-project1 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
-    author_id: 3,
+project1 = Project.create!(title: "The Rite of Spring: Fully Staged at Davies Symphony Hall", 
+    campaign: "Help InterMusicSF reach our funding goal and see the City Ballet perform the original Rite of Spring choreography at Davies Symphony Hall", 
+    funding_goal: 20000,
+    amount_pledged: 1055,
+    end_date: Date.new(2021,12,1),
+    location: 'San Francisco', 
+    description: 'See what caused a riot in 1913!', 
+    author_id: 1,
     category_id: 1, #arts
     updates: '', 
     faq: '', 
-    risks: '')
+    risks: 'Covid-19 has pushed back our timeline by at least a year, but we would really appreciate your support')
 
-project2 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
-    author_id: 4,
+project2 = Project.create!(title: "Why Beethoven Threw the Stew (And Lots More Stories about the Lives of Great Composers)", 
+    campaign: "I grew up playing music, but the kids around me all thought I was weird. They didn't know how interesting classical music is and the stories behind the composers who wrote the music, so I would like to tell you a few of my favorites", 
+    funding_goal: 7500,
+    amount_pledged: 8050,
+    end_date: Date.new(2021,2,1),
+    location: 'Daly City, CA', 
+    description: "Fun stories about classical composers for kids", 
+    author_id: 3,
     category_id: 2, #comics/illustration 
-    updates: '', 
+    updates: 'Wow, we surpassed our goal! Thank you all!', 
     faq: '', 
-    risks: '')
+    risks: 'We run the risk of not finding a publisher, as the market for childrens books is over-saturated at the moment')
 
-project3 = Project.create!(title: "The Bloch Strap", 
+project3 = Project.create!(title: "The Block Strap", 
     campaign: "Introducing the world's first cello strap that lets cellists play standing up!", 
     funding_goal: 5000,
     amount_pledged: 4355,
@@ -88,31 +88,31 @@ project4 = Project.create!(title: "Forte",
     faq: 'Q: When will it be released? A: In 2021', 
     risks: 'While we have so much passion for this film, we worry that we will not have the resources to complete it')
 
-project5 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
+project5 = Project.create!(title: "Amigurumi Musical Instruments", 
+    campaign: "Help us fund our classes and you can learn to crochet your favorite instruments!", 
+    funding_goal: 10000,
+    amount_pledged: 2500,
+    end_date: Date.new(2021,6,1),
+    location: 'Berkeley, CA', 
+    description: 'Learn to crochet your favorite instruments!', 
     author_id: 2, # user2
     category_id: 5, # food/craft
     updates: '', 
     faq: '', 
-    risks: '')
+    risks: "If we don't meet our funding goal, we run the risk of not having the resources to hold the classes")
 
-project6 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
+project6 = Project.create!(title: "Violin Hero", 
+    campaign: "Is Guitar Hero too easy for you? We are developing the newest version of Guitar Hero: Violin Hero!", 
+    funding_goal: 50000,
+    amount_pledged: 50050,
+    end_date: Date.new(2020,12,31),
+    location: 'Cleveland, OH', 
+    description: "For those that are bored with Guitar Hero", 
     author_id: 6,
     category_id: 6, #games
     updates: '', 
-    faq: '', 
-    risks: '')
+    faq: 'Q: Is this an April Fools joke? A: No, of course not', 
+    risks: "People not taking us seriously")
 
 project7 = Project.create!(title: "Women in Music Commission", 
     campaign: 'We are commissioning five new works by female composers for our upcoming album, which we hope will inspire young female musicians everywhere to follow their dreams of composing', 
@@ -146,25 +146,25 @@ project9 = Project.create!(title: "Stalinist Russia in Retrospect",
     amount_pledged: 11505,
     end_date: Date.new(2021,4,15),
     location: 'New York', 
-    description: 'Music by Prokofiev, Khachaturian, and my friend, Dmitri Shostakovich', 
+    description: 'A recital of music by Prokofiev, Khachaturian, and my friend, Dmitri Shostakovich', 
     author_id: 4,
     category_id: 7, #music
     updates: 'Thank you all for your support thus far', 
     faq: '', 
     risks: "The Russian government is not happy that I am putting on this program, but I will do everything I can to make it happen")
 
-project10 = Project.create!(title: "", 
-    campaign: '', 
-    funding_goal: ,
-    amount_pledged: ,
-    end_date: ,
-    location: '', 
-    description: '', 
-    author_id: 8, 
+project10 = Project.create!(title: "The Holocaust: Remembered", 
+    campaign: "A gallery exhibit of photographs from the Holocaust, paired with music written in concentration camps", 
+    funding_goal: 5000,
+    amount_pledged: 5150,
+    end_date: Date.new(2021,5,1),
+    location: 'Bloomington, IN', 
+    description: "Pairing photography with music in memory of the Holocaust", 
+    author_id: 5, 
     category_id: 1, # arts
-    updates: '', 
+    updates: 'We have found a venue, thank you all for your support', 
     faq: '', 
-    risks: '')
+    risks: 'We are having some difficulty finding a venue for the exhibit')
 
 project11 = Project.create!(title: "Tortelier's Tortellini", 
     campaign: "I may be French, but I have had a lifelong passion for pasta. I am working towards opening a pop-up pasta shop in the heart of Paris and would love your support!", 
