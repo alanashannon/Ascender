@@ -1,0 +1,89 @@
+.login-page {
+    background-color: whitesmoke;
+    display: flex; 
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 400px; 
+}
+
+.login-box {
+    display: flexbox;
+    width: 350px; 
+    padding: 25px; 
+    background-color: rgb(255, 255, 255); 
+    border: 1px solid rgb(235, 235, 240);
+}
+
+.login-box h2 {
+    padding-bottom: 20px;
+    font-size: 30px; 
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-weight: 300;
+    
+}
+
+.form-input {
+    display: flex; 
+    align-items: center;
+    padding-top: 12px; 
+    padding-bottom: 12px; 
+    padding-left: 12px;
+    border: 1px solid lightgray;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    width: 95.5%;
+}
+
+.submit-button {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    background-color:#028858;
+    color: white;
+    border: 1px solid #028858;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-weight: 300;
+    align-content: stretch;
+    width: 100%;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background-color: #015738;
+}
+
+.submit-button-demo {
+    border-bottom: 1px solid lightgray;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    padding-left: 10px;
+    background-color:#028858;
+    color: white;
+    border: 1px solid #028858;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-weight: 300;
+    align-content: stretch;
+    width: 100%;
+}
+
+.submit-button-demo:hover {
+    cursor: pointer;
+    background-color: #015738;
+}
+
+.login-footer {
+    font-size: 14px;
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+}
+
+.errors {
+    color: red; 
+    font-size: 14px;
+}
+
