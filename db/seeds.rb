@@ -25,14 +25,14 @@ user12 = User.create!(name: 'Paul Tortelier', email: 'torti@aa.io', password: 'p
 
 
 #categories: 
-# category1 = Category.create!(category_name: "Arts")
-# category2 = Category.create!(category_name: "Comics & Illustration")
-# category3 = Category.create!(category_name: "Design & Tech")
-# category4 = Category.create!(category_name: "Film")
-# category5 = Category.create!(category_name: "Food & Craft")
-# category6 = Category.create!(category_name: "Games")
-# category7 = Category.create!(category_name: "Music")
-# category8 = Category.create!(category_name: "Publishing")
+category1 = Category.create!(category_name: "Arts")
+category2 = Category.create!(category_name: "Comics & Illustration")
+category3 = Category.create!(category_name: "Design & Tech")
+category4 = Category.create!(category_name: "Film")
+category5 = Category.create!(category_name: "Food & Craft")
+category6 = Category.create!(category_name: "Games")
+category7 = Category.create!(category_name: "Music")
+category8 = Category.create!(category_name: "Publishing")
 
 
 #projects
@@ -43,8 +43,8 @@ project1 = Project.create!(title: "The Rite of Spring: Fully Staged at Davies Sy
     end_date: Date.new(2021,12,1),
     location: 'San Francisco', 
     description: 'See what caused a riot in 1913!', 
-    author_id: 1,
-    category_id: 1, #arts
+    author_id: user1.id,
+    category_id: category1.id, #arts
     updates: '', 
     faq: '', 
     risks: 'Covid-19 has pushed back our timeline by at least a year, but we would really appreciate your support')
@@ -56,8 +56,8 @@ project2 = Project.create!(title: "Why Beethoven Threw the Stew (And Lots More S
     end_date: Date.new(2021,2,1),
     location: 'Daly City, CA', 
     description: "Fun stories about classical composers for kids", 
-    author_id: 3,
-    category_id: 2, #comics/illustration 
+    author_id: user3.id,
+    category_id: category2.id, #comics/illustration 
     updates: 'Wow, we surpassed our goal! Thank you all!', 
     faq: '', 
     risks: 'We run the risk of not finding a publisher, as the market for childrens books is over-saturated at the moment')
@@ -69,8 +69,8 @@ project3 = Project.create!(title: "The Block Strap",
     end_date: Date.new(2021,1,1),
     location: 'Cleveland, OH', 
     description: "With this strap you'll never have to wonder what kind of chairs will be at the gig ever again", 
-    author_id: 9,
-    category_id: 3, # design/tech
+    author_id: user9.id,
+    category_id: category3.id, # design/tech
     updates: 'Less than 1000 to go!', 
     faq: 'Q: How does it work? A: the strap wraps around the scroll, over your shoulder, and down to the end pin', 
     risks: 'Reaching our funding goal, as our target audience is a rather niche market')
@@ -82,8 +82,8 @@ project4 = Project.create!(title: "Forte",
     end_date: Date.new(2021,3,1),
     location: 'New York', 
     description: 'We will travel with the musicians every step of the way', 
-    author_id: 10, 
-    category_id: 4, #film
+    author_id: user10.id, 
+    category_id: category4.id, #film
     updates: '', 
     faq: 'Q: When will it be released? A: In 2021', 
     risks: 'While we have so much passion for this film, we worry that we will not have the resources to complete it')
@@ -95,8 +95,8 @@ project5 = Project.create!(title: "Amigurumi Musical Instruments",
     end_date: Date.new(2021,6,1),
     location: 'Berkeley, CA', 
     description: 'Learn to crochet your favorite instruments!', 
-    author_id: 2, # user2
-    category_id: 5, # food/craft
+    author_id: user2.id, # user2
+    category_id: category5.id, # food/craft
     updates: '', 
     faq: '', 
     risks: "If we don't meet our funding goal, we run the risk of not having the resources to hold the classes")
@@ -108,8 +108,8 @@ project6 = Project.create!(title: "Violin Hero",
     end_date: Date.new(2020,12,31),
     location: 'Cleveland, OH', 
     description: "For those that are bored with Guitar Hero", 
-    author_id: 6,
-    category_id: 6, #games
+    author_id: user6.id,
+    category_id: category6.id, #games
     updates: '', 
     faq: 'Q: Is this an April Fools joke? A: No, of course not', 
     risks: "People not taking us seriously")
@@ -121,8 +121,8 @@ project7 = Project.create!(title: "Women in Music Commission",
     end_date: Date.new(2021,3,1),
     location: 'San Francisco', 
     description: 'We will be paying our composers the same as we have our commissions by male composers', 
-    author_id: 11,
-    category_id: 7, #music
+    author_id: user11.id,
+    category_id: category7.id, #music
     updates: '', 
     faq: '', 
     risks: 'Covid-19 has prevented us from being able to rehearse and perform')
@@ -134,8 +134,8 @@ project8 = Project.create!(title: "Incorporating Music Education into the Bard P
     end_date: Date.new(2021,3,1),
     location: 'Kingston, NY', 
     description: "After performing in prisons and seeing the impact that the Bard Prison Initiative has had, I feel very passionate about using music education to better our society", 
-    author_id: 7,
-    category_id: 8, #publishing
+    author_id: user7.id,
+    category_id: category8.id, #publishing
     updates: '', 
     faq: '', 
     risks: 'Not reaching our funding goal is our primary concern')
@@ -147,8 +147,8 @@ project9 = Project.create!(title: "Stalinist Russia in Retrospect",
     end_date: Date.new(2021,4,15),
     location: 'New York', 
     description: 'A recital of music by Prokofiev, Khachaturian, and my friend, Dmitri Shostakovich', 
-    author_id: 4,
-    category_id: 7, #music
+    author_id: user4.id,
+    category_id: category7.id, #music
     updates: 'Thank you all for your support thus far', 
     faq: '', 
     risks: "The Russian government is not happy that I am putting on this program, but I will do everything I can to make it happen")
@@ -160,8 +160,8 @@ project10 = Project.create!(title: "The Holocaust: Remembered",
     end_date: Date.new(2021,5,1),
     location: 'Bloomington, IN', 
     description: "Pairing photography with music in memory of the Holocaust", 
-    author_id: 5, 
-    category_id: 1, # arts
+    author_id: user5.id, 
+    category_id: category1.id, # arts
     updates: 'We have found a venue, thank you all for your support', 
     faq: '', 
     risks: 'We are having some difficulty finding a venue for the exhibit')
@@ -173,8 +173,8 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
     end_date: Date.new(2021,5,1),
     location: 'Paris', 
     description: 'Obviously, I specialize in tortellini', 
-    author_id: 12, 
-    category_id: 5, #food/craft
+    author_id: user12.id, 
+    category_id: category5.id, #food/craft
     updates: '', 
     faq: "Q: What is your pasta recipe? A: That's a secret!", 
     risks: "Covid-19 has taken a toll on all of us, I'm afraid we may need to hold off on opening until there is a vaccine")
