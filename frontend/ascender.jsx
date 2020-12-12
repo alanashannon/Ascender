@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchProject = fetchProject; 
     window.createProject = createProject; 
     window.updateProject = updateProject; 
-    window.deleteProject = deleteProject; 
+    window.deleteProject = deleteProject;  
     
     const root = document.getElementById('root'); 
     ReactDOM.render(<Root store={store} />, root);

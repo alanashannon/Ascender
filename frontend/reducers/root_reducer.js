@@ -5,8 +5,8 @@ import errorsReducer from './errors_reducer';
 
 //combine multiple domain-specific reducers
 const rootReducer = combineReducers({
-    session: sessionReducer, 
     entities: entitiesReducer, 
+    session: sessionReducer, 
     errors: errorsReducer
 });
 
