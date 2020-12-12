@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
 
-    before_action :require_logged_in, only: [:create, :update, :destroy]
+    before_action :logged_in?, only: [:create, :update, :destroy]
 
     def index
         @projects = Project.all 
@@ -14,6 +14,7 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
+
         if @project.save
             render :show 
         else
