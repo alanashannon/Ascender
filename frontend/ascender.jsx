@@ -5,8 +5,9 @@ import Root from './components/root';
 
 //TESTING ONLY
 // import { signup, login, logout } from './util/session_api_util';
-import { signup, login, logout } from './actions/session_actions';
-import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./util/project_api_util";
+// import { signup, login, logout } from './actions/session_actions';
+// import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./util/project_api_util";
+import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./actions/project_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store; 
