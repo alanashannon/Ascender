@@ -13,26 +13,16 @@ class ProjectIndex extends React.Component {
         this.props.fetchProjects(); 
     }
 
-    // section for featured - separate file? 
-        // calculate percent funded
-        // div for Featured Project header
-        // link to project show page
-            // photo, title, description/campaign, author name
-    // section for recommended
-        // div for Recommended For You header
-        // ul for map through each project
     render () {
         return (
-            <div>
-                {/* <h1>Project Index</h1> */}
-
+            <div className="index-container">
                 <section className="featured-project">
-                    <div>Featured Project</div>
+                    <div className="featured-header">Featured Project</div>
                     <FeaturedProject project={this.props.project} />
                 </section>
 
                 <section className="recommended-projects">
-                    <div>Recommended For You</div>
+                    <div className="recommended-header">Recommended For You</div>
                     <ul>
                         {this.props.projects.map((project, idx) => {
                             return <ProjectIndexItem project={project} key={idx} />

@@ -67,7 +67,7 @@ class ProjectShow extends React.Component {
                     </div>
                     <div className="project-show-mid">
                         <section>
-                            photo goes here 
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" /> 
                         </section>
                         <div>
                             progress bar goes here 
@@ -77,7 +77,7 @@ class ProjectShow extends React.Component {
                                 ${this.props.project.amount_pledged}
                             </li>
                             <li>
-                                pledged of {this.props.project.funding_goal}
+                                pledged of ${this.props.project.funding_goal}
                             </li>
                             <li>
                                 number of backers goes here 

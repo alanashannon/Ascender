@@ -18,22 +18,27 @@ class FeaturedProject extends React.Component {
 
         return (
             !projectExists ? <div></div> : (
-            <div>
+            <div className="featured-project-inner">
                 <Link to={`/projects/${this.props.project.id}`}>
-                    featured photo
+                    <img className="featured-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" />
+                    <div className="featured-progress-bar"></div>
                 </Link>
-                <Link to={`/projects/${this.props.project.id}`}>
-                    <li>
-                        {this.props.project.title}
+                <ul>
+                    <li className="featured-info">
+                        <Link className="featured-title" to={`/projects/${this.props.project.id}`}>
+                            {this.props.project.title}
+                        </Link>
+                        <br/>
+                        <Link className="featured-camp" to={`/projects/${this.props.project.id}`}>
+                            {this.props.project.campaign}
+                        </Link>
+                        <br/>
+                        By
+                        <Link className="featured-author" to={`/projects/${this.props.project.id}`}>
+                            {this.props.project.author_id}
+                        </Link>
                     </li>
-                    <li>
-                        {this.props.project.campaign}
-                    </li>
-                    <li>
-                        By <div>{this.props.project.author_id}</div>
-                    </li>
-
-                </Link>
+                </ul>
             </div> 
             )
         )
