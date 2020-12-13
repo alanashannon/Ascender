@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
+import FeaturedProject from './featured_project';
 
 class ProjectIndex extends React.Component {
     constructor(props) {
@@ -23,18 +24,20 @@ class ProjectIndex extends React.Component {
     render () {
         return (
             <div>
-                <h1>Project Index</h1>
+                {/* <h1>Project Index</h1> */}
 
                 <section className="featured-project">
                     <div>Featured Project</div>
+                    <FeaturedProject project={this.props.project} />
                 </section>
 
                 <section className="recommended-projects">
                     <div>Recommended For You</div>
                     <ul>
-                        {this.props.projects.map((project) => {
-                            return <ProjectIndexItem project={project} />
+                        {this.props.projects.map((project, idx) => {
+                            return <ProjectIndexItem project={project} key={idx} />
                         })}
+                        <br />
                     </ul>
                 </section>
             </div>

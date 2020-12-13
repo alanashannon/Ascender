@@ -4,8 +4,11 @@ import { fetchProjects } from '../../actions/project_actions';
 
 
 const mapStateToProps = (state) => {
+    const projects = Object.values(state.entities.projects); 
+    let index = Math.floor(Math.random() * projects.length)
     return {
-        projects: Object.values(state.entities.projects)
+        projects: projects,
+        project: projects[index]
     }
 }
 

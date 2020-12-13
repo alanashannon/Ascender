@@ -9,7 +9,11 @@ class ProjectIndexItem extends React.Component {
     // if in featured, display photo, title, description, author
     // if in recommended, display photo, title, percent funded, author
     render() {
-        let percentFunded = (this.props.project.amount_pledged / this.props.project.funding_goal) * 100
+        if (!this.props.project) {
+            return null; 
+        }
+
+        let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
         if (percentFunded > 100) {
             percentFunded = 100
         }
@@ -26,9 +30,10 @@ class ProjectIndexItem extends React.Component {
                         </Link>
                         <br />
                         <Link to={`/projects/${this.props.project.id}`}>
-                            {this.props.project.description}
+                            {this.props.project.campaign}
                         </Link>
-                        <br />
+                        <div>{percentFunded}% funded</div>
+                        {/* <br /> */}
                         <Link to={`/projects/${this.props.project.id}`}>
                             {this.props.project.author_id}
                         </Link>
