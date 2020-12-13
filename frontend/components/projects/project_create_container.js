@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
             fundingGoal: '', 
             endDate: '', 
             risks: '', 
+            formPage: 1,
         },
-        formPage: 1,
         authorId: state.session.id, 
         formType: 'create'
     }

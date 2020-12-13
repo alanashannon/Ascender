@@ -13,7 +13,7 @@ const App = () => (
         <header className="header">
             <a href="#">Explore</a>
             {/* <a href="#">Start a project</a> */}
-            <Link to={"/projects/start"}>Start a project</Link>
+            <Link to={"/projects/new"}>Start a project</Link>
             <Link to="/">
                 <h1 className="logo">ASCENDER</h1>
             </Link>
@@ -23,7 +23,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
-            <ProtectedRoute exact path="/projects/start" component={ProjectCreateContainer}/>
+            <ProtectedRoute exact path="/projects/new" component={ProjectCreateContainer}/>
             <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
