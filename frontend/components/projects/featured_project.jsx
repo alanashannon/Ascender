@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 class FeaturedProject extends React.Component {
 
     render () {
-        let projectCheck; 
-        (this.props.project) ? projectCheck = this.props.project : projectCheck = null; 
+        let projectExists; 
+        (this.props.project) ? projectExists = this.props.project : projectExists = null; 
 
         //for progress bar under pic
         // let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
@@ -17,7 +17,7 @@ class FeaturedProject extends React.Component {
         // }
 
         return (
-            !projectCheck ? <div></div> : (
+            !projectExists ? <div></div> : (
             <div>
                 <Link to={`/projects/${this.props.project.id}`}>
                     featured photo
