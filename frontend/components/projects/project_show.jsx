@@ -33,7 +33,7 @@ class ProjectShow extends React.Component {
         let daysCounter = !daysLeft ? null : daysLeft(this.props.project.end_date) < 0 ? "0" : daysLeft(this.props.project.end_date).toString(); 
 
         let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
-            <button>Delete This Project</button> : <button>Back This Project</button>
+            <input className="options-button" type="submit" value="Delete This Project" /> : <input className="options-button" type="submit" value="Back This Project" />
 
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
@@ -60,42 +60,54 @@ class ProjectShow extends React.Component {
 
         return (
             !projectExists ? <div></div> : (
-                <div>
+                <div className="project-show-page">
                     <div className="project-show-header">
                         <h1>{this.props.project.title}</h1>
                         <h2>{this.props.project.description}</h2>
                     </div>
                     <div className="project-show-mid">
-                        <section>
+                        <section className="project-show-pic">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" /> 
                         </section>
-                        <div>
-                            progress bar goes here 
+                        <div className="project-show-mid-info">
+                            <div className="show-progress-bar">
+                                 
+                            </div>
+                            <ul className="project-show-mid-info-list">
+                                <li className="show-amount-pledged">
+                                    ${this.props.project.amount_pledged}
+                                </li>
+                                <li className="show-funding-goal">
+                                    pledged of ${this.props.project.funding_goal}
+                                </li>
+                                <li className="show-backers">
+                                    <div className="show-num-backers">
+                                        number of backers 
+                                    </div>
+                                    <div className="show-funding-goal">
+                                        backers 
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="show-num-backers">
+                                        {daysCounter}
+                                    </div>
+                                    <div className="show-days">
+                                        days to go
+                                    </div>
+                                </li>
+                            </ul>
+                            <div >
+                                {optionsButton}
+                            </div>
                         </div>
-                        <ul>
-                            <li>
-                                ${this.props.project.amount_pledged}
-                            </li>
-                            <li>
-                                pledged of ${this.props.project.funding_goal}
-                            </li>
-                            <li>
-                                number of backers goes here 
-                                <br/>
-                                backers 
-                            </li>
-                            <li>
-                                {daysCounter}
-                                <br/>
-                                days to go
-                            </li>
-                        </ul>
-                        {optionsButton}
+
                     </div>
-                    <div>
-                        <div onClick={this.handleClick("campaign")}>Campaign</div>
-                        <div onClick={this.handleClick("faq")}>FAQ</div>
-                        <div onClick={this.handleClick("updates")}>Updates</div>
+                    
+                    <div className="show-option-links">
+                        <div className="campaign-option" onClick={this.handleClick("campaign")}>Campaign</div>
+                        <div className="faq-option" onClick={this.handleClick("faq")}>FAQ</div>
+                        <div className="updates-option" onClick={this.handleClick("updates")}>Updates</div>
                     </div>
                     <div>
                         {bodyPage}

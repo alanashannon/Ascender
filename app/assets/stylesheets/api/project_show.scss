@@ -1,0 +1,118 @@
+.project-show-page {
+    display: flex; 
+    padding-left: 60px;
+    padding-right: 60px;
+    flex-direction: column;
+    max-width: 1366px;
+    background-color: rgb(245, 245, 245);
+}
+
+.project-show-header {
+    display: block; 
+    color: rgb(40, 40, 40);
+    margin-bottom: 36px;
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-top: 42px; 
+}
+
+.project-show-header h1 {
+    font-size: 24px; 
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.project-show-header h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.project-show-mid {
+    display: flex; 
+    // position: absolute;
+    
+}
+
+.project-show-pic {
+    display: block; 
+    flex-basis: 60%;
+    padding-left: 18px; 
+    padding-right: 18px;
+    float: left; 
+}
+
+.project-show-pic img {
+    width: 100%;  
+}
+
+.project-show-mid-info {
+    display: block; 
+    flex-basis: 40%;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-stretch: 100%;
+}
+
+.project-show-mid-info-list {
+    list-style-type: none;
+}
+
+.show-progress-bar {
+    width: 100%; 
+    height: 8px;
+    background-color: rgb(232, 232, 232);
+    margin-bottom: 18px;
+}
+
+.show-amount-pledged {
+    display: flex; 
+    align-items: center;
+    font-size: 28px;
+    color: rgb(0, 158, 116);
+    font-weight: 500;
+}
+
+.show-funding-goal {
+    color: rgb(101, 105, 105);
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.show-num-backers {
+    color: rgb(101, 105, 105);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.show-days {
+    color: rgb(101, 105, 105);
+    font-size: 14px;
+    padding-bottom: 28px;
+}
+
+.options-button {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: rgb(2, 136, 88);
+    color: rgb(255, 255, 255);
+    border-color: rgb(2, 136, 88);
+    border-style: none;
+}
+
+.options-button:focus {
+    outline: none;
+}
+
+.options-button:hover {
+    background-color: #015738;
+}
