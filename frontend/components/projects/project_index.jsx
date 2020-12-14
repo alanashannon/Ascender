@@ -26,9 +26,9 @@ class ProjectIndex extends React.Component {
                 <section className="recommended-projects">
                     <div className="recommended-header">Recommended For You</div>
                     <ul>
-                        {/* {this.props.projects.map((project, idx) => {
+                        {/* (shows all projects in a list) {this.props.projects.map((project, idx) => {
                             return <ProjectIndexItem project={project} key={idx} />
-                        })} */}
+                        })} */} 
                         {recommendedProjects.map((project, idx) => {
                             return <ProjectIndexItem project={project} key={idx} />
                         })}

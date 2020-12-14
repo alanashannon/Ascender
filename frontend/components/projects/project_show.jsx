@@ -23,6 +23,10 @@ class ProjectShow extends React.Component {
     render() {
         let projectExists;
         (this.props.project) ? projectExists = this.props.project : projectExists = null; 
+        
+        if (!this.props.project) {
+            return null;
+        }
 
         let daysLeft = !projectExists ? null : (date) => {
             let today = new Date(); 
@@ -56,7 +60,11 @@ class ProjectShow extends React.Component {
                     <p>{this.props.project.updates}</p>) :
                     <p>Looks like there aren't any updates yet.</p>}
             </div>
-        
+
+        let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
+        if (percentFunded > 100) {
+            percentFunded = 100
+        }
 
         return (
             !projectExists ? <div></div> : (
@@ -70,9 +78,7 @@ class ProjectShow extends React.Component {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" /> 
                         </section>
                         <div className="project-show-mid-info">
-                            <div className="show-progress-bar">
-                                 
-                            </div>
+                            <div className="show-progress-bar" style={{ width: `calc(1% * ${percentFunded})` }}></div>
                             <ul className="project-show-mid-info-list">
                                 <li className="show-amount-pledged">
                                     ${this.props.project.amount_pledged}
@@ -103,15 +109,16 @@ class ProjectShow extends React.Component {
                         </div>
 
                     </div>
-                    
-                    <div className="show-option-links">
-                        <div className="campaign-option" onClick={this.handleClick("campaign")}>Campaign</div>
-                        <div className="faq-option" onClick={this.handleClick("faq")}>FAQ</div>
-                        <div className="updates-option" onClick={this.handleClick("updates")}>Updates</div>
+                    <div className="show-body">
+                        <div className="show-option-links">
+                            <div className="campaign-option" onClick={this.handleClick("campaign")}>Campaign</div>
+                            <div className="faq-option" onClick={this.handleClick("faq")}>FAQ</div>
+                            <div className="updates-option" onClick={this.handleClick("updates")}>Updates</div>
+                        </div>
                     </div>
-                    <div>
-                        {bodyPage}
-                    </div>
+                        <div>
+                            {bodyPage}
+                        </div>
                     
                 </div>
             )

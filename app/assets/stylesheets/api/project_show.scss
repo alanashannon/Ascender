@@ -60,10 +60,10 @@
     list-style-type: none;
 }
 
-.show-progress-bar {
+.show-progress-bar { 
     width: 100%; 
     height: 8px;
-    background-color: rgb(232, 232, 232);
+    background-color:rgb(3, 115, 98);
     margin-bottom: 18px;
 }
 
@@ -115,4 +115,62 @@
 
 .options-button:hover {
     background-color: #015738;
+}
+
+.show-body {
+    display: inline-block; 
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-top: 40px;
+}
+
+.campaign-option {
+    display: inline-block; 
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.campaign-option:hover {
+    font-weight: bold;
+    color: rgb(2, 136, 88);
+    border-bottom: 3px solid rgb(40, 40, 40);
+}
+
+.faq-option {
+    display: inline-block; 
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.faq-option:hover {
+    font-weight: bold;
+    color: rgb(2, 136, 88);
+    border-bottom: 3px solid rgb(40, 40, 40);
+}
+
+.updates-option {
+    display: inline-block; 
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.updates-option:hover {
+    font-weight: bold;
+    color: rgb(2, 136, 88);
+    border-bottom: 3px solid rgb(40, 40, 40);
 }
