@@ -32,7 +32,7 @@ class ProjectIndexItem extends React.Component {
                             <br />
                             <div className="rec-percent-funded">{percentFunded}% funded</div>
                             <div className="rec-author-outer">
-                                By 
+                                By&nbsp; 
                                 <Link className="recommended-author" to={`/projects/${this.props.project.id}`}>
                                     {this.props.project.author_id}
                                 </Link>

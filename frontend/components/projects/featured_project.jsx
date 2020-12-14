@@ -32,18 +32,21 @@ class FeaturedProject extends React.Component {
                 </Link>
                 <ul>
                     <li className="featured-info">
-                        <Link className="featured-title" to={`/projects/${this.props.project.id}`}>
-                            {this.props.project.title}
-                        </Link>
-                        <br/>
-                        <Link className="featured-camp" to={`/projects/${this.props.project.id}`}>
-                            {this.props.project.campaign}
-                        </Link>
-                        <br/>
-                        By
-                        <Link className="featured-author" to={`/projects/${this.props.project.id}`}>
-                            {this.props.project.author_id}
-                        </Link>
+                        <div className="featured-title">
+                            <Link className="featured-title-text" to={`/projects/${this.props.project.id}`}>
+                                {this.props.project.title}
+                            </Link>
+                        </div>
+                        <div className="featured-camp">
+                            <Link className="featured-camp-text" to={`/projects/${this.props.project.id}`}>
+                                {this.props.project.campaign}
+                            </Link>
+                        </div>
+                        <div className="featured-author">By&nbsp; 
+                            <Link className="featured-author-text" to={`/projects/${this.props.project.id}`}>
+                                {this.props.project.author_id}
+                            </Link>
+                        </div>
                     </li>
                 </ul>
             </div> 
