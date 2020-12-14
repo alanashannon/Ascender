@@ -14,6 +14,8 @@ class ProjectIndex extends React.Component {
     }
 
     render () {
+        const recommendedProjects = this.props.projects.slice(1, 5)
+
         return (
             <div className="index-container">
                 <section className="featured-project">
@@ -24,9 +26,13 @@ class ProjectIndex extends React.Component {
                 <section className="recommended-projects">
                     <div className="recommended-header">Recommended For You</div>
                     <ul>
-                        {this.props.projects.map((project, idx) => {
+                        {/* {this.props.projects.map((project, idx) => {
+                            return <ProjectIndexItem project={project} key={idx} />
+                        })} */}
+                        {recommendedProjects.map((project, idx) => {
                             return <ProjectIndexItem project={project} key={idx} />
                         })}
+                        
                         <br />
                     </ul>
                 </section>

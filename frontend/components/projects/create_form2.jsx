@@ -46,7 +46,7 @@ class FormPage2 extends React.Component {
 
                     <h3>Risks and challenges</h3>
                     <h4>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it</h4>
-                    <textarea cols="50" rows="3"></textarea>
+                    <textarea cols="50" rows="3" onChange={this.handleInput("risks")}></textarea>
 
                     <input type="submit" value="Next: Story"/>
                 </form>
