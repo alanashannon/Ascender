@@ -24,6 +24,9 @@ class ProjectCreate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
+        // const formData = new FormData();
+        
+
         this.setState({ formPage: 2 })
     }
 
@@ -74,7 +77,7 @@ class ProjectCreate extends React.Component {
                     <input type="date" value={this.state.endDate} required={true} onChange={this.handleInput("endDate")}/>
 
                     <br/>
-                    <button>Next: Funding</button>
+                    <input type="submit" value="Next: Funding"/>
                 </form>
 
             </div>
