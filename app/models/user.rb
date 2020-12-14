@@ -6,6 +6,7 @@ class User < ApplicationRecord
     attr_reader :password 
 
     has_many :projects, 
+        primary_key: :id, 
         foreign_key: :author_id, 
         class_name: :Project 
 

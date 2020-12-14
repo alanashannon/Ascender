@@ -80,7 +80,7 @@ class ProjectCreate extends React.Component {
 
                     <h3>Risks and challenges</h3>
                     <h4>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it</h4>
-                    <textarea cols="50" rows="3" onChange={this.handleInput("risks")}></textarea>
+                    <textarea cols="50" rows="3" required={true} onChange={this.handleInput("risks")}></textarea>
 
                     <div>
                         <h1>Introduce your project</h1>
@@ -89,11 +89,11 @@ class ProjectCreate extends React.Component {
 
                     <h3>Project description</h3>
                     <h4>Tell people why they should be excited about your project. Get specific but be clear and be brief</h4>
-                    <textarea cols="50" rows="3" onChange={this.handleInput("description")}></textarea>
+                    <textarea cols="50" rows="3" required={true} onChange={this.handleInput("description")}></textarea>
 
                     <h3>Campaign</h3>
                     <h4>Write about your project like you're explaining it to a friend</h4>
-                    <textarea cols="50" rows="10" onChange={this.handleInput("campaign")}></textarea>
+                    <textarea cols="50" rows="10" required={true} onChange={this.handleInput("campaign")}></textarea>
 
                     <br/>
                     <input type="submit" value="Create Your Project"/>

@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProjectIndexContainer from './projects/project_index_container';
 import ProjectShowContainer from './projects/project_show_container';
 import ProjectCreateContainer from './projects/project_create_container';
+import ProjectEditContainer from './projects/project_edit_container';
 
 const App = () => (
     <div>
@@ -24,6 +25,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
             <ProtectedRoute exact path="/projects/new" component={ProjectCreateContainer}/>
+            <ProtectedRoute exact path="/projects/:projectId/edit" component={ProjectEditContainer}/>
             <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>

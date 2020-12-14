@@ -36,8 +36,8 @@ class ProjectShow extends React.Component {
         }
         let daysCounter = !daysLeft ? null : daysLeft(this.props.project.end_date) < 0 ? "0" : daysLeft(this.props.project.end_date).toString(); 
 
-        let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
-            <input className="options-button" type="submit" value="Delete This Project" /> : <input className="options-button" type="submit" value="Back This Project" />
+        // let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
+        //     <input className="options-button" type="submit" value="Delete This Project" /> : <input className="options-button" type="submit" value="Back This Project" />
 
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
@@ -104,7 +104,7 @@ class ProjectShow extends React.Component {
                                 </li>
                             </ul>
                             <div >
-                                {optionsButton}
+                                <input className="options-button" type="submit" value="Back This Project" />
                             </div>
                         </div>
 

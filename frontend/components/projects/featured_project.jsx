@@ -44,7 +44,7 @@ class FeaturedProject extends React.Component {
                         </div>
                         <div className="featured-author">By&nbsp; 
                             <Link className="featured-author-text" to={`/projects/${this.props.project.id}`}>
-                                {this.props.project.author_id}
+                                {this.props.project.authorName}
                             </Link>
                         </div>
                     </li>
