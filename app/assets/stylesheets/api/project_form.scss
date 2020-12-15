@@ -1,0 +1,569 @@
+.form-header {
+    display: block; 
+    border-bottom: 1px solid lightgray;
+}
+
+.form-header-text {
+    padding-top: 72px;
+    padding-bottom: 66px;
+
+    h1 {
+        color: rgb(40, 40, 40); 
+        font-size: 24px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: rgb(101, 105, 105);
+        font-size: 18px;
+        margin-top: 12px;
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+//basic info starts
+.title {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .title-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .title-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+
+        input {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        input:focus {
+            outline: none; 
+        }
+        
+    }
+}
+
+.category {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .category-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .category-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        select {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 98%;
+            margin-top: 8px;
+        }
+        select:focus {
+            outline: none; 
+        }
+    }
+}
+
+.location {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .location-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .location-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        input {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        input:focus {
+            outline: none; 
+        }
+    }
+}
+
+.image {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .image-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .image-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        input {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        input:focus {
+            outline: none; 
+        }
+    }
+}
+
+.enddate {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .enddate-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .enddate-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        input {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        input:focus {
+            outline: none; 
+        }
+    }
+}
+
+//funding starts
+.funding-header {
+    display: block; 
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.funding-header-text {
+    padding-top: 72px;
+    padding-bottom: 66px;
+
+    h1 {
+        color: rgb(40, 40, 40); 
+        font-size: 24px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: rgb(101, 105, 105);
+        font-size: 18px;
+        margin-top: 12px;
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.goal {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .goal-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .goal-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        input {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        input:focus {
+            outline: none; 
+        }
+    }
+}
+
+.risks {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .risks-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .risks-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        textarea {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        textarea:focus {
+            outline: none; 
+        }
+    }
+}
+
+//story starts
+.story-header {
+    display: block; 
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.story-header-text {
+    padding-top: 72px;
+    padding-bottom: 66px;
+
+    h1 {
+        color: rgb(40, 40, 40); 
+        font-size: 24px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: rgb(101, 105, 105);
+        font-size: 18px;
+        margin-top: 12px;
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.description {
+    display: flex; 
+    border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .description-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .description-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        textarea {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        textarea:focus {
+            outline: none; 
+        }
+    }
+}
+
+.campaign {
+    display: flex; 
+    // border-bottom: 1px solid lightgray;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .campaign-info {
+        display: block; 
+        flex-basis: 40%;
+        padding-left: 18px;
+        padding-right: 18px;
+        vertical-align: baseline;
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        h4 {
+            color: rgb(101, 105, 105);
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+    }
+    
+    .campaign-input {
+        display: block; 
+        flex-basis: 60%;
+        margin-left: 10%;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        vertical-align: baseline;
+
+        textarea {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            padding: 12px; 
+            width: 94%;
+            margin-top: 8px;
+        }
+        textarea:focus {
+            outline: none; 
+        }
+    }
+}
+
+.update-button {
+    // border-bottom: 1px solid lightgray;
+    input {
+        font-size: 14px;
+        font-weight: 500;
+        border-bottom: 1px solid lightgray;
+    }
+
+    button {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

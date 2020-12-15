@@ -182,34 +182,34 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
 
 
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
-project1.photo.attach(io: file, filename: "rite-of-spring.jpg")
+project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
 
 file2 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/beethoven-book.jpg")
-project2.photo.attach(io: file, filename: "beethoven-book.jpg")
+project2.photo.attach(io: file2, filename: "beethoven-book.jpg")
 
 file3 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/block-strap.jpg")
-project3.photo.attach(io: file, filename: "block-strap.jpg")
+project3.photo.attach(io: file3, filename: "block-strap.jpg")
 
 file4 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/forte.jpg")
-project4.photo.attach(io: file, filename: "forte.jpg")
+project4.photo.attach(io: file4, filename: "forte.jpg")
 
 file5 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/ami-uke.jpg")
-project5.photo.attach(io: file, filename: "ami-uke.jpg")
+project5.photo.attach(io: file5, filename: "ami-uke.jpg")
 
 file6 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/violin-hero.jpg")
-project6.photo.attach(io: file, filename: "violin-hero.jpg")
+project6.photo.attach(io: file6, filename: "violin-hero.jpg")
 
 file7 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/kronos.jpg")
-project7.photo.attach(io: file, filename: "kronos.jpg")
+project7.photo.attach(io: file7, filename: "kronos.jpg")
 
 file8 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/bard.jpg")
-project8.photo.attach(io: file, filename: "bard.jpg")
+project8.photo.attach(io: file8, filename: "bard.jpg")
 
 file9 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/shosty-rosty.jpg")
-project9.photo.attach(io: file, filename: "shosty-rosty.jpg")
+project9.photo.attach(io: file9, filename: "shosty-rosty.jpg")
 
 file10 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/holocaust.jpg")
-project10.photo.attach(io: file, filename: "holocaust.jpg")
+project10.photo.attach(io: file10, filename: "holocaust.jpg")
 
 file11 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/tortellini.jpg")
-project11.photo.attach(io: file, filename: "tortellini.jpg")
+project11.photo.attach(io: file11, filename: "tortellini.jpg")
