@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom';
 
 class ProjectShow extends React.Component {
     constructor(props) {
@@ -35,10 +36,10 @@ class ProjectShow extends React.Component {
             return Math.floor(time_diff / (86400000)) //convert to days from milliseconds, rounded down 
         }
         let daysCounter = !daysLeft ? null : daysLeft(this.props.project.end_date) < 0 ? "0" : daysLeft(this.props.project.end_date).toString(); 
-
-        // let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
-        //     <input className="options-button" type="submit" value="Delete This Project" /> : <input className="options-button" type="submit" value="Back This Project" />
-
+    
+        let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
+            <Link className="options-button" to={`/projects/${this.props.project.id}/edit`}>Edit This Project</Link> : <input className="options-button" type="submit" value="Back This Project" />
+            
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
                 <section className="project-show-body">
@@ -104,7 +105,7 @@ class ProjectShow extends React.Component {
                                 </li>
                             </ul>
                             <div >
-                                <input className="options-button" type="submit" value="Back This Project" />
+                                {optionsButton}
                             </div>
                         </div>
 

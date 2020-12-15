@@ -21,6 +21,11 @@ class ProjectEdit extends React.Component {
         }
     }
 
+    handleDelete() {
+        this.props.deleteProject(this.props.match.params.projectId)
+            .then(() => this.props.history.push(`/`))
+    }
+
     handleSubmit(e) {
         e.preventDefault(); 
 
@@ -32,17 +37,12 @@ class ProjectEdit extends React.Component {
             .then(() => this.props.history.push(`/projects/${this.props.project.id}`))
     }
 
-    handleDelete() {
-        this.props.deletePost(this.props.match.params.projectId)
-    }
-
     render () {
-        // debugger
         if (!this.props.project || !this.state) {
             return <div></div> 
         }
 
-        if (this.props.project.author_id !== this.props.currentUser.id) {
+        if (this.props.project.author_id !== this.props.currentUser) {
             this.props.history.push('/')
         }
 

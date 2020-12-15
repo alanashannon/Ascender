@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Redirect } from 'react-router-dom';
 
 class ProjectCreate extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class ProjectCreate extends React.Component {
         e.preventDefault(); 
         
         this.props.createProject(this.state)
+            .then(() => this.props.history.push(`/projects/${this.state.id}`))
     }
 
     render () {

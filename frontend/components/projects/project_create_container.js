@@ -5,6 +5,7 @@ import { createProject } from '../../actions/project_actions';
 const mapStateToProps = (state) => {
     return {
         project: { 
+            id: '',
             title: '', 
             category: '',
             description: '', 

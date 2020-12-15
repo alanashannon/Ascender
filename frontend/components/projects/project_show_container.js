@@ -5,7 +5,8 @@ import { fetchProject, deleteProject, updateProject } from '../../actions/projec
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        project: state.entities.projects[ownProps.match.params.projectId], 
+        project: state.entities.projects[ownProps.match.params.projectId],
+        currentUser: state.session.id 
     }
 }
 

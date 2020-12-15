@@ -5,7 +5,7 @@ import { fetchProject, updateProject, deleteProject } from '../../actions/projec
 const mapStateToProps = (state, ownProps) => {
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.session.id, //state.entities.users[]
         formType: "Edit This Project"
     }
 }
