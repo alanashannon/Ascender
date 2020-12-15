@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
     }
 
     render () {
-        const recommendedProjects = this.props.projects.slice(1, 5)
+        const recommendedProjects = this.props.projects.slice(4, 8)
 
         return (
             <div className="index-container">
