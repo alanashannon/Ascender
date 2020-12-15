@@ -4,24 +4,15 @@ import ProjectIndexContainer from './project_index_container';
 class ProjectEdit extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.project
-        this.state = {
-            title: '',
-            category: '',
-            description: '',
-            campaign: '',
-            location: '',
-            fundingGoal: '',
-            // endDate: '',
-            risks: '',
-        }
 
-        this.handleInput.bind(this)
-        this.handleSubmit.bind(this)
+        this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId)
+            .then(() => this.setState(this.props.project))
     }
 
     handleInput(field) {
@@ -37,44 +28,17 @@ class ProjectEdit extends React.Component {
             this.props.history.push('/login')
         }
 
-        // let newTitle = this.props.project.title;
-        // let newCategory = this.props.project.category;
-        // let newLocation = this.props.project.Location;
-        // let newFundingGoal = this.props.project.fundingGoal;
-        // let newRisks = this.props.project.risks;
-        // let newDescription = this.props.project.description;
-        // let newCampaign = this.props.project.campaign;
+        this.props.updateProject(this.state)
+            .then(() => this.props.history.push(`/projects/${this.props.project.id}`))
+    }
 
-        if (this.state.location !== false) {
-            let newLocation = this.state.location
-        } else {
-            let newLocation = this.props.project.location
-        }
-        // (this.state.title) ? newTitle = this.state.title : newTitle = this.props.project.title
-        // (this.state.category) ? newCategory = this.state.category : newCategory = this.props.project.category
-        // (this.state.location) ? newLocation = this.state.location : newLocation = this.props.project.location
-        // (this.state.fundingGoal) ? newFundingGoal = this.state.fundingGoal : newFundingGoal = this.props.project.fundingGoal
-        // (this.state.risks) ? newRisks = this.state.risks : newRisks = this.props.project.risks
-        // (this.state.description) ? newDescription = this.state.description : newDescription = this.props.project.description
-        // (this.state.campaign) ? newCampaign = this.state.campaign : newCampaign = this.props.project.campaign
-
-        const projectUpdates = {
-            // id: this.props.project.id,
-            // title: newTitle,
-            // category: newCategory,
-            location: newLocation,
-            // fundingGoal: newFundingGoal,
-            // risks: newRisks, 
-            // description: newDescription,
-            // campaign: newCampaign
-        }
-
-        this.props.updateProject(projectUpdates)
-        //     .then(() => this.props.history.push(`/projects/${this.props.project.id}`))
+    handleDelete() {
+        this.props.deletePost(this.props.match.params.projectId)
     }
 
     render () {
-        if (!this.props.project) {
+        // debugger
+        if (!this.props.project || !this.state) {
             return <div></div> 
         }
 
@@ -113,15 +77,11 @@ class ProjectEdit extends React.Component {
 
                     <h3>Project location</h3>
                     <h4>Enter the location that best describes where your project is based</h4>
-                    <input type="text" value={this.state.location} onChange={this.handleInput("location")} placeholder={this.props.project.location} />
+                    <input type="text" value={this.state.location} onChange={this.handleInput("location")}  />
 
                     <h3>Project image</h3>
                     <h4>Add an image that clearly represents your project</h4>
                     {/* <input type="file"/> */}
-
-                    {/* <h3>Project end date</h3>
-                    <h4>Set a time limit for your campaign. You won't be able to change this after you launch</h4>
-                    <input type="date" value={this.state.endDate} onChange={this.handleInput("endDate")} /> */}
 
                     <div>
                         <h1>Let's talk about money</h1>
@@ -131,12 +91,12 @@ class ProjectEdit extends React.Component {
                     <h3>Funding goal</h3>
                     <h4>Set an achievable goal that covers what you need to complete your project</h4>
                     <label>Goal amount
-                        <input type="number" value={this.state.fundingGoal} onChange={this.handleInput("fundingGoal")} placeholder={this.props.project.fundingGoal}/>
+                        <input type="number" value={this.state.funding_goal} onChange={this.handleInput("funding_goal")} placeholder={this.props.project.funding_goal}/>
                     </label>
 
                     <h3>Risks and challenges</h3>
                     <h4>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it</h4>
-                    <textarea cols="50" rows="3" onChange={this.handleInput("risks")} placeholder={this.props.project.risks}></textarea>
+                    <textarea cols="50" rows="3" onChange={this.handleInput("risks")} value={this.state.risks}></textarea>
 
                     <div>
                         <h1>Introduce your project</h1>
@@ -145,14 +105,15 @@ class ProjectEdit extends React.Component {
 
                     <h3>Project description</h3>
                     <h4>Tell people why they should be excited about your project. Get specific but be clear and be brief</h4>
-                    <textarea cols="50" rows="3" onChange={this.handleInput("description")} placeholder={this.props.project.description} ></textarea>
+                    <textarea cols="50" rows="3" onChange={this.handleInput("description")} value={this.state.description} ></textarea>
 
                     <h3>Campaign</h3>
                     <h4>Write about your project like you're explaining it to a friend</h4>
-                    <textarea cols="50" rows="10" onChange={this.handleInput("campaign")} placeholder={this.props.project.campaign} ></textarea>
+                    <textarea cols="50" rows="10" onChange={this.handleInput("campaign")} value={this.state.campaign} ></textarea>
 
                     <br />
                     <input type="submit" value="Update Project" />
+                    <button onClick={this.handleDelete}>Delete This Project</button>
                 </form>
 
             </div>

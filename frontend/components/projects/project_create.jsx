@@ -65,7 +65,7 @@ class ProjectCreate extends React.Component {
 
                     <h3>Project end date</h3>
                     <h4>Set a time limit for your campaign. You won't be able to change this after you launch</h4>
-                    <input type="date" value={this.state.endDate} required={true} onChange={this.handleInput("endDate")}/>
+                    <input type="date" value={this.state.end_date} required={true} onChange={this.handleInput("end_date")}/>
 
                     <div>
                         <h1>Let's talk about money</h1>
@@ -75,7 +75,7 @@ class ProjectCreate extends React.Component {
                     <h3>Funding goal</h3>
                     <h4>Set an achievable goal that covers what you need to complete your project</h4>
                     <label>Goal amount
-                        <input type="number" value={this.state.fundingGoal} required={true} onChange={this.handleInput("fundingGoal")} />
+                        <input type="number" value={this.state.funding_goal} required={true} onChange={this.handleInput("funding_goal")} />
                     </label>
 
                     <h3>Risks and challenges</h3>

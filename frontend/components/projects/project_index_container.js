@@ -16,8 +16,6 @@ const mapStateToProps = (state) => {
     let index = Math.floor(Math.random() * projects.length)
     return {
         projects: projectWithAuthor(state),
-        // projects: projects,
-        // project: projects[index]
         project: projectWithAuthor(state)[index]
     }
 }

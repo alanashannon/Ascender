@@ -15,6 +15,10 @@ class Api::ProjectsController < ApplicationController
     def create
         @project = Project.new(project_params)
         @project.author_id = current_user.id 
+        @project.category_id = @project.category_id.to_i
+        # @project.end_date = Project.change_date(project_params[:end_date])
+        @project.amount_pledged = @project.amount_pledged.to_i
+        @project.funding_goal = @project.funding_goal.to_i
 
         if @project.save
             render :show 
