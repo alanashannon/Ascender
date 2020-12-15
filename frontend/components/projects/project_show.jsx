@@ -43,20 +43,26 @@ class ProjectShow extends React.Component {
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
                 <section className="project-show-body">
-                    <h2>Story</h2>
-                    <p>{this.props.project.campaign}</p>
-                    <h2>Risks</h2>
-                    <p>{this.props.project.risks}</p>
+                    <div className="project-show-sidebar">
+                        <h2>Story</h2>
+                        <h2>Risks</h2>
+                    </div>
+                    <div className="project-show-info">
+                        <h3>Story</h3>
+                        <p>{this.props.project.campaign}</p>
+                        <h3>Risks and Challenges</h3>
+                        <p>{this.props.project.risks}</p>
+                    </div>
                 </section>
             </div> ) : this.state.bodyPage === "faq" ? (
                 <div className="show-faq">
-                    <h2>Frequently Asked Questions</h2>
+                    <h3>Frequently Asked Questions</h3>
                     {this.props.project.faq ? (
                     <p>{this.props.project.faq}</p>) :
                     <p>Looks like there aren't any frequently asked questions yet.</p>}
                 </div>
             ) : <div className="show-updates">
-                    <h2>Updates</h2>
+                    <h3>Updates</h3>
                     {this.props.project.updates ? (
                     <p>{this.props.project.updates}</p>) :
                     <p>Looks like there aren't any updates yet.</p>}
@@ -117,7 +123,7 @@ class ProjectShow extends React.Component {
                             <div className="updates-option" onClick={this.handleClick("updates")}>Updates</div>
                         </div>
                     </div>
-                        <div>
+                        <div className="show-bodypage">
                             {bodyPage}
                         </div>
                     

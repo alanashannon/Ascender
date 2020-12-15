@@ -122,6 +122,9 @@
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
     margin-top: 40px;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
 }
 
 .campaign-option {
@@ -173,4 +176,81 @@
     font-weight: bold;
     color: rgb(2, 136, 88);
     border-bottom: 3px solid rgb(40, 40, 40);
+}
+
+.show-bodypage {
+    display: flex; 
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.project-show-body {
+    display: flex; 
+    // flex-direction: column;
+}
+
+.project-show-sidebar {
+    display: block;  
+    flex-basis: 20%;
+    padding-right: 18px;
+     
+}
+
+.project-show-body h2 {
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+}
+
+.project-show-body h2:hover {
+    color: rgb(2, 136, 88);
+}
+
+.project-show-info {
+    display: block;  
+    flex-basis: 80%;
+    padding-left: 18px;
+}
+
+.project-show-info h3 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.project-show-info p {
+    color: rgb(40, 40, 40);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.show-faq h3 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.show-faq p {
+    color: rgb(40, 40, 40);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.show-updates h3 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.show-updates p {
+    color: rgb(40, 40, 40);
+    font-size: 16px;
+    margin-bottom: 30px;
 }
