@@ -104,7 +104,17 @@ header img {
         grid-column-start: 2;
         grid-column-end: 2;
         border-bottom: 1px solid lightgray;
+        
+        li {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
     }
+
+    // .dropdown-nav .created-projects-links {
+    //     padding-top: 4px;
+    //     padding-bottom: 4px;
+    // }
     
     .dropdown-nav .logout-footer {
         grid-row-start: 2;

@@ -191,7 +191,7 @@ project12 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: "")
+    risks: "Covid-19")
 
 project13 = Project.create!(title: "Test Project", 
     campaign: "Test campaign", 
@@ -204,7 +204,7 @@ project13 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: "")
+    risks: "Covid-19")
 
 project14 = Project.create!(title: "Test Project", 
     campaign: "Test campaign", 
@@ -217,7 +217,7 @@ project14 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: "")
+    risks: "Covid-19")
 
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
 project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
@@ -254,5 +254,9 @@ project11.photo.attach(io: file11, filename: "tortellini.jpg")
 
 file12 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
 project12.photo.attach(io: file12, filename: "puppy_pic.jpg")
-project13.photo.attach(io: file12, filename: "puppy_pic.jpg")
-project14.photo.attach(io: file12, filename: "puppy_pic.jpg")
+
+file13 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
+project13.photo.attach(io: file13, filename: "puppy_pic.jpg")
+
+file14 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
+project14.photo.attach(io: file14, filename: "puppy_pic.jpg")

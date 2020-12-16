@@ -31,10 +31,18 @@ const Greeting = ({ currentUser, logout }) => {
                 <div className="created-projects">
                     <h3>Created Projects</h3>
                         <ul>
-                            <Link to={"/projects/new"}>New</Link>
-                            <Link to={"/projects/12"}>Demo Project</Link>
-                            <Link to={"/projects/13"}>Demo Project</Link>
-                            <Link to={"/projects/14"}>Demo Project</Link>
+                            <li>
+                                <Link className="created-projects-links" to={"/projects/new"}>New</Link>
+                            </li>
+                            <li>
+                                <Link className="created-projects-links" to={"/projects/12"}>Demo Project</Link>
+                            </li>
+                            <li>
+                                <Link className="created-projects-links" to={"/projects/13"}>Demo Project</Link>
+                            </li>
+                            <li>
+                                <Link className="created-projects-links" to={"/projects/14"}>Demo Project</Link>
+                            </li>
                         </ul>
                 </div>
                 <div className="logout-footer">
