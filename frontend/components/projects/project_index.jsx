@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
 import FeaturedProject from './featured_project';
 
+
 class ProjectIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -11,6 +12,7 @@ class ProjectIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchProjects(); 
+        // this.props.receiveCurrentUser(); 
     }
 
     render () {

@@ -82,7 +82,7 @@ class ProjectShow extends React.Component {
                     </div>
                     <div className="project-show-mid">
                         <section className="project-show-pic">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" /> 
+                            <img src={this.props.project.photo} /> 
                         </section>
                         <div className="project-show-mid-info">
                             <div className="show-progress-bar" style={{ width: `calc(1% * ${percentFunded})` }}></div>

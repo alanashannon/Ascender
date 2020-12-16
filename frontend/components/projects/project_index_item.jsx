@@ -22,7 +22,7 @@ class ProjectIndexItem extends React.Component {
             <div>
                 <div className="recommended-block">
                     <Link to={`/projects/${this.props.project.id}`}>
-                        <img className="recommended-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy"/>
+                        <img className="recommended-pic" src={this.props.project.photo} alt="photo"/>
                     </Link>
                     <ul className="recommended-list">
                         <li>

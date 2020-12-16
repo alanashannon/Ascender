@@ -96,15 +96,15 @@ class ProjectEdit extends React.Component {
                             <input type="text" value={this.state.location} onChange={this.handleInput("location")}  />
                         </div>
                     </div>
-                    <div className="image">
+                    {/* <div className="image">
                         <div className="image-info">
                             <h3>Project image</h3>
                             <h4>Add an image that clearly represents your project</h4>
                         </div>
                         <div className="image-input">
-                            {/* <input type="file"/> */}
+                            <input type="file"/> 
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="funding-header">
                         <div className="funding-header-text">

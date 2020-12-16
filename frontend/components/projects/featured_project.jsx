@@ -27,7 +27,7 @@ class FeaturedProject extends React.Component {
             !this.props.project ? <div></div> : (
             <div className="featured-project-inner">
                 <Link to={`/projects/${this.props.project.id}`}>
-                    <img className="featured-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bernese_Mountain_Dog.jpg/1200px-Bernese_Mountain_Dog.jpg" alt="puppy" />
+                    <img className="featured-pic" src={this.props.project.photo} />
                     <div className="featured-progress-bar" style={{width: `calc(1% * ${percentFunded})`}}></div>
                 </Link>
                 <ul>
@@ -39,7 +39,7 @@ class FeaturedProject extends React.Component {
                         </div>
                         <div className="featured-camp">
                             <Link className="featured-camp-text" to={`/projects/${this.props.project.id}`}>
-                                {this.props.project.campaign}
+                                {this.props.project.description}
                             </Link>
                         </div>
                         <div className="featured-author">By&nbsp; 

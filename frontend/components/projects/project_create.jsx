@@ -8,6 +8,7 @@ class ProjectCreate extends React.Component {
 
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
     handleInput(field) {
@@ -16,14 +17,40 @@ class ProjectCreate extends React.Component {
         }
     }
 
-    // handleFile(e) {
-    //     this.setState({photoFile: e.currentTarget.files[0]})
-    // }
+    handleFile(e) {
+        // this.setState({ photoFile: null })
+        const file = e.currentTarget.files[0]; 
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            this.setState({ photoUrl: reader.result, photoFile: file });
+        }
+
+        if (file) {
+            reader.readAsDataURL(file); 
+        } 
+        // else {
+        //     this.setState({ photoUrl: "", photoFile: null })
+        // }
+    }
 
     handleSubmit(e) {
         e.preventDefault(); 
+
+        const formData = new FormData(); 
+        formData.append('project[title]', this.state.title); 
+        formData.append('project[category]', this.state.category);
+        formData.append('project[location]', this.state.location);
+        formData.append('project[end_date]', this.state.end_date);
+        formData.append('project[funding_goal]', this.state.funding_goal);
+        formData.append('project[risks]', this.state.risks);
+        formData.append('project[description]', this.state.description);
+        formData.append('project[campaign]', this.state.campaign);
         
-        this.props.createProject(this.state)
+        if (this.state.photoFile) {
+            formData.append('project[photo]', this.state.photoFile);
+        }
+
+        this.props.createProject(formData)
             .then(() => this.props.history.push(`/projects/${this.state.id}`))
     }
 
@@ -88,7 +115,7 @@ class ProjectCreate extends React.Component {
                             <h4>Add an image that clearly represents your project</h4>
                         </div>
                         <div className="image-input">
-                            {/* <input type="file" onChange={this.handleFile("photoFile")}/> */}
+                            <input type="file" onChange={this.handleFile.bind(this)}/>
                         </div>
                     </div>
                     <div className="enddate">

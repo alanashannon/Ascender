@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
             funding_goal: '', 
             end_date: '', 
             risks: '',
-            // photoFile: null,
+            photoFile: null,
+            photoUrl: null,
             author_id: state.session.id, 
         },
         formType: 'Create Your Project'
