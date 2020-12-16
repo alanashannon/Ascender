@@ -180,6 +180,44 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
     faq: "Q: What is your pasta recipe? A: That's a secret!", 
     risks: "Covid-19 has taken a toll on all of us, I'm afraid we may need to hold off on opening until there is a vaccine")
 
+project12 = Project.create!(title: "Test Project", 
+    campaign: "Test campaign", 
+    funding_goal: 15000,
+    amount_pledged: 10580,
+    end_date: Date.new(2021,5,1),
+    location: 'San Francisco', 
+    description: 'Test description', 
+    author_id: user1.id, 
+    category_id: 5, #food/craft
+    updates: '', 
+    faq: "", 
+    risks: ""
+
+project13 = Project.create!(title: "Test Project", 
+    campaign: "Test campaign", 
+    funding_goal: 15000,
+    amount_pledged: 10580,
+    end_date: Date.new(2021,5,1),
+    location: 'San Francisco', 
+    description: 'Test description', 
+    author_id: user1.id, 
+    category_id: 5, #food/craft
+    updates: '', 
+    faq: "", 
+    risks: ""
+
+project14 = Project.create!(title: "Test Project", 
+    campaign: "Test campaign", 
+    funding_goal: 15000,
+    amount_pledged: 10580,
+    end_date: Date.new(2021,5,1),
+    location: 'San Francisco', 
+    description: 'Test description', 
+    author_id: user1.id, 
+    category_id: 5, #food/craft
+    updates: '', 
+    faq: "", 
+    risks: ""
 
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
 project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
@@ -213,3 +251,8 @@ project10.photo.attach(io: file10, filename: "holocaust.jpg")
 
 file11 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/tortellini.jpg")
 project11.photo.attach(io: file11, filename: "tortellini.jpg")
+
+file12 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
+project12.photo.attach(io: file12, filename: "puppy_pic.jpg")
+project13.photo.attach(io: file12, filename: "puppy_pic.jpg")
+project14.photo.attach(io: file12, filename: "puppy_pic.jpg")

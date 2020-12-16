@@ -7,7 +7,7 @@ import Root from './components/root';
 // import { signup, login, logout } from './util/session_api_util';
 // import { signup, login, logout } from './actions/session_actions';
 // import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./util/project_api_util";
-import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./actions/project_actions";
+// import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./actions/project_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store; 
@@ -28,11 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //TESTING ONLY
     window.getState = store.getState; 
     window.dispatch = store.dispatch; 
-    window.fetchProjects = fetchProjects;
-    window.fetchProject = fetchProject; 
-    window.createProject = createProject; 
-    window.updateProject = updateProject; 
-    window.deleteProject = deleteProject;  
     
     const root = document.getElementById('root'); 
     ReactDOM.render(<Root store={store} />, root);

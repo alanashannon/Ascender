@@ -32,6 +32,9 @@ const Greeting = ({ currentUser, logout }) => {
                     <h3>Created Projects</h3>
                         <ul>
                             <Link to={"/projects/new"}>New</Link>
+                            <Link to={"/projects/12"}>Demo Project</Link>
+                            <Link to={"/projects/13"}>Demo Project</Link>
+                            <Link to={"/projects/14"}>Demo Project</Link>
                         </ul>
                 </div>
                 <div className="logout-footer">
