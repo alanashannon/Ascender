@@ -7,7 +7,7 @@ const projectWithAuthor = (state) => {
     return Object.values(state.entities.projects).map((project) => {
         // let author = state.entities.users[project.author_id]
         let author = state.entities.projects["users"][project.author_id]
-        if ((project.id !== undefined) ) {
+        if ((project.id !== undefined)) {
             return Object.assign({}, project, {authorName: author.name})
         }
     })
