@@ -191,7 +191,7 @@ project12 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: ""
+    risks: "")
 
 project13 = Project.create!(title: "Test Project", 
     campaign: "Test campaign", 
@@ -204,7 +204,7 @@ project13 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: ""
+    risks: "")
 
 project14 = Project.create!(title: "Test Project", 
     campaign: "Test campaign", 
@@ -217,7 +217,7 @@ project14 = Project.create!(title: "Test Project",
     category_id: 5, #food/craft
     updates: '', 
     faq: "", 
-    risks: ""
+    risks: "")
 
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
 project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
