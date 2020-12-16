@@ -29,7 +29,7 @@ class Api::ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
-        if @project.update(project_params) && current_user.id 
+        if @project.update(project_update_params) && current_user.id 
             render :show 
         else
             render json: @project.errors.full_messages, status: 404
@@ -49,6 +49,10 @@ class Api::ProjectsController < ApplicationController
 
     def project_params 
         params.require(:project).permit(:title, :description, :location, :category_id, :author_id, :end_date, :campaign, :funding_goal, :amount_pledged, :risks, :updates, :faq, :photo)
+    end
+
+    def project_update_params
+        params.require(:project).permit(:title, :description, :location, :category_id, :author_id, :campaign, :funding_goal, :amount_pledged, :risks)
     end
     
 end
