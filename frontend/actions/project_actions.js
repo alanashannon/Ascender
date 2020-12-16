@@ -3,6 +3,7 @@ import * as ProjectAPIUtil from '../util/project_api_util';
 export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 // action creators
 const receiveAllProjects = (projects) => ({
@@ -18,6 +19,11 @@ const receiveProject = (project) => ({
 const removeProject = (projectId) => ({
     type: REMOVE_PROJECT, 
     projectId 
+});
+
+const receiveAllUsers = (users) => ({
+    type: RECEIVE_ALL_USERS,
+    users 
 })
 
 //thunk actions
@@ -44,4 +50,9 @@ export const updateProject = (project) => dispatch => (
 export const deleteProject = (projectId) => dispatch => (
     ProjectAPIUtil.deleteProject(projectId) 
         .then(() => dispatch(removeProject(projectId)))
+);
+
+export const fetchUsers = (users) => dispatch => (
+    ProjectAPIUtil.fetchUsers(users)
+        .then((projects) => dispatch(receiveAllUsers(projects)))
 );

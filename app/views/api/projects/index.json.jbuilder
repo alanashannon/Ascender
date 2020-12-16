@@ -8,13 +8,13 @@
     end
 end
 #safe
-json.users do 
-    @projects.each do |project|
-        json.set! project.author_id do 
-            json.name project.author.name
-        end
-    end
-end
+# json.users do 
+#     @projects.each do |project|
+#         json.set! project.author_id do 
+#             json.name project.author.name
+#         end
+#     end
+# end
   
 
 # json.projects do 

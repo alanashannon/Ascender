@@ -12,12 +12,12 @@ export const fetchProject = (projectId) => {
     })
 };
 
-// export const fetchUsers = () => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `/api/users`
-//     })
-// }
+export const fetchUsers = () => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/users`
+    })
+}
 
 export const createProject = (project) => {
     return $.ajax({

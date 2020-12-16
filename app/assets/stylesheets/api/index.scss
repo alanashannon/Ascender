@@ -10,6 +10,7 @@
     padding-right: 30px; 
     padding-top: 30px; 
     margin-top: 24px; 
+    margin-bottom: 24px; 
     border-right: 1px solid rgb(232, 232, 232);
 }
 
@@ -89,16 +90,12 @@
     border-bottom: 1px solid rgb(232, 232, 232);
 }
 
-// .recommended-block:first-child {
-//     padding-top: 0px;
-// }
-
 .recommended-pic {
     display: block; 
     flex-basis: 40%;
     height: 90px; 
     padding-right: 24px;
-
+    width: 150px; 
 }
 
 .recommended-header {
