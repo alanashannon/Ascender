@@ -5,9 +5,7 @@ class ProjectIndexItem extends React.Component {
     constructor(props) {
         super(props)
     }
-    // check if project is in featured or recommended
-    // if in featured, display photo, title, description, author
-    // if in recommended, display photo, title, percent funded, author
+    
     render() {
         if (!this.props.project) {
             return null; 
