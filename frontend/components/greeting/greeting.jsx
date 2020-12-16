@@ -34,7 +34,7 @@ const Greeting = ({ currentUser, logout }) => {
                             <li>
                                 <Link className="created-projects-links" to={"/projects/new"}>New</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link className="created-projects-links" to={"/projects/12"}>Demo Project</Link>
                             </li>
                             <li>
@@ -42,7 +42,7 @@ const Greeting = ({ currentUser, logout }) => {
                             </li>
                             <li>
                                 <Link className="created-projects-links" to={"/projects/14"}>Demo Project</Link>
-                            </li>
+                            </li> */}
                         </ul>
                 </div>
                 <div className="logout-footer">
