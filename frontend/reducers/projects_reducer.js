@@ -7,7 +7,7 @@ const projectsReducer = (state = {}, action) => {
         case RECEIVE_ALL_PROJECTS:
             return action.projects; 
         case RECEIVE_PROJECT:
-            newState[action.project.project.id] = action.project.project; 
+            newState[action.project.id] = action.project; 
             return newState;
         case REMOVE_PROJECT:
             delete newState[action.projectId];

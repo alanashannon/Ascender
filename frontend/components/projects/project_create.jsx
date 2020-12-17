@@ -28,9 +28,6 @@ class ProjectCreate extends React.Component {
         if (file) {
             reader.readAsDataURL(file); 
         } 
-        // else {
-        //     this.setState({ photoUrl: "", photoFile: null })
-        // }
     }
 
     handleSubmit(e) {
@@ -51,7 +48,11 @@ class ProjectCreate extends React.Component {
         }
 
         this.props.createProject(formData)
-            .then(() => this.props.history.push(`/projects/${this.state.id}`))
+            .then((response) => {
+                // debugger
+                this.props.history.push(`/projects/${response.project.project.id}`)
+            })
+            
     }
 
     render () {
