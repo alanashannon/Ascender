@@ -5,11 +5,9 @@ import { fetchProjects, fetchUsers } from '../../actions/project_actions';
 
 const projectWithAuthor = (state) => {
     return Object.values(state.entities.projects).map((project) => {
-         
         let author = state.entities.users[project.author_id]
-        // let author = state.entities.projects["users"][project.author_id]
 
-        if ((project.id !== undefined) && (author !== undefined)) {   //&& (author !== undefined)
+        if ((project.id !== undefined) && (author !== undefined)) {   
             return Object.assign({}, project, {authorName: author.name})
         }
     })

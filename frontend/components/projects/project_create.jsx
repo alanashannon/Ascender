@@ -49,7 +49,7 @@ class ProjectCreate extends React.Component {
 
         this.props.createProject(formData)
             .then((response) => {
-                // debugger
+                this.props.history.push('/')
                 this.props.history.push(`/projects/${response.project.project.id}`)
             })
             

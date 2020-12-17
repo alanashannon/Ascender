@@ -19,25 +19,39 @@ class ProjectIndex extends React.Component {
         const recommendedProjects = this.props.projects.slice(4, 8)
 
         return (
-            <div className="index-container">
-                <section className="featured-project">
-                    <div className="featured-header">Featured Project</div>
-                    <FeaturedProject project={this.props.project} />
-                </section>
-
-                <section className="recommended-projects">
-                    <div className="recommended-header">Recommended For You</div>
+            <div>
+                <div className="category-bar">
                     <ul>
-                        {/* (shows all projects in a list) {this.props.projects.map((project, idx) => {
-                            return <ProjectIndexItem project={project} key={idx} />
-                        })} */} 
-                        {recommendedProjects.map((project, idx) => {
-                            return <ProjectIndexItem project={project} key={idx} />
-                        })}
-                        
-                        <br />
+                        <li>Arts</li>
+                        <li>Comics & Illustration</li>
+                        <li>Design & Tech</li>
+                        <li>Film</li>
+                        <li>Food & Craft</li>
+                        <li>Games</li>
+                        <li>Music</li>
+                        <li>Publishing</li>
                     </ul>
-                </section>
+                </div>
+                <div className="index-container">
+                    <section className="featured-project">
+                        <div className="featured-header">Featured Project</div>
+                        <FeaturedProject project={this.props.project} />
+                    </section>
+
+                    <section className="recommended-projects">
+                        <div className="recommended-header">Recommended For You</div>
+                        <ul>
+                            {/* (shows all projects in a list) {this.props.projects.map((project, idx) => {
+                                return <ProjectIndexItem project={project} key={idx} />
+                            })} */} 
+                            {recommendedProjects.map((project, idx) => {
+                                return <ProjectIndexItem project={project} key={idx} />
+                            })}
+                            
+                            <br />
+                        </ul>
+                    </section>
+                </div>
             </div>
         )
     }
