@@ -123,9 +123,9 @@ class ProjectShow extends React.Component {
                             <div className="updates-option" onClick={this.handleClick("updates")}>Updates</div>
                         </div>
                     </div>
-                        <div className="show-bodypage">
-                            {bodyPage}
-                        </div>
+                    <div className="show-bodypage">
+                        {bodyPage}
+                    </div>
                     
                 </div>
             )
