@@ -13,9 +13,12 @@ const receiveBacking = (backing) => ({
     backing 
 })
 
-export const fetchProjectBackings = projectId => dispatch => (
+export const fetchProjectBackings = (projectId) => dispatch => (
     BackingApiUtil.fetchProjectBackings(projectId)
-        .then((backings) => dispatch(receiveProjectBackings(backings)))
+        .then((backings) => {
+            debugger
+            dispatch(receiveProjectBackings(backings))
+        })
 ); 
 
 export const createBacking = backing => dispatch => (
