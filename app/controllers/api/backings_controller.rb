@@ -6,6 +6,8 @@ class Api::BackingsController < ApplicationController
 
     def create 
         @backing = Backing.new(backing_params)
+        @project = Project.find_by(id: params[:backing][:project_id])
+        
         if @backing.save
             render :show 
         else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_181326) do
+ActiveRecord::Schema.define(version: 2020_12_18_050905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_181326) do
     t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["backer_id"], name: "index_backings_on_backer_id", unique: true
-    t.index ["project_id"], name: "index_backings_on_project_id", unique: true
-    t.index ["reward_id"], name: "index_backings_on_reward_id", unique: true
   end
 
   create_table "projects", force: :cascade do |t|
@@ -76,7 +73,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_181326) do
     t.string "ships_to"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_rewards_on_project_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
