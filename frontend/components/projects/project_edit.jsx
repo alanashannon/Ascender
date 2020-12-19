@@ -1,5 +1,4 @@
 import React from 'react'; 
-import ProjectIndexContainer from './project_index_container';
 
 class ProjectEdit extends React.Component {
     constructor(props) {
@@ -34,7 +33,10 @@ class ProjectEdit extends React.Component {
         }
 
         this.props.updateProject(this.state)
-            .then(() => this.props.history.push(`/projects/${this.props.project.id}`))
+            .then(() => {
+                this.props.history.push('/')
+                this.props.history.push(`/projects/${this.props.project.id}`)
+            })
     }
 
     render () {
