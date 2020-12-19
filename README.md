@@ -1,24 +1,7 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ascender
 
-Things you may want to cover:
+Ascender is a crowdfunding platform where you can create your own projects that need funding or help support others' projects. It is largely modeled off of Kickstarter and uses React/Redux on the frontend and Rails/Postgresql on the backend.
 
-* Ruby version
+[Link to the live site](https://project-ascender.herokuapp.com/#/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
