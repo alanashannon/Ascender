@@ -8,7 +8,7 @@ import Root from './components/root';
 // import { signup, login, logout } from './actions/session_actions';
 // import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./util/project_api_util";
 // import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./actions/project_actions";
-import { fetchProjectRewards, createReward } from './actions/reward_actions';
+import { fetchRewards, createReward, fetchReward, updateReward, deleteReward } from './actions/reward_actions';
 import { fetchBackings, createBacking, fetchBacking, updateBacking, deleteBacking } from './actions/backing_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,13 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     //TESTING ONLY
     window.getState = store.getState; 
     window.dispatch = store.dispatch; 
-    window.fetchProjectRewards = fetchProjectRewards;
+    window.fetchRewards = fetchRewards;
     window.createReward = createReward; 
     window.fetchBackings = fetchBackings;
     window.createBacking = createBacking; 
     window.fetchBacking = fetchBacking; 
     window.updateBacking = updateBacking; 
     window.deleteBacking = deleteBacking; 
+    window.fetchReward = fetchReward;
+    window.updateReward = updateReward; 
+    window.deleteReward = deleteReward; 
     
     const root = document.getElementById('root'); 
     ReactDOM.render(<Root store={store} />, root);

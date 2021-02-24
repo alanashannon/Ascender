@@ -1,8 +1,10 @@
 class Api::RewardsController < ApplicationController
-    before_action :logged_in?, only: [:create]
+    before_action :logged_in?, only: [:create, :update, :destroy]
 
     def index
         @rewards = Reward.all
+        render :index 
+        # @rewards = where(project_id: params[:project_id])
     end
 
     def create
@@ -16,6 +18,30 @@ class Api::RewardsController < ApplicationController
         else
             render json: @reward.errors.full_messages, status: 401 
         end
+    end
+
+    def show
+        @reward = Reward.find(params[:id])
+        render :show
+    end
+
+    def destroy 
+        @reward = Reward.find(params[:id])
+        # if @reward.author == current_user.id 
+            @reward.destroy 
+        # else
+        #     render json: @reward.errors.full_messages, status: 404
+        # end
+    end
+
+    def update 
+        @reward = Reward.find(params[:id])
+        # if @reward.author == current_user.id 
+            @reward.update(reward_params)
+            render :show 
+        # else
+        #     render json: @reward.errors.full_messages, status: 404
+        # end
     end
 
     private

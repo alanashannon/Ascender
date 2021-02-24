@@ -1,4 +1,4 @@
-export const fetchBackings = (projectId) => {
+export const fetchBackings = () => {
     return $.ajax({
         method: 'GET', 
         url: `/api/backings`
