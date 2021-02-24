@@ -9,7 +9,7 @@ import Root from './components/root';
 // import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./util/project_api_util";
 // import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from "./actions/project_actions";
 import { fetchProjectRewards, createReward } from './actions/reward_actions';
-import { fetchProjectBackings, createBacking } from './actions/backing_actions';
+import { fetchBackings, createBacking, fetchBacking, updateBacking, deleteBacking } from './actions/backing_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store; 
@@ -32,8 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch; 
     window.fetchProjectRewards = fetchProjectRewards;
     window.createReward = createReward; 
-    window.fetchProjectBackings = fetchProjectBackings;
+    window.fetchBackings = fetchBackings;
     window.createBacking = createBacking; 
+    window.fetchBacking = fetchBacking; 
+    window.updateBacking = updateBacking; 
+    window.deleteBacking = deleteBacking; 
     
     const root = document.getElementById('root'); 
     ReactDOM.render(<Root store={store} />, root);
