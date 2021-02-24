@@ -185,6 +185,7 @@
     border-left: 1px solid lightgray;
     border-right: 1px solid lightgray;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
 }
 
@@ -216,8 +217,10 @@
 
 .project-show-info {
     display: block;  
-    flex-basis: 80%;
+    flex-basis: 60%;
     padding-left: 18px;
+    padding-right: 18px;
+
 }
 
 .project-show-info h3 {
@@ -254,4 +257,30 @@
     color: rgb(40, 40, 40);
     font-size: 16px;
     margin-bottom: 30px;
+}
+
+.author-info {
+    display: block;
+    flex-basis: 20%;
+    border: 1px solid lightgray; 
+    padding-top: 18px; 
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.author-location {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.author-bio {
+    font-size: 14px;
 }

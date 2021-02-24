@@ -13,6 +13,7 @@ class ProjectShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId)
+        this.props.fetchUsers()
     }
 
     handleClick(page) {
@@ -52,6 +53,17 @@ class ProjectShow extends React.Component {
                         <p>{this.props.project.campaign}</p>
                         <h3>Risks and Challenges</h3>
                         <p>{this.props.project.risks}</p>
+                    </div>
+                    <div className="author-info">
+                        <div className="author-name">
+                            {this.props.users[this.props.project.author_id].name}
+                        </div>
+                        <div className="author-location">
+                            {this.props.users[this.props.project.author_id].location}
+                        </div>
+                        <div className="author-bio">
+                            {this.props.users[this.props.project.author_id].biography}
+                        </div>
                     </div>
                 </section>
             </div> ) : this.state.bodyPage === "faq" ? (

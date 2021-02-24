@@ -6,7 +6,8 @@ import { fetchProject, deleteProject, updateProject, fetchUsers } from '../../ac
 const mapStateToProps = (state, ownProps) => {
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
-        currentUser: state.session.id
+        currentUser: state.session.id, 
+        users: state.entities.users
     }
 }
 
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchProject: () => dispatch(fetchProject(ownProps.match.params.projectId)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         updateProject: (project) => dispatch(updateProject(project)),
+        fetchUsers: () => dispatch(fetchUsers())
     }
 }
 
