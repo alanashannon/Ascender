@@ -60,6 +60,13 @@
     list-style-type: none;
 }
 
+.progress-bar-container {
+    width: 100%; 
+    height: 8px;
+    margin-bottom: 18px;
+    background-color: lightgray;
+}
+
 .show-progress-bar { 
     width: 100%; 
     height: 8px;
@@ -286,6 +293,12 @@
 
 .author-bio {
     font-size: 14px;
+}
+
+.need-login {
+    font-size: 13px;
+    color: red; 
+    margin-top: 18px;
 }
 
 .reward-each {

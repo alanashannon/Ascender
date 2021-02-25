@@ -3,13 +3,15 @@ import ProjectShow from './project_show';
 import { withRouter } from 'react-router-dom';
 import { fetchProject, deleteProject, updateProject, fetchUsers } from '../../actions/project_actions';
 import { fetchRewards, createReward, fetchReward, updateReward, deleteReward } from '../../actions/reward_actions'; 
+import { fetchBackings } from '../../actions/backing_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
         currentUser: state.session.id, 
         users: state.entities.users, 
-        rewards: Object.values(state.entities.rewards)
+        rewards: Object.values(state.entities.rewards), 
+        backings: Object.values(state.entities.backings)
     }
 }
 
@@ -20,6 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         updateProject: (project) => dispatch(updateProject(project)),
         fetchUsers: () => dispatch(fetchUsers()), 
         fetchRewards: () => dispatch(fetchRewards()), 
+        fetchBackings: () => dispatch(fetchBackings())
     }
 }
 
