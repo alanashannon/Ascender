@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 import ProjectShow from './project_show';
 import { withRouter } from 'react-router-dom';
 import { fetchProject, deleteProject, updateProject, fetchUsers } from '../../actions/project_actions';
+import { fetchRewards, createReward, fetchReward, updateReward, deleteReward } from '../../actions/reward_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
         currentUser: state.session.id, 
-        users: state.entities.users
+        users: state.entities.users, 
+        rewards: Object.values(state.entities.rewards)
     }
 }
 
@@ -16,7 +18,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchProject: () => dispatch(fetchProject(ownProps.match.params.projectId)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         updateProject: (project) => dispatch(updateProject(project)),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()), 
+        fetchRewards: () => dispatch(fetchRewards()), 
     }
 }
 

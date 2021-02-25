@@ -12,8 +12,9 @@ class ProjectShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProject(this.props.match.params.projectId)
-        this.props.fetchUsers()
+        this.props.fetchProject(this.props.match.params.projectId);
+        this.props.fetchUsers();
+        this.props.fetchRewards(); 
     }
 
     handleClick(page) {
@@ -41,6 +42,13 @@ class ProjectShow extends React.Component {
         let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
             <Link className="options-button" to={`/projects/${this.props.project.id}/edit`}>Edit This Project</Link> : <input className="options-button" type="submit" value="Back This Project" />
             
+        let rewardsArr = []; 
+        this.props.rewards.forEach((rew) => {
+            if (rew.project_id === this.props.project.id) {
+                rewardsArr.push(rew)
+            }
+        })
+
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
                 <section className="project-show-body">
@@ -54,15 +62,57 @@ class ProjectShow extends React.Component {
                         <h3>Risks and Challenges</h3>
                         <p>{this.props.project.risks}</p>
                     </div>
-                    <div className="author-info">
-                        <div className="author-name">
-                            {this.props.users[this.props.project.author_id].name}
+                    <div className="right-side-info">
+                        <div className="author-info">
+                            <div className="author-name">
+                                {this.props.users[this.props.project.author_id].name}
+                            </div>
+                            <div className="author-location">
+                                {this.props.users[this.props.project.author_id].location}
+                            </div>
+                            <div className="author-bio">
+                                {this.props.users[this.props.project.author_id].biography}
+                            </div>
                         </div>
-                        <div className="author-location">
-                            {this.props.users[this.props.project.author_id].location}
-                        </div>
-                        <div className="author-bio">
-                            {this.props.users[this.props.project.author_id].biography}
+                        <div className="reward-info">
+                            <h3>Support</h3>
+                            <div className="pledge-no-reward">
+                                <div className="reward-header">Pledge without a reward</div>
+                                <form>
+                                    <div className="pledge-input">
+                                        <span>$</span>
+                                        <input placeholder="Pledge any amount"/>
+                                    </div>
+                                    <div className="no-reward-p">
+                                        <p className="no-reward-p1">Back it because you believe in it.</p>
+                                        <p className="no-reward-p2">Support the project for no reward, just because it speaks to you.</p>
+                                    </div>
+                                    <input className="backing-submit" type="submit" value="Continue"/>
+                                </form>
+                            </div>
+                            <div>
+                                {rewardsArr.map((reward, i) => {
+                                    return (
+                                        <div key={i} className="reward-each">
+                                            <div className="reward-header">
+                                                Pledge ${reward.pledge_amount} or more
+                                            </div>
+                                            <div className="reward-title">
+                                                {reward.title}
+                                            </div>
+                                            <div className="reward-description">
+                                                {reward.description}
+                                            </div>
+                                            <div className="reward-est-delivery">
+                                                Estimated delivery <br /> {reward.est_delivery}
+                                            </div>
+                                            <div className="reward-ships-to">
+                                                Ships to <br /> {reward.ships_to}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </section>
