@@ -11,8 +11,9 @@ class ProjectShow extends React.Component {
             backing_amount: ""
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleReward =  this.handleReward.bind(this);
     }
 
     componentDidMount() {
@@ -42,9 +43,15 @@ class ProjectShow extends React.Component {
         }
     }
 
+    //no reward form
     handleSubmit(e) {
         e.preventDefault(); 
         console.log(this.state.backing_amount)
+    }
+
+    //choose set reward
+    handleReward() {
+        
     }
 
     render() {
@@ -125,7 +132,7 @@ class ProjectShow extends React.Component {
                             <div>
                                 {rewardsArr.map((reward, i) => {
                                     return (
-                                        <div key={i} className="reward-each">
+                                        <div key={i} className="reward-each" onClick={this.handleReward}>
                                             <div className="reward-header">
                                                 Pledge ${reward.pledge_amount} or more
                                             </div>
@@ -194,7 +201,7 @@ class ProjectShow extends React.Component {
                                         {backingsArr.length} 
                                     </div>
                                     <div className="show-funding-goal">
-                                        backers 
+                                        backer(s) 
                                     </div>
                                 </li>
                                 <li>
