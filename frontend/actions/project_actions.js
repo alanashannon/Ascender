@@ -55,7 +55,7 @@ export const deleteProject = (projectId) => dispatch => (
         .then(() => dispatch(removeProject(projectId)))
 );
 
-export const fetchUsers = (users) => dispatch => (
-    ProjectAPIUtil.fetchUsers(users)
-        .then((projects) => dispatch(receiveAllUsers(projects)))
+export const fetchUsers = () => dispatch => (
+    ProjectAPIUtil.fetchUsers()
+        .then((users) => dispatch(receiveAllUsers(users)))
 );

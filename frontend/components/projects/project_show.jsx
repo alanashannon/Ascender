@@ -7,17 +7,77 @@ class ProjectShow extends React.Component {
         this.state = {
             bodyPage: "campaign",
             subSection: "story", 
-            amountPledged: 0
+            amountPledged: 0, 
+            backing_amount: ""
         }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleReward =  this.handleReward.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchProject(this.props.match.params.projectId)
+        this.props.fetchUsers()
+            .then(() => this.props.fetchProject(this.props.match.params.projectId))
+            .then(() => this.props.fetchRewards())
+            .then(() => this.props.fetchBackings())
     }
 
     handleClick(page) {
         return (e) => {
             this.setState({bodyPage: page})
+        }
+    }
+
+    handleScroll(e) {
+        e.preventDefault(); 
+        let support = document.getElementById("reward-info")
+        support.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    handleInput(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    //no reward form
+    handleSubmit(e) {
+        e.preventDefault(); 
+        this.props.createBacking({
+            "backer_id": this.props.currentUser, 
+            "backing_amount": this.state.backing_amount, 
+            "project_id": this.props.project.id
+        })
+        this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(this.state.backing_amount)
+        this.setState({
+            backing_amount: ""
+        });
+    }
+
+    //choose set reward
+    handleReward(e) {
+        e.preventDefault(); 
+
+        let allRewards = Object.values(this.props.rewards)
+        let rewardsArr = [];
+        allRewards.forEach((rew) => {
+            if (rew.project_id === this.props.project.id) {
+                rewardsArr.push(rew)
+            }
+        });
+        
+        for (let i = 0; i < rewardsArr.length; i++) {
+            this.props.createBacking({
+                "backer_id": this.props.currentUser,
+                "backing_amount": rewardsArr[i].pledge_amount,
+                "project_id": this.props.project.id,
+                "reward_id": rewardsArr[i].id
+            })
+
+            this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount)
         }
     }
 
@@ -38,8 +98,25 @@ class ProjectShow extends React.Component {
         let daysCounter = !daysLeft ? null : daysLeft(this.props.project.end_date) < 0 ? "0" : daysLeft(this.props.project.end_date).toString(); 
     
         let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
-            <Link className="options-button" to={`/projects/${this.props.project.id}/edit`}>Edit This Project</Link> : <input className="options-button" type="submit" value="Back This Project" />
+            <Link className="options-button" to={`/projects/${this.props.project.id}/edit`}>Edit This Project</Link> : <input onClick={this.handleScroll} className="options-button" type="submit" value="Back This Project" />
             
+        let allRewards = Object.values(this.props.rewards)
+        let rewardsArr = []; 
+        // console.log(this.props.rewards)
+        allRewards.forEach((rew) => {
+            if (rew.project_id === this.props.project.id) {
+                rewardsArr.push(rew)
+            }
+        });
+
+        let backingsArr = []; 
+        // console.log(this.props.backings)
+        this.props.backings.forEach((backing) => {
+            if (backing.project_id === this.props.project.id) {
+                backingsArr.push(backing)
+            }
+        });
+
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
                 <section className="project-show-body">
@@ -52,6 +129,62 @@ class ProjectShow extends React.Component {
                         <p>{this.props.project.campaign}</p>
                         <h3>Risks and Challenges</h3>
                         <p>{this.props.project.risks}</p>
+                    </div>
+                    <div className="right-side-info">
+                        <div className="author-info">
+                            <div className="author-name">
+                                {this.props.users[this.props.project.author_id].name}
+                            </div>
+                            <div className="author-location">
+                                {this.props.users[this.props.project.author_id].location}
+                            </div>
+                            <div className="author-bio">
+                                {this.props.users[this.props.project.author_id].biography}
+                            </div>
+                        </div>
+                        <div className="reward-info" id="reward-info">
+                            <h3>Support</h3>
+                            {(!this.props.currentUser) ? <div className="need-login">You must be logged in to support projects</div> : null}
+                            <div className="pledge-no-reward">
+                                <div className="reward-header">Pledge without a reward</div>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="pledge-input">
+                                        <span>$</span>
+                                        <input value={this.state.backing_amount} placeholder="Pledge any amount" onChange={this.handleInput("backing_amount")}/>
+                                    </div>
+                                    <div className="no-reward-p">
+                                        <p className="no-reward-p1">Back it because you believe in it.</p>
+                                        <p className="no-reward-p2">Support the project for no reward, just because it speaks to you.</p>
+                                    </div>
+                                    <input className="backing-submit" type="submit" value="Continue"/>
+                                </form>
+                            </div>
+                            <div>
+                                {rewardsArr.map((reward, i) => {
+                                    return (
+                                        <button key={i} className="reward-each" onClick={this.handleReward}>
+                                            {/* <input value={reward.pledge_amount} onChange={this.handleInput("backing_amount")} style={{ display: 'none' }}/> */}
+
+                                            <div className="reward-header">
+                                                Pledge ${reward.pledge_amount} or more
+                                            </div>
+                                            <div className="reward-title">
+                                                {reward.title}
+                                            </div>
+                                            <div className="reward-description">
+                                                {reward.description}
+                                            </div>
+                                            <div className="reward-est-delivery">
+                                                Estimated delivery <br /> {reward.est_delivery}
+                                            </div>
+                                            <div className="reward-ships-to">
+                                                Ships to <br /> {reward.ships_to}
+                                            </div>
+                                        </button>
+                                    )
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div> ) : this.state.bodyPage === "faq" ? (
@@ -85,7 +218,9 @@ class ProjectShow extends React.Component {
                             <img src={this.props.project.photo} /> 
                         </section>
                         <div className="project-show-mid-info">
-                            <div className="show-progress-bar" style={{ width: `calc(1% * ${percentFunded})` }}></div>
+                            <div className="progress-bar-container">
+                                <div className="show-progress-bar" style={{ width: `calc(1% * ${percentFunded})` }}></div>
+                            </div>
                             <ul className="project-show-mid-info-list">
                                 <li className="show-amount-pledged">
                                     ${this.props.project.amount_pledged}
@@ -95,10 +230,10 @@ class ProjectShow extends React.Component {
                                 </li>
                                 <li className="show-backers">
                                     <div className="show-num-backers">
-                                        number of backers 
+                                        {backingsArr.length} 
                                     </div>
                                     <div className="show-funding-goal">
-                                        backers 
+                                        backer(s) 
                                     </div>
                                 </li>
                                 <li>

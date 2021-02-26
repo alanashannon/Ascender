@@ -60,6 +60,13 @@
     list-style-type: none;
 }
 
+.progress-bar-container {
+    width: 100%; 
+    height: 8px;
+    margin-bottom: 18px;
+    background-color: lightgray;
+}
+
 .show-progress-bar { 
     width: 100%; 
     height: 8px;
@@ -185,6 +192,7 @@
     border-left: 1px solid lightgray;
     border-right: 1px solid lightgray;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
 }
 
@@ -216,8 +224,10 @@
 
 .project-show-info {
     display: block;  
-    flex-basis: 80%;
+    flex-basis: 60%;
     padding-left: 18px;
+    padding-right: 18px;
+
 }
 
 .project-show-info h3 {
@@ -254,4 +264,148 @@
     color: rgb(40, 40, 40);
     font-size: 16px;
     margin-bottom: 30px;
+}
+
+.right-side-info {
+    display: block;
+    flex-basis: 20%;
+}
+
+.author-info {
+    border: 1px solid lightgray; 
+    padding-top: 18px; 
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.author-location {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.author-bio {
+    font-size: 14px;
+}
+
+.need-login {
+    font-size: 13px;
+    color: red; 
+    margin-top: 18px;
+}
+
+.reward-each {
+    border: 1px solid lightgray; 
+    padding: 18px; 
+    // margin-top: 42px; 
+    margin-bottom: 42px; 
+    background-color: white;
+    text-align: left;
+}
+.reward-each:hover {
+    cursor: pointer;
+    background-color: rgb(2, 136, 88);
+    color: white; 
+}
+.reward-each:focus {
+    outline: none;
+}
+
+.reward-info h3 {
+    font-size: 21px; 
+}
+
+.reward-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reward-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.reward-description {
+    font-size: 14px; 
+    margin-bottom: 10px;
+}
+
+.reward-est-delivery {
+    font-size: 14px; 
+    margin-bottom: 10px;
+}
+
+.reward-ships-to {
+    font-size: 14px; 
+    margin-bottom: 10px;
+}
+
+.pledge-no-reward {
+    border: 1px solid lightgray; 
+    padding: 18px; 
+    margin-top: 42px; 
+    margin-bottom: 42px; 
+    // text-align: center;
+}
+
+.no-reward-p {
+    background-image: -webkit-linear-gradient(top, #DBE7FF, #FFF2EC); 
+    border: 1px solid lightgray; 
+    padding: 18px; 
+    margin-bottom: 18px;
+}
+
+.no-reward-p1 {
+    font-size: 14px; 
+    font-weight: 700; 
+    margin-bottom: 10px;
+}
+.no-reward-p2 {
+    font-size: 14px; 
+}
+
+.pledge-input {
+    display: flex; 
+    margin-bottom: 18px;
+}
+.pledge-input span {
+    display: block; 
+    flex-basis: 25%;
+    border: 1px solid lightgray; 
+    border-right: none; 
+    padding: 12px; 
+    font-size: 12px; 
+}
+.pledge-input input {
+    display: block; 
+    flex-basis: 75%;
+    border: 1px solid lightgray; 
+    padding: 10px; 
+}
+
+.backing-submit {
+    width: 100%; 
+    padding-left: 18px; 
+    padding-right: 18px;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    background-color: rgb(2, 136, 88);
+    color: white; 
+    border: 1px solid rgb(2, 136, 88);
+}
+
+.backing-submit:hover {
+    cursor: pointer;
+    background-color: #015738;
+}
+.backing-submit:focus {
+    outline: none; 
 }

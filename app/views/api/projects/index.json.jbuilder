@@ -7,6 +7,7 @@
         json.photo url_for(project.photo) if project.photo.attached?
     end
 end
+
 #safe
 # json.users do 
 #     @projects.each do |project|

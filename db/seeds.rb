@@ -9,6 +9,8 @@ require 'open-uri'
 
 User.destroy_all
 Project.destroy_all
+Backing.destroy_all
+Reward.destroy_all
 
 user1 = User.create!(name: 'Demo User', email: 'demo@user.com', password: 'password', location: 'San Francisco', biography: 'I am a San Francisco-based engineer')
 user2 = User.create!(name: 'Alisa Weilerstein', email: 'cellista@aa.io', password: 'password', location: 'San Francisco', biography: 'Hello, I love making things out of whatever I can get my hands on')
@@ -22,6 +24,10 @@ user9 = User.create!(name: 'Mischa Maisky', email: 'cellist@aa.io', password: 'p
 user10 = User.create!(name: 'Pablo Casals', email: 'pablo@aa.io', password: 'password', location: 'Puerto Rico', biography: 'An aspiring filmmaker')
 user11 = User.create!(name: 'Kronos Quartet', email: 'krono@aa.io', password: 'password', location: 'San Francisco', biography: 'An award-winning quartet that mixes many genres')
 user12 = User.create!(name: 'Paul Tortelier', email: 'torti@aa.io', password: 'password', location: 'Paris', biography: 'Recent culinary school grad looking to make a name for myself')
+user13 = User.create!(name: 'Zuill Bailey', email: 'zb@aa.io', password: 'password', location: 'New York', biography: 'Concert cellist')
+user14 = User.create!(name: 'Emanuel Feuermann', email: 'manny@aa.io', password: 'password', location: 'Paris', biography: 'I love supporting people on their journies to greatness!')
+user15 = User.create!(name: 'Gregor Piatigorsky', email: 'Piati@aa.io', password: 'password', location: 'Los Angeles', biography: 'Looking for the new upcoming tech giant')
+user16 = User.create!(name: 'David Popper', email: 'popper@aa.io', password: 'password', location: 'Chicago', biography: 'Making cellists miserable since 1901')
 
 
 
@@ -292,3 +298,38 @@ project15.photo.attach(io: file15, filename: "puppy_pic.jpg")
 
 file16 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
 project16.photo.attach(io: file16, filename: "puppy_pic.jpg")
+
+reward1 = Reward.create!(project_id: project1.id, title: "A token of our appreciation!", description: "A ticket to our concert in the special VIP box", pledge_amount: 75, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward2 = Reward.create!(project_id: project2.id, title: "Free copy of my book", description: "Makes a great gift for the young musician in your life!", pledge_amount: 15, est_delivery: Date.new(2021,5,1), ships_to: "Anywhere in the world")
+reward3 = Reward.create!(project_id: project3.id, title: "Be a beta tester for our product", description: "Be one of the first to get to use the Block Strap!", pledge_amount: 100, est_delivery: Date.new(2021,12,1), ships_to: "Anywhere in the world")
+reward4 = Reward.create!(project_id: project4.id, title: "A ticket to our red carpet premiere event", description: "Join us on opening night!", pledge_amount: 30, est_delivery: Date.new(2021,12,1), ships_to: "Anywhere in the world")
+reward5 = Reward.create!(project_id: project5.id, title: "$30 gift card at our store", description: "Stock up on the world's best yarn", pledge_amount: 25, est_delivery: Date.new(2021,2,1), ships_to: "Anywhere in the world")
+reward6 = Reward.create!(project_id: project6.id, title: "Get the game at an early bird discount", description: "To thank you for your support, you'll receive our special discount and be among the first to play the game!", pledge_amount: 100, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward7 = Reward.create!(project_id: project7.id, title: "Get a free download of our most recent album", description: "Our newest album is Sun Rings, in collaboration with composer Terry Riley", pledge_amount: 25, est_delivery: Date.new(2021,1,1), ships_to: "Anywhere in the world")
+reward8 = Reward.create!(project_id: project8.id, title: "A free signed copy of the book", description: "Get an exclusive copy of my book", pledge_amount: 30, est_delivery: Date.new(2021,7,1), ships_to: "Anywhere in the world")
+reward9 = Reward.create!(project_id: project9.id, title: "A VIP ticket to the concert", description: "Sit in our special VIP box and meet the musicians at our exclusive post-concert reception", pledge_amount: 500, est_delivery: Date.new(2021,3,1), ships_to: "Anywhere in the world")
+reward10 = Reward.create!(project_id: project10.id, title: "A copy of our book", description: "Includes photographs from the exhibit and more", pledge_amount: 35, est_delivery: Date.new(2021,8,1), ships_to: "Anywhere in the world")
+reward11 = Reward.create!(project_id: project11.id, title: "Come to our opening night party!", description: "There will be live music and lots of champagne!", pledge_amount: 25, est_delivery: Date.new(2021,2,1), ships_to: "Anywhere in the world")
+reward12 = Reward.create!(project_id: project12.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward13 = Reward.create!(project_id: project13.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward14 = Reward.create!(project_id: project14.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward15 = Reward.create!(project_id: project15.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward16 = Reward.create!(project_id: project16.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+
+backing1 = Backing.create!(backer_id: user5.id, backing_amount: 75, reward_id: reward1.id, project_id: project1.id)
+backing2 = Backing.create!(backer_id: user2.id, backing_amount: 15, reward_id: reward2.id, project_id: project2.id)
+backing3 = Backing.create!(backer_id: user10.id, backing_amount: 100, reward_id: reward3.id, project_id: project3.id)
+backing4 = Backing.create!(backer_id: user11.id, backing_amount: 30, reward_id: reward4.id, project_id: project4.id)
+backing5 = Backing.create!(backer_id: user1.id, backing_amount: 25, reward_id: reward5.id, project_id: project5.id)
+backing6 = Backing.create!(backer_id: user8.id, backing_amount: 100, reward_id: reward6.id, project_id: project6.id)
+backing7 = Backing.create!(backer_id: user4.id, backing_amount: 25, reward_id: reward7.id, project_id: project7.id)
+backing8 = Backing.create!(backer_id: user9.id, backing_amount: 30, reward_id: reward8.id, project_id: project8.id)
+backing9 = Backing.create!(backer_id: user3.id, backing_amount: 500, reward_id: reward9.id, project_id: project9.id)
+backing10 = Backing.create!(backer_id: user6.id, backing_amount: 35, reward_id: reward10.id, project_id: project10.id)
+backing11 = Backing.create!(backer_id: user7.id, backing_amount: 25, reward_id: reward11.id, project_id: project11.id)
+backing12 = Backing.create!(backer_id: user12.id, backing_amount: 50, reward_id: reward12.id, project_id: project12.id)
+backing13 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward13.id, project_id: project13.id)
+backing14 = Backing.create!(backer_id: user14.id, backing_amount: 50, reward_id: reward14.id, project_id: project14.id)
+backing15 = Backing.create!(backer_id: user15.id, backing_amount: 50, reward_id: reward15.id, project_id: project15.id)
+backing16 = Backing.create!(backer_id: user16.id, backing_amount: 50, reward_id: reward16.id, project_id: project16.id)
+

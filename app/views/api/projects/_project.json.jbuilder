@@ -11,5 +11,9 @@ projects.each do |project|
     # end
 
     json.photo url_for(project.photo) if project.photo.attached?
+
+    # json.author do 
+    #     json.extract! @project.author, :id, :name, :biography, :location
+    # end
 end
 
