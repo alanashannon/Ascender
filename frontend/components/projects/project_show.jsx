@@ -76,6 +76,8 @@ class ProjectShow extends React.Component {
                 "project_id": this.props.project.id,
                 "reward_id": rewardsArr[i].id
             })
+
+            this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount)
         }
     }
 

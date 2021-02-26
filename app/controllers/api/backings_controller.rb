@@ -8,9 +8,10 @@ class Api::BackingsController < ApplicationController
 
     def create 
         @backing = Backing.new(backing_params)
-        # @project = Project.find_by(id: params[:backing][:project_id])
+        @project = Project.find_by(id: params[:backing][:project_id])
         
         if @backing.save
+            @project.amount_pledged += @backing.backing_amount.to_i
             render :show 
         else
             render json: @backing.errors.full_messages, status: 401
