@@ -110,12 +110,17 @@ class ProjectShow extends React.Component {
         });
 
         let backingsArr = []; 
-        // console.log(this.props.backings)
         this.props.backings.forEach((backing) => {
             if (backing.project_id === this.props.project.id) {
                 backingsArr.push(backing)
             }
         });
+        let peopleBacked = []; 
+        backingsArr.forEach((backing) => {
+            if (!peopleBacked.includes(backing.backer_id)) {
+                peopleBacked.push(backing.backer_id)
+            }
+        })
 
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
@@ -145,6 +150,7 @@ class ProjectShow extends React.Component {
                         <div className="reward-info" id="reward-info">
                             <h3>Support</h3>
                             {(!this.props.currentUser) ? <div className="need-login">You must be logged in to support projects</div> : null}
+                            
                             <div className="pledge-no-reward">
                                 <div className="reward-header">Pledge without a reward</div>
                                 <form onSubmit={this.handleSubmit}>
@@ -159,12 +165,21 @@ class ProjectShow extends React.Component {
                                     <input className="backing-submit" type="submit" value="Continue"/>
                                 </form>
                             </div>
+                            {peopleBacked.map((person, j) => {
+                                if (person === this.props.currentUser) {
+                                    return (
+                                        <div key={j} className="backing-thanks">
+                                            <p>Thank you for supporting our project!</p>
+                                        </div>
+                                    )
+                                } else {
+                                    return null
+                                }
+                            })}
                             <div>
                                 {rewardsArr.map((reward, i) => {
                                     return (
                                         <button key={i} className="reward-each" onClick={this.handleReward}>
-                                            {/* <input value={reward.pledge_amount} onChange={this.handleInput("backing_amount")} style={{ display: 'none' }}/> */}
-
                                             <div className="reward-header">
                                                 Pledge ${reward.pledge_amount} or more
                                             </div>
@@ -213,6 +228,7 @@ class ProjectShow extends React.Component {
                         <h1>{this.props.project.title}</h1>
                         <h2>{this.props.project.description}</h2>
                     </div>
+                    
                     <div className="project-show-mid">
                         <section className="project-show-pic">
                             <img src={this.props.project.photo} /> 
