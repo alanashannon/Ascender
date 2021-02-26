@@ -1,9 +1,9 @@
 class Reward < ApplicationRecord
     validates :title, :description, :pledge_amount, presence: true 
 
-    has_many :backings, 
-        foreign_key: :reward_id, 
-        class_name: :Backing 
+    # has_many :backings, 
+    #     foreign_key: :reward_id, 
+    #     class_name: :Backing 
 
     belongs_to :project, 
         foreign_key: :project_id, 

@@ -24,7 +24,7 @@ export const fetchBackings = () => dispatch => (
         .then((backings) => dispatch(receiveBackings(backings)))
 ); 
 
-export const createBacking = backing => dispatch => (
+export const createBacking = (backing) => dispatch => (
     BackingApiUtil.createBacking(backing)
         .then((backing) => dispatch(receiveBacking(backing)))
 );

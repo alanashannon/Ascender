@@ -304,13 +304,18 @@
 .reward-each {
     border: 1px solid lightgray; 
     padding: 18px; 
-    margin-top: 42px; 
+    // margin-top: 42px; 
     margin-bottom: 42px; 
+    background-color: white;
+    text-align: left;
 }
 .reward-each:hover {
     cursor: pointer;
     background-color: rgb(2, 136, 88);
     color: white; 
+}
+.reward-each:focus {
+    outline: none;
 }
 
 .reward-info h3 {
@@ -348,6 +353,7 @@
     padding: 18px; 
     margin-top: 42px; 
     margin-bottom: 42px; 
+    // text-align: center;
 }
 
 .no-reward-p {

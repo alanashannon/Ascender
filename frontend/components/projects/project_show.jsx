@@ -17,10 +17,10 @@ class ProjectShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProject(this.props.match.params.projectId);
-        this.props.fetchUsers();
-        this.props.fetchRewards(); 
-        this.props.fetchBackings(); 
+        this.props.fetchUsers()
+            .then(() => this.props.fetchProject(this.props.match.params.projectId))
+            .then(() => this.props.fetchRewards())
+            .then(() => this.props.fetchBackings())
     }
 
     handleClick(page) {
@@ -46,12 +46,37 @@ class ProjectShow extends React.Component {
     //no reward form
     handleSubmit(e) {
         e.preventDefault(); 
-        console.log(this.state.backing_amount)
+        this.props.createBacking({
+            "backer_id": this.props.currentUser, 
+            "backing_amount": this.state.backing_amount, 
+            "project_id": this.props.project.id
+        })
+        this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(this.state.backing_amount)
+        this.setState({
+            backing_amount: ""
+        });
     }
 
     //choose set reward
-    handleReward() {
+    handleReward(e) {
+        e.preventDefault(); 
+
+        let allRewards = Object.values(this.props.rewards)
+        let rewardsArr = [];
+        allRewards.forEach((rew) => {
+            if (rew.project_id === this.props.project.id) {
+                rewardsArr.push(rew)
+            }
+        });
         
+        for (let i = 0; i < rewardsArr.length; i++) {
+            this.props.createBacking({
+                "backer_id": this.props.currentUser,
+                "backing_amount": rewardsArr[i].pledge_amount,
+                "project_id": this.props.project.id,
+                "reward_id": rewardsArr[i].id
+            })
+        }
     }
 
     render() {
@@ -73,14 +98,17 @@ class ProjectShow extends React.Component {
         let optionsButton = !projectExists ? null : (this.props.project.author_id === this.props.currentUser) ? 
             <Link className="options-button" to={`/projects/${this.props.project.id}/edit`}>Edit This Project</Link> : <input onClick={this.handleScroll} className="options-button" type="submit" value="Back This Project" />
             
+        let allRewards = Object.values(this.props.rewards)
         let rewardsArr = []; 
-        this.props.rewards.forEach((rew) => {
+        // console.log(this.props.rewards)
+        allRewards.forEach((rew) => {
             if (rew.project_id === this.props.project.id) {
                 rewardsArr.push(rew)
             }
         });
 
         let backingsArr = []; 
+        // console.log(this.props.backings)
         this.props.backings.forEach((backing) => {
             if (backing.project_id === this.props.project.id) {
                 backingsArr.push(backing)
@@ -132,7 +160,9 @@ class ProjectShow extends React.Component {
                             <div>
                                 {rewardsArr.map((reward, i) => {
                                     return (
-                                        <div key={i} className="reward-each" onClick={this.handleReward}>
+                                        <button key={i} className="reward-each" onClick={this.handleReward}>
+                                            {/* <input value={reward.pledge_amount} onChange={this.handleInput("backing_amount")} style={{ display: 'none' }}/> */}
+
                                             <div className="reward-header">
                                                 Pledge ${reward.pledge_amount} or more
                                             </div>
@@ -148,7 +178,7 @@ class ProjectShow extends React.Component {
                                             <div className="reward-ships-to">
                                                 Ships to <br /> {reward.ships_to}
                                             </div>
-                                        </div>
+                                        </button>
                                     )
                                 })}
                             </div>
