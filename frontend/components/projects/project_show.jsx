@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class ProjectShow extends React.Component {
     constructor(props) {
@@ -46,6 +46,9 @@ class ProjectShow extends React.Component {
     //no reward form
     handleSubmit(e) {
         e.preventDefault(); 
+        if (!this.props.currentUser) {
+            this.props.history.push("/login")
+        }
         this.props.createBacking({
             "backer_id": this.props.currentUser, 
             "backing_amount": this.state.backing_amount, 
@@ -60,6 +63,9 @@ class ProjectShow extends React.Component {
     //choose set reward
     handleReward(e) {
         e.preventDefault(); 
+        if (!this.props.currentUser) {
+            this.props.history.push("/login")
+        }
 
         let allRewards = Object.values(this.props.rewards)
         let rewardsArr = [];

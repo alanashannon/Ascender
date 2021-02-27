@@ -13,11 +13,13 @@ class Greeting extends React.Component {
     render () {
         let projects = Object.values(this.props.projects)
         let projectsArr = []; 
-        {projects.forEach((project) => {
-            if (project.author_id === this.props.currentUser.id) {
-                projectsArr.push(project)
-            }
-        })}
+        {if (this.props.currentUser) {
+            projects.forEach((project) => {
+                if (project.author_id === this.props.currentUser.id) {
+                    projectsArr.push(project)
+                }
+            })}
+        }
 
         const newSession = () => (
             <nav className="login-nav-link">
