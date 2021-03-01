@@ -13,71 +13,90 @@ class CategoryIndex extends React.Component {
     render() {
         let categoriesArr = Object.values(this.props.categories)
         return (
-            <div>
+            <div className="categories-all">
                 <div className="collections-container">
-                    <h1>Collections</h1>
+                    <div className="collections-header">
+                        <h1>Collections</h1>
+                    </div>
                     <ul>
-                        <li>
-                            <Link to={"/"}>Everything</Link>
+                        <li className="collections-list">
+                            <Link className="list-everything" to={"/"}>Everything</Link>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h1>Sections</h1>
+                <div className="sections-container">
+                    <div className="sections-header">
+                        <h1>Sections</h1>
+                    </div>
                     {categoriesArr.map((category, i) => {
                         return (
-                            <div key={i}>
-                                <Link to={"/"}>{category.category_name}</Link>
+                            <div key={i} className="collections-list">
+                                <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
                             </div>
                         )
                     })}
                 </div>
-                <div>
-                    <h1>Categories</h1>
-                    <div>
-                        <Link to={"/"}>Art</Link>
+                <div className="categories-container">
+                    <div className="categories-header">
+                        <h1>Categories</h1>
                     </div>
-                    <div>
-                        <Link to={"/"}>Comics</Link>
+                    <div className="collections-list">
+                        {/* arts */}
+                        <Link className="list-everything" to={"/"}>Art</Link> 
                     </div>
-                    <div>
-                        <Link to={"/"}>Crafts</Link>
+                    <div className="collections-list">
+                        {/* comics & illustration */}
+                        <Link className="list-everything" to={"/"}>Comics</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Dance</Link>
+                    <div className="collections-list">
+                        {/* food & craft  */}
+                        <Link className="list-everything" to={"/"}>Crafts</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Design</Link>
+                    <div className="collections-list">
+                        {/* arts */}
+                        <Link className="list-everything" to={"/"}>Dance</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Fashion</Link>
+                    <div className="collections-list">
+                        {/* design & tech  */}
+                        <Link className="list-everything" to={"/"}>Design</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Film & Video</Link>
+                    <div className="collections-list">
+                        {/* arts */}
+                        <Link className="list-everything" to={"/"}>Fashion</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Food</Link>
+                    <div className="collections-list">
+                        {/* film  */}
+                        <Link className="list-everything" to={"/"}>Film & Video</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Games</Link>
+                    <div className="collections-list">
+                        {/* food & craft  */}
+                        <Link className="list-everything" to={"/"}>Food</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Journalism</Link>
+                    <div className="collections-list">
+                        {/* games  */}
+                        <Link className="list-everything" to={"/"}>Games</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Music</Link>
+                    <div className="collections-list">
+                        {/* publishing  */}
+                        <Link className="list-everything" to={"/"}>Journalism</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Photography</Link>
+                    <div className="collections-list">
+                        <Link className="list-everything" to={"/"}>Music</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Publishing</Link>
+                    <div className="collections-list">
+                        {/* arts  */}
+                        <Link className="list-everything" to={"/"}>Photography</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Technology</Link>
+                    <div className="collections-list">
+                        <Link className="list-everything" to={"/"}>Publishing</Link>
                     </div>
-                    <div>
-                        <Link to={"/"}>Theater</Link>
+                    <div className="collections-list">
+                        {/* design and tech  */}
+                        <Link className="list-everything" to={"/"}>Technology</Link>
+                    </div>
+                    <div className="collections-list">
+                        {/* arts  */}
+                        <Link className="list-everything" to={"/"}>Theater</Link>
                     </div>
                 </div>
             </div>
