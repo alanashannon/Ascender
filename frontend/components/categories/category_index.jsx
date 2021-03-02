@@ -12,7 +12,42 @@ class CategoryIndex extends React.Component {
     }
 
     render() {
-        let categoriesArr = Object.values(this.props.categories)
+        let categoriesArr = Object.values(this.props.categories);
+        let extendedCategories = [
+            {newName: "Art", catName: "Arts"}, 
+            {newName: "Comics", catName: "Comics & Illustration"}, 
+            {newName: "Crafts", catName: "Food & Craft"}, 
+            {newName: "Dance", catName: "Arts"}, 
+            {newName: "Design", catName: "Design & Tech"}, 
+            {newName: "Fashion", catName: "Arts"}, 
+            {newName: "Film & Video", catName: "Film"}, 
+            {newName: "Food", catName: "Food & Craft"}, 
+            {newName: "Games", catName: "Games"}, 
+            {newName: "Journalism", catName: "Publishing"}, 
+            {newName: "Music", catName: "Music"}, 
+            {newName: "Photography", catName: "Arts"}, 
+            {newName: "Publishing", catName: "Publishing"}, 
+            {newName: "Technology", catName: "Design & Tech"}, 
+            {newName: "Theater", catName: "Arts"}, 
+        ];
+
+        const catWithId = () => {
+            extendedCategories.map((newCat, i) => {
+                return (
+                    categoriesArr.map((cat, j) => {
+                        if (newCat.catName === cat.category_name) {
+                            return (
+                                <div className="collections-list">
+                                    <Link className="list-everything" to={`/category/cat.id`}>{newCat.newName}</Link>
+                                </div>
+                            )
+                        }
+                    })
+
+                )
+            })
+        }
+
         return (
             <div className="categories-all">
                 <div className="collections-container">
@@ -44,64 +79,21 @@ class CategoryIndex extends React.Component {
                         <h1>Categories</h1>
                         <Link to={"/"} className="exit-button"><IoMdClose size={20} /></Link>
                     </div>
-                    <div className="collections-list">
-                        {/* arts */}
-                        <Link className="list-everything" to={"/"}>Art</Link> 
-                    </div>
-                    <div className="collections-list">
-                        {/* comics & illustration */}
-                        <Link className="list-everything" to={"/"}>Comics</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* food & craft  */}
-                        <Link className="list-everything" to={"/"}>Crafts</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* arts */}
-                        <Link className="list-everything" to={"/"}>Dance</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* design & tech  */}
-                        <Link className="list-everything" to={"/"}>Design</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* arts */}
-                        <Link className="list-everything" to={"/"}>Fashion</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* film  */}
-                        <Link className="list-everything" to={"/"}>Film & Video</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* food & craft  */}
-                        <Link className="list-everything" to={"/"}>Food</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* games  */}
-                        <Link className="list-everything" to={"/"}>Games</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* publishing  */}
-                        <Link className="list-everything" to={"/"}>Journalism</Link>
-                    </div>
-                    <div className="collections-list">
-                        <Link className="list-everything" to={"/"}>Music</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* arts  */}
-                        <Link className="list-everything" to={"/"}>Photography</Link>
-                    </div>
-                    <div className="collections-list">
-                        <Link className="list-everything" to={"/"}>Publishing</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* design and tech  */}
-                        <Link className="list-everything" to={"/"}>Technology</Link>
-                    </div>
-                    <div className="collections-list">
-                        {/* arts  */}
-                        <Link className="list-everything" to={"/"}>Theater</Link>
-                    </div>
+                    {extendedCategories.map((newCat, i) => {
+                        return (
+                            <div key={i}>
+                                {categoriesArr.map((cat, j) => {
+                                    if (newCat.catName === cat.category_name) {
+                                        return (
+                                            <div key={j} className="collections-list">
+                                                <Link className="list-everything" to={`/category/${cat.id}`}>{newCat.newName}</Link>
+                                            </div>
+                                        )
+                                    }
+                                })}
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         )
