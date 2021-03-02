@@ -38,7 +38,7 @@
     font-size: 14px;
 }
 
-header img {
+.icon img {
     border-radius: 30px;
     position: absolute;
 }
@@ -141,6 +141,32 @@ header img {
         cursor: pointer;
         color: #028858;
         text-decoration: underline;
+    }
+
+    .user-projects-container {
+        display: flex; 
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+    .user-projects-container img {
+        height: 34px; 
+        width: 68px; 
+        border-radius: none;
+        display: block; 
+        flex-basis: 20%;
+        margin-right: 8px;
+    }
+    .user-projects-greeting-title {
+        display: block; 
+        flex-basis: 80%;
+        padding-left: 0px;
+    }
+    .projects-greeting-title-link {
+        padding-left: 0px;
+    }
+
+    .created-projects li {
+        margin-bottom: 10px;
     }
 }
 
