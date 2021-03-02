@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import { IoMdClose } from 'react-icons/io'
 
 class CategoryIndex extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class CategoryIndex extends React.Component {
                 <div className="collections-container">
                     <div className="collections-header">
                         <h1>Collections</h1>
+                        <Link to={"/"} className="exit-button"><IoMdClose size={20} /></Link>
                     </div>
                     <ul>
                         <li className="collections-list">
@@ -27,6 +29,7 @@ class CategoryIndex extends React.Component {
                 <div className="sections-container">
                     <div className="sections-header">
                         <h1>Sections</h1>
+                        <Link to={"/"} className="exit-button"><IoMdClose size={20} /></Link>
                     </div>
                     {categoriesArr.map((category, i) => {
                         return (
@@ -39,6 +42,7 @@ class CategoryIndex extends React.Component {
                 <div className="categories-container">
                     <div className="categories-header">
                         <h1>Categories</h1>
+                        <Link to={"/"} className="exit-button"><IoMdClose size={20} /></Link>
                     </div>
                     <div className="collections-list">
                         {/* arts */}

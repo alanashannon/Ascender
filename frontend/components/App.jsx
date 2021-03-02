@@ -9,6 +9,7 @@ import ProjectShowContainer from './projects/project_show_container';
 import ProjectCreateContainer from './projects/project_create_container';
 import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
+import { BsSearch } from 'react-icons/bs'; 
 
 const App = () => (
     <div>
@@ -19,6 +20,7 @@ const App = () => (
                 <h1 className="logo">ASCENDER</h1>
             </Link>
             <a href="#">Search</a>
+            <BsSearch size={16}/> &nbsp;
             <GreetingContainer /> 
         </header>
         <Switch>

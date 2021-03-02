@@ -6,6 +6,7 @@
 
 .collections-header {
     display: flex; 
+    justify-content: space-between;
     align-items: center;
     height: 48px; 
     border-bottom: 1px solid lightgray;
@@ -41,6 +42,7 @@
 .sections-header {
     display: flex; 
     align-items: center;
+    justify-content: space-between;
     height: 48px; 
     border-bottom: 1px solid lightgray;
     font-size: 16px;
@@ -55,6 +57,7 @@
 
 .categories-header {
     display: flex; 
+    justify-content: space-between;
     align-items: center;
     height: 48px; 
     border-bottom: 1px solid lightgray;
@@ -67,5 +70,8 @@
 
 .categories-container {
     margin-bottom: 30px;
+}
+.exit-button {
+    color: rgb(3, 115, 98);
 }
 
