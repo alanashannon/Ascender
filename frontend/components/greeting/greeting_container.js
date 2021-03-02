@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'; 
 import Greeting from './greeting';
 import { logout } from '../../actions/session_actions';
-import { fetchProjects } from '../../actions/project_actions'
+import { fetchProjects, fetchUsers } from '../../actions/project_actions'
+import { fetchCategories } from '../../actions/categories_actions';
 
 const mapStateToProps = ({ session, entities: { users, projects } }) => {
     return {
@@ -13,7 +14,8 @@ const mapStateToProps = ({ session, entities: { users, projects } }) => {
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logout()),
-    fetchProjects: () => dispatch(fetchProjects())
+    fetchProjects: () => dispatch(fetchProjects()), 
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting)

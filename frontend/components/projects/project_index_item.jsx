@@ -12,9 +12,6 @@ class ProjectIndexItem extends React.Component {
         }
 
         let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
-        if (percentFunded > 100) {
-            percentFunded = 100
-        }
 
         return (
             <div>
@@ -32,7 +29,7 @@ class ProjectIndexItem extends React.Component {
                             <div className="rec-author-outer">
                                 By&nbsp; 
                                 <Link className="recommended-author" to={`/projects/${this.props.project.id}`}>
-                                    {this.props.project.authorName}
+                                    {this.props.users[this.props.project.author_id].name}
                                 </Link>
                             </div>
                         </li>
