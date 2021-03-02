@@ -19,7 +19,7 @@ user3 = User.create!(name: 'Steven Isserlis', email: 'monkey@aa.io', password: '
 user4 = User.create!(name: 'Mstislav Rostropovich', email: 'cello@aa.io', password: 'password', location: 'Washington, DC', biography: 'Spreading love and happiness')
 user5 = User.create!(name: 'Janos Starker', email: 'janos@aa.io', password: 'password', location: 'Bloomington, IN', biography: 'Helping non-profits is my passion!')
 user6 = User.create!(name: 'Sol Gabetta', email: 'catgirl@aa.io', password: 'password', location: 'London', biography: 'Former ballet dancer, currently a photographer')
-user7 = User.create!(name: 'Jacqueline DuPre', email: 'password123@aa.io', password: 'password', location: 'New York', biography: 'I am a freelance writer for the New Yorker, looking to publish my first book!')
+user8 = User.create!(name: 'Jacqueline DuPre', email: 'password123@aa.io', password: 'password', location: 'New York', biography: 'I am a freelance writer for the New Yorker, looking to publish my first book!')
 user8 = User.create!(name: 'Pieter Wispelwey', email: 'wisps@aa.io', password: 'password', location: 'Amsterdam', biography: 'I love to paint, anywhere and anything')
 user9 = User.create!(name: 'Mischa Maisky', email: 'cellist@aa.io', password: 'password', location: 'Dallas', biography: 'I have a million startup ideas, let me tell you just a few')
 user10 = User.create!(name: 'Pablo Casals', email: 'pablo@aa.io', password: 'password', location: 'Puerto Rico', biography: 'An aspiring filmmaker')
@@ -208,7 +208,7 @@ project13 = Project.create!(title: "Test Project",
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: category5.id, #food/craft
+    category_id: category6.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
@@ -221,7 +221,7 @@ project14 = Project.create!(title: "Test Project",
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: category5.id, #food/craft
+    category_id: category7.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
@@ -234,7 +234,7 @@ project15 = Project.create!(title: "Test Project",
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: category5.id, #food/craft
+    category_id: category8.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
@@ -247,10 +247,49 @@ project16 = Project.create!(title: "Test Project",
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: category5.id, #food/craft
+    category_id: category2.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
+
+project17 = Project.create!(title: "Decomposer", 
+    campaign: "Experiment with music and gain some insight on how composers make their decisions", 
+    funding_goal: 1000,
+    amount_pledged: 600,
+    end_date: Date.new(2021,12,1),
+    location: 'San Francisco', 
+    description: 'An app that lets users rewrite famous pieces of music', 
+    author_id: user1.id, 
+    category_id: category3.id, #tech
+    updates: '', 
+    faq: "", 
+    risks: "Copyright issues")
+
+project18 = Project.create!(title: "Busque", 
+    campaign: "Artists are getting creative during Covid-19, and Busque is here to help. Busque helps musicians find venues to perform and help earn a living during these trying times", 
+    funding_goal: 10000,
+    amount_pledged: 10580,
+    end_date: Date.new(2021,11,1),
+    location: 'San Francisco Bay Area', 
+    description: 'An app that helps musicians and street performers find busking spots', 
+    author_id: user13.id, 
+    category_id: category3.id, #tech
+    updates: 'We are always working to improve our app, more updates coming soon!', 
+    faq: "", 
+    risks: "Covid-19")
+
+project19 = Project.create!(title: "IV-V-I: the Music Theory Card Game", 
+    campaign: "This card game will help teach you the basics of harmony, and you don't have to be a musician to play!", 
+    funding_goal: 8000,
+    amount_pledged: 5680,
+    end_date: Date.new(2021,7,1),
+    location: 'San Mateo', 
+    description: 'Learn music theory the fun way!', 
+    author_id: user16.id, 
+    category_id: category6.id, #games
+    updates: '', 
+    faq: "", 
+    risks: "Not receiving our full funding amount will cause significant delays")
 
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
 project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
@@ -300,6 +339,15 @@ project15.photo.attach(io: file15, filename: "puppy_pic.jpg")
 file16 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
 project16.photo.attach(io: file16, filename: "puppy_pic.jpg")
 
+file17 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/decomposer.png")
+project17.photo.attach(io: file17, filename: "decomposer.png")
+
+file18 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/busque.png")
+project18.photo.attach(io: file18, filename: "busque.png")
+
+file19 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/iv-v-i-2.jpeg")
+project19.photo.attach(io: file19, filename: "iv-v-i-2.jpeg")
+
 reward1 = Reward.create!(project_id: project1.id, title: "A token of our appreciation!", description: "A ticket to our concert in the special VIP box", pledge_amount: 75, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
 reward2 = Reward.create!(project_id: project2.id, title: "Free copy of my book", description: "Makes a great gift for the young musician in your life!", pledge_amount: 15, est_delivery: Date.new(2021,5,1), ships_to: "Anywhere in the world")
 reward3 = Reward.create!(project_id: project3.id, title: "Be a beta tester for our product", description: "Be one of the first to get to use the Block Strap!", pledge_amount: 100, est_delivery: Date.new(2021,12,1), ships_to: "Anywhere in the world")
@@ -316,6 +364,10 @@ reward13 = Reward.create!(project_id: project13.id, title: "Sample Reward", desc
 reward14 = Reward.create!(project_id: project14.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
 reward15 = Reward.create!(project_id: project15.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
 reward16 = Reward.create!(project_id: project16.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward17 = Reward.create!(project_id: project17.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward18 = Reward.create!(project_id: project18.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward19 = Reward.create!(project_id: project19.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+
 
 backing1 = Backing.create!(backer_id: user5.id, backing_amount: 75, reward_id: reward1.id, project_id: project1.id)
 backing2 = Backing.create!(backer_id: user2.id, backing_amount: 15, reward_id: reward2.id, project_id: project2.id)
@@ -333,4 +385,7 @@ backing13 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id:
 backing14 = Backing.create!(backer_id: user14.id, backing_amount: 50, reward_id: reward14.id, project_id: project14.id)
 backing15 = Backing.create!(backer_id: user15.id, backing_amount: 50, reward_id: reward15.id, project_id: project15.id)
 backing16 = Backing.create!(backer_id: user16.id, backing_amount: 50, reward_id: reward16.id, project_id: project16.id)
+backing17 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward17.id, project_id: project17.id)
+backing18 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward18.id, project_id: project18.id)
+backing19 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward19.id, project_id: project19.id)
 
