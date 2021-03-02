@@ -31,23 +31,6 @@ class CategoryIndex extends React.Component {
             {newName: "Theater", catName: "Arts"}, 
         ];
 
-        const catWithId = () => {
-            extendedCategories.map((newCat, i) => {
-                return (
-                    categoriesArr.map((cat, j) => {
-                        if (newCat.catName === cat.category_name) {
-                            return (
-                                <div className="collections-list">
-                                    <Link className="list-everything" to={`/category/cat.id`}>{newCat.newName}</Link>
-                                </div>
-                            )
-                        }
-                    })
-
-                )
-            })
-        }
-
         return (
             <div className="categories-all">
                 <div className="collections-container">
