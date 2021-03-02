@@ -7,7 +7,6 @@ import FeaturedProject from './featured_project';
 class ProjectIndex extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.projects;
     }
 
     componentDidMount() {
@@ -35,7 +34,7 @@ class ProjectIndex extends React.Component {
                 <div className="index-container">
                     <section className="featured-project">
                         <div className="featured-header">Featured Project</div>
-                        <FeaturedProject project={this.props.project} />
+                        <FeaturedProject project={this.props.project} users={this.props.users} />
                     </section>
 
                     <section className="recommended-projects">
@@ -45,7 +44,7 @@ class ProjectIndex extends React.Component {
                                 return <ProjectIndexItem project={project} key={idx} />
                             })} */} 
                             {recommendedProjects.map((project, idx) => {
-                                return <ProjectIndexItem project={project} key={idx} />
+                                return <ProjectIndexItem project={project} users={this.props.users}  key={idx} />
                             })}
                             
                             <br />

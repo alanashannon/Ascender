@@ -32,7 +32,7 @@ class ProjectIndexItem extends React.Component {
                             <div className="rec-author-outer">
                                 By&nbsp; 
                                 <Link className="recommended-author" to={`/projects/${this.props.project.id}`}>
-                                    {this.props.project.authorName}
+                                    {this.props.users[this.props.project.author_id].name}
                                 </Link>
                             </div>
                         </li>
