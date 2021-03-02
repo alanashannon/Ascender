@@ -12,9 +12,6 @@ class ProjectIndexItem extends React.Component {
         }
 
         let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
-        if (percentFunded > 100) {
-            percentFunded = 100
-        }
 
         return (
             <div>

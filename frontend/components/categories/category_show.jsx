@@ -41,14 +41,13 @@ class CategoryShow extends React.Component {
             <div>
                 <div className="category-bar">
                     <ul>
-                        <li>Arts</li>
-                        <li>Comics & Illustration</li>
-                        <li>Design & Tech</li>
-                        <li>Film</li>
-                        <li>Food & Craft</li>
-                        <li>Games</li>
-                        <li>Music</li>
-                        <li>Publishing</li>
+                        {categoriesArr.map((category, i) => {
+                            return (
+                                <li key={i} >
+                                    <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
 

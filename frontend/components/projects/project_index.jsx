@@ -12,23 +12,25 @@ class ProjectIndex extends React.Component {
     componentDidMount() {
         this.props.fetchProjects(); 
         this.props.fetchUsers();  
+        this.props.fetchCategories(); 
     }
 
     render () {
         const recommendedProjects = this.props.projects.slice(4, 8)
+        const categoriesArr = Object.values(this.props.categories)
+
 
         return (
             <div>
                 <div className="category-bar">
                     <ul>
-                        <li>Arts</li>
-                        <li>Comics & Illustration</li>
-                        <li>Design & Tech</li>
-                        <li>Film</li>
-                        <li>Food & Craft</li>
-                        <li>Games</li>
-                        <li>Music</li>
-                        <li>Publishing</li>
+                        {categoriesArr.map((category, i) => {
+                            return (
+                                <li key={i} >
+                                    <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
                 <div className="index-container">

@@ -17,16 +17,16 @@ class FeaturedProject extends React.Component {
 
         //for progress bar under pic
         let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
-        if (percentFunded > 100) {
-            percentFunded = 100
-        }
+        
 
         return (
             !this.props.project ? <div></div> : (
             <div className="featured-project-inner">
                 <Link to={`/projects/${this.props.project.id}`}>
                     <img className="featured-pic" src={this.props.project.photo} />
-                    <div className="featured-progress-bar" style={{width: `calc(1% * ${percentFunded})`}}></div>
+                    <div className="featured-progress-bar-container">
+                        <div className="featured-progress-bar" style={{width: `calc(1% * ${percentFunded})`}}></div>
+                    </div>
                 </Link>
                 <ul>
                     <li className="featured-info">
