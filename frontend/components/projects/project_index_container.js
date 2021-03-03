@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectIndex from './project_index'; 
 import { fetchProjects, fetchUsers } from '../../actions/project_actions';
+import { fetchCategories } from '../../actions/categories_actions';
 
 
 const projectWithAuthor = (state) => {
@@ -18,14 +19,17 @@ const mapStateToProps = (state) => {
     let index = Math.floor(Math.random() * projects.length)
     return {
         projects: projectWithAuthor(state),
-        project: projectWithAuthor(state)[index]
+        project: projectWithAuthor(state)[index], 
+        users: state.entities.users, 
+        categories: state.entities.categories
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProjects: () => dispatch(fetchProjects()),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()), 
+        fetchCategories: () => dispatch(fetchCategories())
     }
 }
 

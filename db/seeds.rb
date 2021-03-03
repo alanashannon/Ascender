@@ -9,6 +9,9 @@ require 'open-uri'
 
 User.destroy_all
 Project.destroy_all
+Backing.destroy_all
+Reward.destroy_all
+Category.destroy_all
 
 user1 = User.create!(name: 'Demo User', email: 'demo@user.com', password: 'password', location: 'San Francisco', biography: 'I am a San Francisco-based engineer')
 user2 = User.create!(name: 'Alisa Weilerstein', email: 'cellista@aa.io', password: 'password', location: 'San Francisco', biography: 'Hello, I love making things out of whatever I can get my hands on')
@@ -22,18 +25,22 @@ user9 = User.create!(name: 'Mischa Maisky', email: 'cellist@aa.io', password: 'p
 user10 = User.create!(name: 'Pablo Casals', email: 'pablo@aa.io', password: 'password', location: 'Puerto Rico', biography: 'An aspiring filmmaker')
 user11 = User.create!(name: 'Kronos Quartet', email: 'krono@aa.io', password: 'password', location: 'San Francisco', biography: 'An award-winning quartet that mixes many genres')
 user12 = User.create!(name: 'Paul Tortelier', email: 'torti@aa.io', password: 'password', location: 'Paris', biography: 'Recent culinary school grad looking to make a name for myself')
+user13 = User.create!(name: 'Zuill Bailey', email: 'zb@aa.io', password: 'password', location: 'New York', biography: 'Concert cellist')
+user14 = User.create!(name: 'Emanuel Feuermann', email: 'manny@aa.io', password: 'password', location: 'Paris', biography: 'I love supporting people on their journies to greatness!')
+user15 = User.create!(name: 'Gregor Piatigorsky', email: 'Piati@aa.io', password: 'password', location: 'Los Angeles', biography: 'Looking for the new upcoming tech giant')
+user16 = User.create!(name: 'David Popper', email: 'popper@aa.io', password: 'password', location: 'Chicago', biography: 'Making cellists miserable since 1901')
 
 
 
 #categories: 
-# category1 = Category.create!(category_name: "Arts")
-# category2 = Category.create!(category_name: "Comics & Illustration")
-# category3 = Category.create!(category_name: "Design & Tech")
-# category4 = Category.create!(category_name: "Film")
-# category5 = Category.create!(category_name: "Food & Craft")
-# category6 = Category.create!(category_name: "Games")
-# category7 = Category.create!(category_name: "Music")
-# category8 = Category.create!(category_name: "Publishing")
+category1 = Category.create!(category_name: "Arts")
+category2 = Category.create!(category_name: "Comics & Illustration")
+category3 = Category.create!(category_name: "Design & Tech")
+category4 = Category.create!(category_name: "Film")
+category5 = Category.create!(category_name: "Food & Craft")
+category6 = Category.create!(category_name: "Games")
+category7 = Category.create!(category_name: "Music")
+category8 = Category.create!(category_name: "Publishing")
 
 
 #projects
@@ -45,7 +52,7 @@ project1 = Project.create!(title: "The Rite of Spring: Fully Staged at Davies Sy
     location: 'San Francisco', 
     description: 'See what caused a riot in 1913!', 
     author_id: user1.id,
-    category_id: 1, #arts
+    category_id: category1.id, #arts
     updates: '', 
     faq: '', 
     risks: 'Covid-19 has pushed back our timeline by at least a year, but we would really appreciate your support')
@@ -54,11 +61,11 @@ project2 = Project.create!(title: "Why Beethoven Threw the Stew (And Lots More S
     campaign: "I grew up playing music, but the kids around me all thought I was weird. They didn't know how interesting classical music is and the stories behind the composers who wrote the music, so I would like to tell you a few of my favorites", 
     funding_goal: 7500,
     amount_pledged: 8050,
-    end_date: Date.new(2021,2,1),
+    end_date: Date.new(2021,8,1),
     location: 'Daly City, CA', 
     description: "Fun stories about classical composers for kids", 
     author_id: user3.id,
-    category_id: 2, #comics/illustration 
+    category_id: category2.id, #comics/illustration 
     updates: 'Wow, we surpassed our goal! Thank you all!', 
     faq: '', 
     risks: 'We run the risk of not finding a publisher, as the market for childrens books is over-saturated at the moment')
@@ -67,11 +74,11 @@ project3 = Project.create!(title: "The Block Strap",
     campaign: "We are developing a rig that lets cellists play standing up. This innovative technology can help keep cellists everywhere from feeling left out while other musicians walk around", 
     funding_goal: 5000,
     amount_pledged: 4355,
-    end_date: Date.new(2021,1,1),
+    end_date: Date.new(2021,10,1),
     location: 'Cleveland, OH', 
     description: "Introducing the world's first cello strap that lets cellists play standing up!", 
     author_id: user9.id,
-    category_id: 3, # design/tech
+    category_id: category3.id, # design/tech
     updates: 'Less than 1000 to go!', 
     faq: 'Q: How does it work? A: the strap wraps around the scroll, over your shoulder, and down to the end pin', 
     risks: 'Reaching our funding goal, as our target audience is a rather niche market')
@@ -80,11 +87,11 @@ project4 = Project.create!(title: "Forte",
     campaign: 'This is a film that chronicles the lives of three women in music, including a composer who will write the music for the film', 
     funding_goal: 15000,
     amount_pledged: 6500,
-    end_date: Date.new(2021,3,1),
+    end_date: Date.new(2021,12,1),
     location: 'New York', 
     description: 'We will be filming a documentary about three women in music, traveling with them every step of the way to make their dreams come true', 
     author_id: user10.id, 
-    category_id: 4, #film
+    category_id: category4.id, #film
     updates: '', 
     faq: 'Q: When will it be released? A: In 2021', 
     risks: 'While we have so much passion for this film, we worry that we will not have the resources to complete it')
@@ -97,7 +104,7 @@ project5 = Project.create!(title: "Amigurumi Musical Instruments",
     location: 'Berkeley, CA', 
     description: 'Learn to make your favorite instruments!', 
     author_id: user2.id, # user2
-    category_id: 5, # food/craft
+    category_id: category5.id, # food/craft
     updates: '', 
     faq: '', 
     risks: "If we don't meet our funding goal, we run the risk of not having the resources to hold the classes")
@@ -106,11 +113,11 @@ project6 = Project.create!(title: "Violin Hero",
     campaign: "Is Guitar Hero too easy for you? We are developing the newest version of Guitar Hero: Violin Hero!", 
     funding_goal: 50000,
     amount_pledged: 50050,
-    end_date: Date.new(2020,12,31),
+    end_date: Date.new(2021,12,31),
     location: 'Cleveland, OH', 
     description: "For those that are bored with Guitar Hero", 
     author_id: user6.id,
-    category_id: 6, #games
+    category_id: category6.id, #games
     updates: '', 
     faq: 'Q: Is this an April Fools joke? A: No, of course not', 
     risks: "People not taking us seriously")
@@ -119,11 +126,11 @@ project7 = Project.create!(title: "Women in Music Commission",
     campaign: 'We are commissioning five new works by female composers for our upcoming album, which we hope will inspire young female musicians everywhere to follow their dreams of composing', 
     funding_goal: 25000,
     amount_pledged: 5500,
-    end_date: Date.new(2021,3,1),
+    end_date: Date.new(2021,9,1),
     location: 'San Francisco', 
     description: 'We will be commissioning five new works by female composers, and need your help to bring this project to life', 
     author_id: user11.id,
-    category_id: 7, #music
+    category_id: category7.id, #music
     updates: '', 
     faq: '', 
     risks: 'Covid-19 has prevented us from being able to rehearse and perform')
@@ -132,11 +139,11 @@ project8 = Project.create!(title: "Incorporating Music Education into the Bard P
     campaign: 'I have spent years researching music education and believe it can be a powerful tool that can be used to better the American prison system. I have concluded my study and am looking to publish my findings', 
     funding_goal: 2000,
     amount_pledged: 1175,
-    end_date: Date.new(2021,3,1),
+    end_date: Date.new(2021,8,1),
     location: 'Kingston, NY', 
     description: "Please help me publish my findings on how music education can have an impact on prison reform in the US", 
     author_id: user7.id,
-    category_id: 8, #publishing
+    category_id: category8.id, #publishing
     updates: '', 
     faq: '', 
     risks: 'Not reaching our funding goal is our primary concern')
@@ -145,11 +152,11 @@ project9 = Project.create!(title: "Stalinist Russia in Retrospect",
     campaign: 'I will be playing a recital of music from the Stalin era, interspersed with personal stories from my experience of that time', 
     funding_goal: 12000,
     amount_pledged: 11505,
-    end_date: Date.new(2021,4,15),
+    end_date: Date.new(2021,9,15),
     location: 'New York', 
     description: 'A recital of music by Prokofiev, Khachaturian, and my friend, Dmitri Shostakovich', 
     author_id: user4.id,
-    category_id: 7, #music
+    category_id: category7.id, #music
     updates: 'Thank you all for your support thus far', 
     faq: '', 
     risks: "The Russian government is not happy that I am putting on this program, but I will do everything I can to make it happen")
@@ -162,7 +169,7 @@ project10 = Project.create!(title: "The Holocaust: Remembered",
     location: 'Bloomington, IN', 
     description: "Pairing photography with music in memory of the Holocaust", 
     author_id: user5.id, 
-    category_id: 1, # arts
+    category_id: category1.id, # arts
     updates: 'We have found a venue, thank you all for your support', 
     faq: '', 
     risks: 'We are having some difficulty finding a venue for the exhibit')
@@ -171,76 +178,167 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
     campaign: "I may be French, but I have had a lifelong passion for pasta. I am working towards opening a pop-up pasta shop in the heart of Paris and would love your support!", 
     funding_goal: 15000,
     amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
+    end_date: Date.new(2021,6,1),
     location: 'Paris', 
     description: 'Please help me realize my dream of opening my own pasta shop!', 
     author_id: user12.id, 
-    category_id: 5, #food/craft
+    category_id: category5.id, #food/craft
     updates: '', 
     faq: "Q: What is your pasta recipe? A: That's a secret!", 
     risks: "Covid-19 has taken a toll on all of us, I'm afraid we may need to hold off on opening until there is a vaccine")
 
 project12 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
     funding_goal: 15000,
     amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
+    end_date: Date.new(2021,6,1),
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: 5, #food/craft
+    category_id: category5.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
 
 project13 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
     funding_goal: 15000,
     amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
+    end_date: Date.new(2021,7,1),
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: 5, #food/craft
+    category_id: category6.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
 
 project14 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
     funding_goal: 15000,
     amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
+    end_date: Date.new(2021,8,1),
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: 5, #food/craft
+    category_id: category7.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
 
 project15 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
     funding_goal: 15000,
     amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
+    end_date: Date.new(2021,10,1),
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: 5, #food/craft
+    category_id: category8.id, #food/craft
     updates: '', 
     faq: "", 
     risks: "Covid-19")
 
 project16 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,5,1),
     location: 'San Francisco', 
     description: 'Test description', 
     author_id: user1.id, 
-    category_id: 5, #food/craft
+    category_id: category2.id, #food/craft
+    updates: '', 
+    faq: "", 
+    risks: "Covid-19")
+
+project17 = Project.create!(title: "Decomposer", 
+    campaign: "Experiment with music and gain some insight on how composers make their decisions", 
+    funding_goal: 1000,
+    amount_pledged: 600,
+    end_date: Date.new(2021,12,1),
+    location: 'San Francisco', 
+    description: 'An app that lets users rewrite famous pieces of music', 
+    author_id: user1.id, 
+    category_id: category3.id, #tech
+    updates: '', 
+    faq: "", 
+    risks: "Copyright issues")
+
+project18 = Project.create!(title: "Busque", 
+    campaign: "Artists are getting creative during Covid-19, and Busque is here to help. Busque helps musicians find venues to perform and help earn a living during these trying times", 
+    funding_goal: 10000,
+    amount_pledged: 10580,
+    end_date: Date.new(2021,11,1),
+    location: 'San Francisco Bay Area', 
+    description: 'An app that helps musicians and street performers find busking spots', 
+    author_id: user13.id, 
+    category_id: category3.id, #tech
+    updates: 'We are always working to improve our app, more updates coming soon!', 
+    faq: "", 
+    risks: "Covid-19")
+
+project19 = Project.create!(title: "IV-V-I: the Music Theory Card Game", 
+    campaign: "This card game will help teach you the basics of harmony, and you don't have to be a musician to play!", 
+    funding_goal: 8000,
+    amount_pledged: 5680,
+    end_date: Date.new(2021,7,1),
+    location: 'San Mateo', 
+    description: 'Learn music theory the fun way!', 
+    author_id: user16.id, 
+    category_id: category6.id, #games
+    updates: '', 
+    faq: "", 
+    risks: "Not receiving our full funding amount will cause significant delays")
+
+project20 = Project.create!(title: "El Sistema", 
+    campaign: "We are filming a documentary about the El Sistema music program in Caracas, and we need your help to make it all happen", 
+    funding_goal: 50000,
+    amount_pledged: 43080,
+    end_date: Date.new(2021,10,31),
+    location: 'Los Angeles, CA', 
+    description: 'Help us make our documentary about this inspiring program', 
+    author_id: user11.id, 
+    category_id: category4.id, #film
+    updates: '', 
+    faq: "", 
+    risks: "Not receiving our full funding amount will cause significant delays")
+
+project21 = Project.create!(title: "Musicians during Covid-19", 
+    campaign: "From street performances to online recitals, we take a look at how some resilient musicians are keeping music alive during these tough times", 
+    funding_goal: 50000,
+    amount_pledged: 43080,
+    end_date: Date.new(2021,7,1),
+    location: 'New York, NY', 
+    description: "A study on how musicians are coping with the Covid-19 lockdown", 
+    author_id: user10.id, 
+    category_id: category4.id, #film
+    updates: '', 
+    faq: "Q: Who will be in it? A: Professional musicians from all over the United States", 
+    risks: "Not receiving our full funding amount will cause significant delays")
+
+project22 = Project.create!(title: "Celebrate Female Composers", 
+    campaign: "Women composers were oppressed for so long, and now we have the chance to hear their stories and their music. Help us reach our funding goal so we can give them the attention they deserve.", 
+    funding_goal: 5000,
+    amount_pledged: 6080,
+    end_date: Date.new(2021,7,1),
+    location: 'Portland, OR', 
+    description: "Let's celebrate Women's History Month by telling the stories of great female composers", 
+    author_id: user10.id, 
+    category_id: category8.id, #publishing
+    updates: '', 
+    faq: "", 
+    risks: "Not receiving our full funding amount will cause significant delays")
+
+project23 = Project.create!(title: "Test Project", 
+    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    funding_goal: 5000,
+    amount_pledged: 1580,
+    end_date: Date.new(2021,5,1),
+    location: 'Chicago, IL', 
+    description: 'Test description', 
+    author_id: user1.id, 
+    category_id: category1.id, #arts
     updates: '', 
     faq: "", 
     risks: "Covid-19")
@@ -292,3 +390,74 @@ project15.photo.attach(io: file15, filename: "puppy_pic.jpg")
 
 file16 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
 project16.photo.attach(io: file16, filename: "puppy_pic.jpg")
+
+file17 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/decomposer.png")
+project17.photo.attach(io: file17, filename: "decomposer.png")
+
+file18 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/busque.png")
+project18.photo.attach(io: file18, filename: "busque.png")
+
+file19 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/iv-v-i-2.jpeg")
+project19.photo.attach(io: file19, filename: "iv-v-i-2.jpeg")
+
+file20 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/el_sistema.jpeg")
+project20.photo.attach(io: file20, filename: "el_sistema.jpeg")
+
+file21 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/guitar_case.jpg")
+project21.photo.attach(io: file21, filename: "guitar_case.jpg")
+
+file22 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/women_composers.jpg")
+project22.photo.attach(io: file22, filename: "women_composers.jpg")
+
+file23 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
+project23.photo.attach(io: file23, filename: "puppy_pic.jpg")
+
+reward1 = Reward.create!(project_id: project1.id, title: "A token of our appreciation!", description: "A ticket to our concert in the special VIP box", pledge_amount: 75, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward2 = Reward.create!(project_id: project2.id, title: "Free copy of my book", description: "Makes a great gift for the young musician in your life!", pledge_amount: 15, est_delivery: Date.new(2021,5,1), ships_to: "Anywhere in the world")
+reward3 = Reward.create!(project_id: project3.id, title: "Be a beta tester for our product", description: "Be one of the first to get to use the Block Strap!", pledge_amount: 100, est_delivery: Date.new(2021,12,1), ships_to: "Anywhere in the world")
+reward4 = Reward.create!(project_id: project4.id, title: "A ticket to our red carpet premiere event", description: "Join us on opening night!", pledge_amount: 30, est_delivery: Date.new(2021,12,1), ships_to: "Anywhere in the world")
+reward5 = Reward.create!(project_id: project5.id, title: "$30 gift card at our store", description: "Stock up on the world's best yarn", pledge_amount: 25, est_delivery: Date.new(2021,2,1), ships_to: "Anywhere in the world")
+reward6 = Reward.create!(project_id: project6.id, title: "Get the game at an early bird discount", description: "To thank you for your support, you'll receive our special discount and be among the first to play the game!", pledge_amount: 100, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward7 = Reward.create!(project_id: project7.id, title: "Get a free download of our most recent album", description: "Our newest album is Sun Rings, in collaboration with composer Terry Riley", pledge_amount: 25, est_delivery: Date.new(2021,1,1), ships_to: "Anywhere in the world")
+reward8 = Reward.create!(project_id: project8.id, title: "A free signed copy of the book", description: "Get an exclusive copy of my book", pledge_amount: 30, est_delivery: Date.new(2021,7,1), ships_to: "Anywhere in the world")
+reward9 = Reward.create!(project_id: project9.id, title: "A VIP ticket to the concert", description: "Sit in our special VIP box and meet the musicians at our exclusive post-concert reception", pledge_amount: 500, est_delivery: Date.new(2021,3,1), ships_to: "Anywhere in the world")
+reward10 = Reward.create!(project_id: project10.id, title: "A copy of our book", description: "Includes photographs from the exhibit and more", pledge_amount: 35, est_delivery: Date.new(2021,8,1), ships_to: "Anywhere in the world")
+reward11 = Reward.create!(project_id: project11.id, title: "Come to our opening night party!", description: "There will be live music and lots of champagne!", pledge_amount: 25, est_delivery: Date.new(2021,2,1), ships_to: "Anywhere in the world")
+reward12 = Reward.create!(project_id: project12.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward13 = Reward.create!(project_id: project13.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward14 = Reward.create!(project_id: project14.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward15 = Reward.create!(project_id: project15.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward16 = Reward.create!(project_id: project16.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward17 = Reward.create!(project_id: project17.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward18 = Reward.create!(project_id: project18.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward19 = Reward.create!(project_id: project19.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward20 = Reward.create!(project_id: project20.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward21 = Reward.create!(project_id: project21.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward22 = Reward.create!(project_id: project22.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward23 = Reward.create!(project_id: project23.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+
+
+backing1 = Backing.create!(backer_id: user5.id, backing_amount: 75, reward_id: reward1.id, project_id: project1.id)
+backing2 = Backing.create!(backer_id: user2.id, backing_amount: 15, reward_id: reward2.id, project_id: project2.id)
+backing3 = Backing.create!(backer_id: user10.id, backing_amount: 100, reward_id: reward3.id, project_id: project3.id)
+backing4 = Backing.create!(backer_id: user11.id, backing_amount: 30, reward_id: reward4.id, project_id: project4.id)
+backing5 = Backing.create!(backer_id: user1.id, backing_amount: 25, reward_id: reward5.id, project_id: project5.id)
+backing6 = Backing.create!(backer_id: user8.id, backing_amount: 100, reward_id: reward6.id, project_id: project6.id)
+backing7 = Backing.create!(backer_id: user4.id, backing_amount: 25, reward_id: reward7.id, project_id: project7.id)
+backing8 = Backing.create!(backer_id: user9.id, backing_amount: 30, reward_id: reward8.id, project_id: project8.id)
+backing9 = Backing.create!(backer_id: user3.id, backing_amount: 500, reward_id: reward9.id, project_id: project9.id)
+backing10 = Backing.create!(backer_id: user6.id, backing_amount: 35, reward_id: reward10.id, project_id: project10.id)
+backing11 = Backing.create!(backer_id: user7.id, backing_amount: 25, reward_id: reward11.id, project_id: project11.id)
+backing12 = Backing.create!(backer_id: user12.id, backing_amount: 50, reward_id: reward12.id, project_id: project12.id)
+backing13 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward13.id, project_id: project13.id)
+backing14 = Backing.create!(backer_id: user14.id, backing_amount: 50, reward_id: reward14.id, project_id: project14.id)
+backing15 = Backing.create!(backer_id: user15.id, backing_amount: 50, reward_id: reward15.id, project_id: project15.id)
+backing16 = Backing.create!(backer_id: user16.id, backing_amount: 50, reward_id: reward16.id, project_id: project16.id)
+backing17 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward17.id, project_id: project17.id)
+backing18 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward18.id, project_id: project18.id)
+backing19 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward19.id, project_id: project19.id)
+backing20 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward20.id, project_id: project20.id)
+backing21 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward21.id, project_id: project21.id)
+backing22 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward22.id, project_id: project22.id)
+backing23 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward23.id, project_id: project23.id)
+

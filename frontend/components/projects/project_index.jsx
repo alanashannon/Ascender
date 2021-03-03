@@ -7,35 +7,36 @@ import FeaturedProject from './featured_project';
 class ProjectIndex extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.projects;
     }
 
     componentDidMount() {
         this.props.fetchProjects(); 
         this.props.fetchUsers();  
+        this.props.fetchCategories(); 
     }
 
     render () {
         const recommendedProjects = this.props.projects.slice(4, 8)
+        const categoriesArr = Object.values(this.props.categories)
+
 
         return (
             <div>
                 <div className="category-bar">
                     <ul>
-                        <li>Arts</li>
-                        <li>Comics & Illustration</li>
-                        <li>Design & Tech</li>
-                        <li>Film</li>
-                        <li>Food & Craft</li>
-                        <li>Games</li>
-                        <li>Music</li>
-                        <li>Publishing</li>
+                        {categoriesArr.map((category, i) => {
+                            return (
+                                <li key={i} >
+                                    <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
                 <div className="index-container">
                     <section className="featured-project">
                         <div className="featured-header">Featured Project</div>
-                        <FeaturedProject project={this.props.project} />
+                        <FeaturedProject project={this.props.project} users={this.props.users} />
                     </section>
 
                     <section className="recommended-projects">
@@ -45,7 +46,7 @@ class ProjectIndex extends React.Component {
                                 return <ProjectIndexItem project={project} key={idx} />
                             })} */} 
                             {recommendedProjects.map((project, idx) => {
-                                return <ProjectIndexItem project={project} key={idx} />
+                                return <ProjectIndexItem project={project} users={this.props.users}  key={idx} />
                             })}
                             
                             <br />

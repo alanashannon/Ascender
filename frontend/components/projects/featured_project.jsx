@@ -1,14 +1,12 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
 
-// section for featured - separate file? 
-    // link to project show page
-    // photo, title, description/campaign, author name
 class FeaturedProject extends React.Component {
     constructor(props) {
         super(props)
     }
 
+    
     render () {
         // let projectExists; 
         // (this.props.project) ? projectExists = this.props.project : projectExists = null; 
@@ -28,7 +26,9 @@ class FeaturedProject extends React.Component {
             <div className="featured-project-inner">
                 <Link to={`/projects/${this.props.project.id}`}>
                     <img className="featured-pic" src={this.props.project.photo} />
-                    <div className="featured-progress-bar" style={{width: `calc(1% * ${percentFunded})`}}></div>
+                    <div className="featured-progress-bar-container">
+                        <div className="featured-progress-bar" style={{width: `calc(1% * ${percentFunded})`}}></div>
+                    </div>
                 </Link>
                 <ul>
                     <li className="featured-info">
@@ -44,7 +44,7 @@ class FeaturedProject extends React.Component {
                         </div>
                         <div className="featured-author">By&nbsp; 
                             <Link className="featured-author-text" to={`/projects/${this.props.project.id}`}>
-                                {this.props.project.authorName}
+                                {this.props.users[this.props.project.author_id].name}
                             </Link>
                         </div>
                     </li>

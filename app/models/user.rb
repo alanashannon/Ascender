@@ -10,6 +10,14 @@ class User < ApplicationRecord
         foreign_key: :author_id, 
         class_name: :Project 
 
+    has_many :backings, 
+        foreign_key: :backer_id, 
+        class_name: :Backing 
+
+    has_many :projects_backed, 
+        through: :backings, 
+        source: :project 
+
     before_validation :ensure_session_token
     
     #SPIRE methods
