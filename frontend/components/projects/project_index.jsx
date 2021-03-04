@@ -61,13 +61,20 @@ class ProjectIndex extends React.Component {
 
     render () {
         const categoriesArr = Object.values(this.props.categories)
-
+        
+        // let shuffledArr = [];
+        // for (let j = 0; j < this.props.projects.length; j++) {
+        //     const k = Math.floor(Math.random() * (this.props.projects.length)); 
+        //     if (!shuffledArr.includes(this.props.projects[k])) {
+        //         shuffledArr.push(this.props.projects[k])
+        //     }
+        // }
+        // console.log(shuffledArr)
+        
         let projectSlice = this.props.projects.slice(((this.state.pageNum - 1) * 4), (this.state.pageNum * 4))
         let result = projectSlice.map((project, i) => {
             return <ProjectIndexItem project={project} users={this.props.users} key={i} />
         })
-
-        
 
         return (
             <div>
