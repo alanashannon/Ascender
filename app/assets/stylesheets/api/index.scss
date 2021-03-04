@@ -186,3 +186,19 @@
     cursor: pointer;
     color: rgb(3, 115, 98);
 }
+
+.pageNum-list {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.pageNum {
+    color:rgb(3, 115, 98); 
+    padding: 10px; 
+    font-weight: normal;
+}
+
+.pageNum:hover {
+    cursor: pointer;
+}
