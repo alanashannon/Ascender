@@ -99,7 +99,7 @@
 .recommended-pic {
     display: block; 
     flex-basis: 40%;
-    height: 90px; 
+    height: 90px;
     padding-right: 24px;
     width: 150px; 
 }
@@ -201,4 +201,8 @@
 
 .pageNum:hover {
     cursor: pointer;
+    font-weight: bold;
+}
+.pageArrow {
+    margin-top: 12px; 
 }
