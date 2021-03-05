@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs'; 
 import { IoMdClose } from 'react-icons/io'
 
@@ -24,15 +24,15 @@ class Searchbar extends React.Component {
     }
 
     handleSearch(e) {
-        console.log(e)
+        // console.log(e)
         if (e.key === "Enter") {
             console.log("entered")
             console.log(this.state.input)
-            // this.props.history.push(`/search/${this.state.input}`)
             this.setState({
                 input: "", 
                 clicked: false
             })
+            this.props.history.push(`/search/${this.state.input}`)
         }
     }
 
@@ -64,4 +64,4 @@ class Searchbar extends React.Component {
     }
 }
 
-export default Searchbar; 
+export default withRouter(Searchbar); 
