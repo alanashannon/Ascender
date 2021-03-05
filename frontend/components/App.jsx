@@ -10,19 +10,23 @@ import ProjectCreateContainer from './projects/project_create_container';
 import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
 import CategoryShowContainer from './categories/category_show_container';
-import { BsSearch } from 'react-icons/bs'; 
+import SearchContainer from './search/search_container'; 
+import Searchbar from './search/searchbar';
 
 const App = () => (
     <div>
-        <header className="header">
-            <Link to={"/discover"}>Explore</Link>
-            <Link to={"/projects/new"}>Start a project</Link>
-            <Link to="/">
+        <header className="header" id="header">
+            <div className="nav-left">
+                <Link id="header-hide" to={"/discover"}>Discover</Link>
+                <Link id="header-hide" to={"/projects/new"}>Start a project</Link>
+            </div>
+            <Link id="header-hide" to="/">
                 <h1 className="logo">ASCENDER</h1>
             </Link>
-            <a href="#">Search</a>
-            <BsSearch size={16}/> &nbsp;
-            <GreetingContainer /> 
+            <div className="nav-right">
+                <Searchbar />
+                <GreetingContainer id="header-hide" /> 
+            </div>
         </header>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -31,6 +35,7 @@ const App = () => (
             <ProtectedRoute exact path="/projects/:projectId/edit" component={ProjectEditContainer}/>
             <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/category/:categoryId" component={CategoryShowContainer}/>
+            <Route exact path="/search/:input" component={SearchContainer}/>
             <Route exact path="/discover" component={CategoryIndexContainer}/>
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
