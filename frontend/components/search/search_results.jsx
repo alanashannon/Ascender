@@ -28,8 +28,8 @@ class SearchResults extends React.Component {
                 }
             })
         }
-        console.log(categoryProjects)
-        console.log(projectsList)
+        // console.log(categoryProjects)
+        // console.log(projectsList)
 
         let daysLeft = (date) => {
             let today = new Date();

@@ -26,8 +26,8 @@ class Searchbar extends React.Component {
     handleSearch(e) {
         // console.log(e)
         if (e.key === "Enter") {
-            console.log("entered")
-            console.log(this.state.input)
+            // console.log("entered")
+            // console.log(this.state.input)
             this.setState({
                 input: "", 
                 clicked: false
@@ -41,10 +41,12 @@ class Searchbar extends React.Component {
             Search&nbsp; <BsSearch size={14} />
         </div>
 
-        let header = document.getElementById("header-hide")
-        if (this.state.clicked === true) {
-            header.style.display = "none"
-        }
+        // let header = document.getElementById("header-hide")
+        // if (this.state.clicked !== true) {
+        //     header.style.display = "block"
+        // } else {
+        //     header.style.display = "none"
+        // }
 
         const searchInput = <div className="search-input-container">
             <input type="text"
