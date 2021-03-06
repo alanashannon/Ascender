@@ -20,7 +20,7 @@ class SearchResults extends React.Component {
 
         projectsList = projectsList.filter((project) => (project.title.toLowerCase().includes(this.props.input.toLowerCase())));
 
-        let categoryProjects = []
+        let categoryProjects = [];
         if (projectsList.length === 0) {
             categoriesList = categoriesList.filter((category) => category.category_name.toLowerCase().includes(this.props.input.toLowerCase()));
             this.props.projects.forEach((project) => {
@@ -28,7 +28,7 @@ class SearchResults extends React.Component {
                     categoryProjects.push(project) 
                 }
             })
-        }
+        };
         
         let noResults = <div>
             <div className="no-results-message-container">

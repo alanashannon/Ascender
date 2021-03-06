@@ -1,0 +1,43 @@
+.footer-cat-container {
+    display: flex; 
+    flex-direction: row;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid rgb(220, 222, 221);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-top: 50px;
+    padding-left: 60px;
+}
+
+.footer-cat-name {
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.footer-links-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-top: 50px; 
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-bottom: 50px;
+}
+
+.footer-links-container h4 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.footer-links-container li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.footer-links-container li:hover {
+    text-decoration: underline;
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+}
+

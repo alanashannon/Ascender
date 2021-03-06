@@ -11,21 +11,22 @@ import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
 import CategoryShowContainer from './categories/category_show_container';
 import SearchContainer from './search/search_container'; 
+import FooterContainer from './footer/footer_container';
 import Searchbar from './search/searchbar';
 
 const App = () => (
     <div>
         <header className="header" id="header">
             <div className="nav-left">
-                <Link id="header-hide" to={"/discover"}>Discover</Link>
-                <Link id="header-hide" to={"/projects/new"}>Start a project</Link>
+                <Link to={"/discover"}>Discover</Link>
+                <Link to={"/projects/new"}>Start a project</Link>
             </div>
-            <Link id="header-hide" to="/">
+            <Link to="/">
                 <h1 className="logo">ASCENDER</h1>
             </Link>
             <div className="nav-right">
                 <Searchbar />
-                <GreetingContainer id="header-hide" /> 
+                <GreetingContainer /> 
             </div>
         </header>
         <Switch>
@@ -40,6 +41,7 @@ const App = () => (
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
         </Switch>
+        <FooterContainer />
     </div>
 ); 
 
