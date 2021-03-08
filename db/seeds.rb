@@ -346,14 +346,14 @@ project23 = Project.create!(title: "Test Project",
 file1 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/rite-of-spring.jpg")
 project1.photo.attach(io: file1, filename: "rite-of-spring.jpg")
 
-file2 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/beethoven-book.jpg")
-project2.photo.attach(io: file2, filename: "beethoven-book.jpg")
+file2 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/new_beethoven_book.jpg")
+project2.photo.attach(io: file2, filename: "new_beethoven_book.jpg")
 
 file3 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/block-strap.jpg")
 project3.photo.attach(io: file3, filename: "block-strap.jpg")
 
-file4 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/forte.jpg")
-project4.photo.attach(io: file4, filename: "forte.jpg")
+file4 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/new_forte.jpeg")
+project4.photo.attach(io: file4, filename: "new_forte.jpeg")
 
 file5 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/ami-uke.jpg")
 project5.photo.attach(io: file5, filename: "ami-uke.jpg")
@@ -397,8 +397,8 @@ project17.photo.attach(io: file17, filename: "decomposer.png")
 file18 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/busque.png")
 project18.photo.attach(io: file18, filename: "busque.png")
 
-file19 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/iv-v-i-2.jpeg")
-project19.photo.attach(io: file19, filename: "iv-v-i-2.jpeg")
+file19 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/new_iv-v-i.jpg")
+project19.photo.attach(io: file19, filename: "new_iv-v-i.jpg")
 
 file20 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/el_sistema.jpeg")
 project20.photo.attach(io: file20, filename: "el_sistema.jpeg")
@@ -406,8 +406,8 @@ project20.photo.attach(io: file20, filename: "el_sistema.jpeg")
 file21 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/guitar_case.jpg")
 project21.photo.attach(io: file21, filename: "guitar_case.jpg")
 
-file22 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/women_composers.jpg")
-project22.photo.attach(io: file22, filename: "women_composers.jpg")
+file22 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/new_women_composers.jpg")
+project22.photo.attach(io: file22, filename: "new_women_composers.jpg")
 
 file23 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
 project23.photo.attach(io: file23, filename: "puppy_pic.jpg")
