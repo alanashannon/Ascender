@@ -188,7 +188,7 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
     risks: "Covid-19 has taken a toll on all of us, I'm afraid we may need to hold off on opening until there is a vaccine")
 
 project12 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,6,1),
@@ -201,7 +201,7 @@ project12 = Project.create!(title: "Test Project",
     risks: "Covid-19")
 
 project13 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,7,1),
@@ -214,7 +214,7 @@ project13 = Project.create!(title: "Test Project",
     risks: "Covid-19")
 
 project14 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,8,1),
@@ -227,7 +227,7 @@ project14 = Project.create!(title: "Test Project",
     risks: "Covid-19")
 
 project15 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,10,1),
@@ -240,7 +240,7 @@ project15 = Project.create!(title: "Test Project",
     risks: "Covid-19")
 
 project16 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 15000,
     amount_pledged: 10580,
     end_date: Date.new(2021,5,1),
@@ -331,7 +331,7 @@ project22 = Project.create!(title: "Celebrate Female Composers",
     risks: "Not receiving our full funding amount will cause significant delays")
 
 project23 = Project.create!(title: "Test Project", 
-    campaign: "Test campaign: Feel free to edit this project for demonstration purposes", 
+    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 5000,
     amount_pledged: 1580,
     end_date: Date.new(2021,5,1),
