@@ -10,19 +10,24 @@ import ProjectCreateContainer from './projects/project_create_container';
 import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
 import CategoryShowContainer from './categories/category_show_container';
-import { BsSearch } from 'react-icons/bs'; 
+import SearchContainer from './search/search_container'; 
+import FooterContainer from './footer/footer_container';
+import Searchbar from './search/searchbar';
 
 const App = () => (
     <div>
-        <header className="header">
-            <Link to={"/discover"}>Explore</Link>
-            <Link to={"/projects/new"}>Start a project</Link>
+        <header className="header" id="header">
+            <div className="nav-left">
+                <Link to={"/discover"}>Discover</Link>
+                <Link to={"/projects/new"}>Start a project</Link>
+            </div>
             <Link to="/">
                 <h1 className="logo">ASCENDER</h1>
             </Link>
-            <a href="#">Search</a>
-            <BsSearch size={16}/> &nbsp;
-            <GreetingContainer /> 
+            <div className="nav-right">
+                <Searchbar />
+                <GreetingContainer /> 
+            </div>
         </header>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -31,10 +36,12 @@ const App = () => (
             <ProtectedRoute exact path="/projects/:projectId/edit" component={ProjectEditContainer}/>
             <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/category/:categoryId" component={CategoryShowContainer}/>
+            <Route exact path="/search/:input" component={SearchContainer}/>
             <Route exact path="/discover" component={CategoryIndexContainer}/>
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
         </Switch>
+        <FooterContainer />
     </div>
 ); 
 
