@@ -165,7 +165,7 @@ class ProjectEdit extends React.Component {
                         <input className="submit-button" type="submit" value="Update Project" />
                     </div>
                     <div className="update-button">
-                        <button className="submit-button" onClick={this.handleDelete}>Delete This Project</button>
+                        <div className="submit-button" onClick={this.handleDelete}>Delete This Project</div>
                     </div>
                 </form>
 

@@ -11,6 +11,10 @@ class ProjectCreate extends React.Component {
         this.handleFile = this.handleFile.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchCategories(); 
+    }
+
     handleInput(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value})
@@ -33,9 +37,16 @@ class ProjectCreate extends React.Component {
     handleSubmit(e) {
         e.preventDefault(); 
 
+        let categoryId; 
+        this.props.categories.forEach(category => {
+            if (this.state.category === category.category_name) {
+                categoryId = category.id 
+            }
+        })
+
         const formData = new FormData(); 
         formData.append('project[title]', this.state.title); 
-        formData.append('project[category]', this.state.category);
+        formData.append('project[category_id]', categoryId);
         formData.append('project[location]', this.state.location);
         formData.append('project[end_date]', this.state.end_date);
         formData.append('project[funding_goal]', this.state.funding_goal);
@@ -89,7 +100,7 @@ class ProjectCreate extends React.Component {
                             <label>Category <br/>
                                 <select value={this.state.category} onChange={this.handleInput("category")} required={true}>
                                     <option value="">Select your category</option>
-                                    <option value="Art">Art</option>
+                                    <option value="Arts">Arts</option>
                                     <option value="Comics & Illustration">Comics & Illustration</option>
                                     <option value="Design & Tech">Design & Tech</option>
                                     <option value="Film">Film</option>
