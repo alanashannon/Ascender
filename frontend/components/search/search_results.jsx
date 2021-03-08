@@ -120,7 +120,10 @@ class SearchResults extends React.Component {
                                         by {this.props.users[project.author_id].name}
                                     </div>
                                     <div className="project-search-progress-bar-container"> 
-                                        <div className="project-search-show-progress-bar" style={{ width: `calc(1% * ${Math.floor((project.amount_pledged / project.funding_goal) * 100)})` }}></div>
+                                        <div className="project-search-show-progress-bar" 
+                                            style={{ width: `calc(1% * {(${Math.floor((project.amount_pledged / project.funding_goal) * 100)} < 100) 
+                                            ? ${Math.floor((project.amount_pledged / project.funding_goal) * 100)} : 100 })` }}>
+                                        </div>
                                     </div>
                                     <div className="project-search-amt">
                                         ${project.amount_pledged} pledged 
