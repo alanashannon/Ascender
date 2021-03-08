@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import ProjectCreate from './project_create';
 import { createProject } from '../../actions/project_actions';
+import { fetchCategories } from '../../actions/categories_actions';
 
 const mapStateToProps = (state) => {
     return {
         project: { 
             id: '',
             title: '', 
-            category: '',
+            category_id: '',
             description: '', 
             campaign: '', 
             location: '', 
@@ -18,13 +19,15 @@ const mapStateToProps = (state) => {
             photoUrl: null,
             author_id: state.session.id, 
         },
-        formType: 'Create Your Project'
+        formType: 'Create Your Project',
+        categories: Object.values(state.entities.categories)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createProject: (project) => dispatch(createProject(project))
+        createProject: (project) => dispatch(createProject(project)), 
+        fetchCategories: () => dispatch(fetchCategories())
     }
 };
 
