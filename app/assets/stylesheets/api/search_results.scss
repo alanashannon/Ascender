@@ -38,7 +38,7 @@
 }
 .project-search-each img {
     width: 100%;
-    max-height: 280px; 
+    height: 250px; 
     border-bottom: 1px solid lightgray;
 }
 
@@ -112,3 +112,58 @@
         grid-template-columns: 50% 50%;
     }
 }
+
+.no-results-message-container {
+    margin-top: -90px; 
+    padding-left: 72px; 
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.message-container {
+    display: flex; 
+    flex-direction: row;
+}
+
+.error-icon {
+    margin-right: 12px;
+    color: rgb(216, 80, 61); 
+    margin-top: 2px; 
+}
+
+.no-results-message1 {
+    color: rgb(216, 80, 61); 
+    font-size: 18px;
+}
+
+.no-results-message2 {
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+    margin-left: 30px;
+    margin-top: 3px; 
+}
+
+.more-projects {
+    font-size: 18px;
+    padding-left: 72px; 
+    // font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: -30px;
+}
+
+.explore-message-container {
+    display: flex; 
+    flex-direction: row;
+    padding-left: 72px; 
+    margin-top: 60px;
+    margin-bottom: -30px;
+    font-size: 22px;
+}
+
+.num-projects {
+    color: rgb(3, 115, 98);
+    font-weight: 700;
+}
+
+
+

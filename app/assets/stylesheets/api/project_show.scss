@@ -198,6 +198,7 @@
 
 .project-show-body {
     display: flex; 
+    // width: 100%;
     // flex-direction: column;
 }
 
@@ -205,7 +206,7 @@
     display: block;  
     flex-basis: 20%;
     padding-right: 18px;
-     
+    // min-width: 20%;
 }
 
 .project-show-body h2 {
@@ -227,7 +228,7 @@
     flex-basis: 60%;
     padding-left: 18px;
     padding-right: 18px;
-
+    // min-width: 71%;
 }
 
 .project-show-info h3 {
@@ -240,6 +241,7 @@
     color: rgb(40, 40, 40);
     font-size: 16px;
     margin-bottom: 30px;
+     
 }
 
 .show-faq h3 {

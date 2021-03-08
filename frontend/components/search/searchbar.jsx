@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs'; 
 import { IoMdClose } from 'react-icons/io'
 
@@ -24,10 +24,7 @@ class Searchbar extends React.Component {
     }
 
     handleSearch(e) {
-        // console.log(e)
         if (e.key === "Enter") {
-            console.log("entered")
-            console.log(this.state.input)
             this.setState({
                 input: "", 
                 clicked: false
@@ -40,11 +37,6 @@ class Searchbar extends React.Component {
         const searchLink = <div onClick={() => this.setState({clicked: true})} className="search-link">
             Search&nbsp; <BsSearch size={14} />
         </div>
-
-        let header = document.getElementById("header-hide")
-        if (this.state.clicked === true) {
-            header.style.display = "none"
-        }
 
         const searchInput = <div className="search-input-container">
             <input type="text"
