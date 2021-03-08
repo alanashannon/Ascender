@@ -16,7 +16,7 @@
 
 .footer-links-container {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 25% 25% 25% 25%;
     padding-top: 50px; 
     padding-left: 20vw;
     padding-right: 20vw;
@@ -39,5 +39,15 @@
     text-decoration: underline;
     color: rgb(3, 115, 98);
     cursor: pointer;
+}
+
+.social-links li {
+    display: flex; 
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.social-links li a {
+    color: black;
 }
 

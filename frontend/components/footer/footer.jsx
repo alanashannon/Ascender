@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { GrLinkedin } from 'react-icons/gr';
+import { GoMarkGithub } from 'react-icons/go';
+import { FaAngellist } from 'react-icons/fa';
 
 class Footer extends React.Component {
     constructor(props) {
@@ -47,6 +50,25 @@ class Footer extends React.Component {
                             <li>The Creative Independent</li>
                             <li>Mobile apps</li>
                             <li>Research</li>
+                        </ul>
+                    </div>
+                    <div className="social-links">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/alanashannon">
+                                    <GoMarkGithub size={35}/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/alana-shannon/">
+                                    <GrLinkedin size={35}/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://angel.co/u/alana-shannon">
+                                    <FaAngellist size={35}/>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
