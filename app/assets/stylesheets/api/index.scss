@@ -206,3 +206,44 @@
 .pageArrow {
     margin-top: 12px; 
 }
+
+.subscribe-container {
+    border-top: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
+    padding: 48px; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.subscribe-container h2 {
+    font-size: 24px;
+    margin: auto;
+    // display: flex;
+    // justify-content: center;
+    // line-height: 30px;
+}
+
+.subscribe-container p {
+    font-size: 18px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    justify-content: center;
+    margin: auto; 
+}
+
+.subscribe-container button {
+    margin: auto;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(70, 70, 70);
+    height: 42px; 
+    width: 100px; 
+    border: 1px solid rgb(70, 70, 70); 
+}
+
+.subscribe-container button:hover {
+    cursor: pointer;
+}
+

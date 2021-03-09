@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link, Redirect } from 'react-router-dom';
+import FooterContainer from '../footer/footer_container';
 
 class ProjectShow extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class ProjectShow extends React.Component {
             .then(() => this.props.fetchProject(this.props.match.params.projectId))
             .then(() => this.props.fetchRewards())
             .then(() => this.props.fetchBackings())
+            .then(() => this.props.fetchCategories())
     }
 
     handleClick(page) {
@@ -284,6 +286,7 @@ class ProjectShow extends React.Component {
                         {bodyPage}
                     </div>
                     
+                    <FooterContainer />
                 </div>
             )
         )

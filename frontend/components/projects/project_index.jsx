@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
 import FeaturedProject from './featured_project';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'; 
+import FooterContainer from '../footer/footer_container';
 
 class ProjectIndex extends React.Component {
     constructor(props) {
@@ -110,6 +111,13 @@ class ProjectIndex extends React.Component {
                         </div>
                     </section>
                 </div>
+                <div className="subscribe-container">
+                    <h2>Discover the best and brightest projects on Ascender</h2>
+                    <p>Sign up to receive our weekly Projects We Love newsletter</p>
+                    <button>Subscribe</button>
+                </div>
+                
+                <FooterContainer />
             </div>
         )
     }

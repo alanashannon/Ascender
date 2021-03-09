@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosPin } from 'react-icons/io';
 import { MdErrorOutline } from 'react-icons/md';
+import FooterContainer from '../footer/footer_container';
+
 
 class SearchResults extends React.Component {
     constructor(props) {
@@ -140,6 +142,8 @@ class SearchResults extends React.Component {
                     }) : null}
                 </div>
                 {(resultsArr.length === 0) ? noResults : null}
+                
+                <FooterContainer />
             </div>
         )
     }

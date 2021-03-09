@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import ProjectIndexItem from '../projects/project_index_item';
 import FeaturedProject from '../projects/featured_project';
+import FooterContainer from '../footer/footer_container';
+
 
 class CategoryShow extends React.Component {
     constructor(props) {
@@ -90,6 +92,8 @@ class CategoryShow extends React.Component {
                         </ul>
                     </section>
                 </div>
+                
+                <FooterContainer />
             </div>
         )
     }
