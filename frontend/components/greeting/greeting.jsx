@@ -5,13 +5,38 @@ import { AiOutlinePlus } from 'react-icons/ai';
 class Greeting extends React.Component {
     constructor(props) {
         super(props)
+
+        this.container = React.createRef(); 
+        this.state = {
+            open: false, 
+        }
+
+        this.handleDropdown = this.handleDropdown.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this); 
     }
 
     componentDidMount() {
         this.props.fetchProjects(); 
+        document.addEventListener("mouseup", this.handleClickOutside)
     }
 
+    handleDropdown(e) {
+        e.preventDefault(); 
+        this.setState({
+            open: !this.state.open 
+        })
+    }
+
+    handleClickOutside(e) {
+        if (this.container.current && !this.container.current.contains(e.target)) {
+            this.setState({
+                open: false, 
+            });
+        }
+    }
+    
     render () {
+
         let projects = Object.values(this.props.projects)
         let projectsArr = []; 
         {if (this.props.currentUser) {
@@ -28,12 +53,12 @@ class Greeting extends React.Component {
             </nav>
         );
         const greetingMessage = () => (
-            <nav className="logged-in-menu">
-                <div className="icon">
+            <nav className="logged-in-menu" id="logged-in-menu" ref={this.container}>
+                <div className="icon" onClick={this.handleDropdown}>
                     <img src="https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-2.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=9a943d81556e01b3c5eb748ea31c4880" alt="icon" />
                 </div>
                 <br/>
-                <div className="dropdown-nav">
+                {this.state.open && (<div className="dropdown-nav" id="dropdown-nav">
                     <div className="account-list">
                         <h3>Your Account</h3>
                             <ul>
@@ -72,7 +97,7 @@ class Greeting extends React.Component {
                     <div className="logout-footer">
                         <a onClick={this.props.logout}>Log Out</a>
                     </div>
-                </div>
+                </div>)}
             </nav>
         );
 
