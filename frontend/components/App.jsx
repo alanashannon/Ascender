@@ -41,7 +41,7 @@ const App = () => (
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
         </Switch>
-        <FooterContainer />
+        {/* <FooterContainer /> */}
     </div>
 ); 
 

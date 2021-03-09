@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import ProjectIndexItem from '../projects/project_index_item';
 import FeaturedProject from '../projects/featured_project';
+import FooterContainer from '../footer/footer_container';
+
 
 class CategoryShow extends React.Component {
     constructor(props) {
@@ -90,6 +92,16 @@ class CategoryShow extends React.Component {
                         </ul>
                     </section>
                 </div>
+                <div className="footer-cat-container">
+                    {categoriesArr.map((category, i) => {
+                        return (
+                            <div key={i} className="footer-cat-name">
+                                <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
+                            </div>
+                        )
+                    })}
+                </div>
+                <FooterContainer />
             </div>
         )
     }

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchProject, deleteProject, updateProject, fetchUsers } from '../../actions/project_actions';
 import { fetchRewards, createReward, fetchReward, updateReward, deleteReward } from '../../actions/reward_actions'; 
 import { fetchBackings, createBacking } from '../../actions/backing_actions';
+import { fetchCategories } from '../../actions/categories_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.session.id, 
         users: state.entities.users, 
         rewards: state.entities.rewards, 
-        backings: Object.values(state.entities.backings)
+        backings: Object.values(state.entities.backings), 
+        categories: Object.values(state.entities.categories)
     }
 }
 
@@ -23,7 +25,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchUsers: () => dispatch(fetchUsers()), 
         fetchRewards: () => dispatch(fetchRewards()), 
         fetchBackings: () => dispatch(fetchBackings()), 
-        createBacking: (backing) => dispatch(createBacking(backing))
+        createBacking: (backing) => dispatch(createBacking(backing)), 
+        fetchCategories: () => dispatch(fetchCategories())
     }
 }
 
