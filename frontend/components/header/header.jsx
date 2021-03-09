@@ -12,8 +12,8 @@ class Header extends React.Component {
         return (
             <header className="header" id="header">
                 <div className="nav-left">
-                    <Link to={"/discover"}>Discover</Link>
-                    <Link to={"/projects/new"}>Start a project</Link>
+                    <Link className="header-links" to={"/discover"}>Discover</Link>
+                    <Link className="header-links" to={"/projects/new"}>Start a project</Link>
                 </div>
                 <Link to="/">
                     <h1 className="logo">ASCENDER</h1>
