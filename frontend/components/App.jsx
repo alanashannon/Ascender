@@ -11,7 +11,6 @@ import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
 import CategoryShowContainer from './categories/category_show_container';
 import SearchContainer from './search/search_container'; 
-import FooterContainer from './footer/footer_container';
 import Searchbar from './search/searchbar';
 
 const App = () => (
@@ -41,7 +40,6 @@ const App = () => (
             <Route exact path="/" component={ProjectIndexContainer}/>
             <Redirect to="/"> </Redirect>
         </Switch>
-        {/* <FooterContainer /> */}
     </div>
 ); 
 
