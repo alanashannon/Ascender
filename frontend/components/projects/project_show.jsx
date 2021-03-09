@@ -39,11 +39,27 @@ class ProjectShow extends React.Component {
         });
     }
 
+    handleStoryScroll(e) {
+        e.preventDefault(); 
+        let story = document.getElementById("project-show-story")
+        story.scrollIntoView({
+            behavior: "smooth"
+        }); 
+    };
+
+    handleRiskScroll(e) {
+        e.preventDefault(); 
+        let risk = document.getElementById("project-show-risks")
+        risk.scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+
     handleInput(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value })
         }
-    }
+    };
 
     //no reward form
     handleSubmit(e) {
@@ -60,7 +76,7 @@ class ProjectShow extends React.Component {
         this.setState({
             backing_amount: ""
         });
-    }
+    };
 
     //choose set reward
     handleReward(e) {
@@ -87,7 +103,7 @@ class ProjectShow extends React.Component {
 
             this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount)
         }
-    }
+    };
 
     render() {
         let projectExists;
@@ -110,7 +126,6 @@ class ProjectShow extends React.Component {
             
         let allRewards = Object.values(this.props.rewards)
         let rewardsArr = []; 
-        // console.log(this.props.rewards)
         allRewards.forEach((rew) => {
             if (rew.project_id === this.props.project.id) {
                 rewardsArr.push(rew)
@@ -132,15 +147,15 @@ class ProjectShow extends React.Component {
 
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
-                <section className="project-show-body">
+                <div className="project-show-body">
                     <div className="project-show-sidebar">
-                        <h2>Story</h2>
-                        <h2>Risks</h2>
+                        <h2 onClick={this.handleStoryScroll}>Story</h2>
+                        <h2 onClick={this.handleRiskScroll}>Risks</h2>
                     </div>
                     <div className="project-show-info">
-                        <h3>Story</h3>
+                        <h3 id="project-show-story">Story</h3>
                         <p>{this.props.project.campaign}</p>
-                        <h3>Risks and Challenges</h3>
+                        <h3 id="project-show-risks">Risks and Challenges</h3>
                         <p>{this.props.project.risks}</p>
                     </div>
                     <div className="right-side-info">
@@ -209,7 +224,7 @@ class ProjectShow extends React.Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div> ) : this.state.bodyPage === "faq" ? (
                 <div className="show-faq">
                     <h3>Frequently Asked Questions</h3>
