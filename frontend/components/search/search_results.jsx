@@ -142,15 +142,7 @@ class SearchResults extends React.Component {
                     }) : null}
                 </div>
                 {(resultsArr.length === 0) ? noResults : null}
-                <div className="footer-cat-container">
-                    {this.props.categories.map((category, i) => {
-                        return (
-                            <div key={i} className="footer-cat-name">
-                                <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
-                            </div>
-                        )
-                    })}
-                </div>
+                
                 <FooterContainer />
             </div>
         )

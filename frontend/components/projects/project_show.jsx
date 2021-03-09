@@ -22,6 +22,7 @@ class ProjectShow extends React.Component {
             .then(() => this.props.fetchProject(this.props.match.params.projectId))
             .then(() => this.props.fetchRewards())
             .then(() => this.props.fetchBackings())
+            .then(() => this.props.fetchCategories())
     }
 
     handleClick(page) {
@@ -284,15 +285,7 @@ class ProjectShow extends React.Component {
                     <div className="show-bodypage">
                         {bodyPage}
                     </div>
-                    <div className="footer-cat-container">
-                        {this.props.categories.map((category, i) => {
-                            return (
-                                <div key={i} className="footer-cat-name">
-                                    <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    
                     <FooterContainer />
                 </div>
             )

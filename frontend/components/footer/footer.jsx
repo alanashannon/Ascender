@@ -12,7 +12,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div>
-                {/* <div className="footer-cat-container">
+                <div className="footer-cat-container">
                     {this.props.categories.map((category, i) => {
                         return (
                             <div key={i} className="footer-cat-name">
@@ -20,7 +20,7 @@ class Footer extends React.Component {
                             </div>
                         )
                     })}
-                </div> */}
+                </div>
                 <div className="footer-links-container">
                     <div className="footer-about">
                         <h4>ABOUT</h4>

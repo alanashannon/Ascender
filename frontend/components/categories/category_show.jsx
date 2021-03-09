@@ -92,15 +92,7 @@ class CategoryShow extends React.Component {
                         </ul>
                     </section>
                 </div>
-                <div className="footer-cat-container">
-                    {categoriesArr.map((category, i) => {
-                        return (
-                            <div key={i} className="footer-cat-name">
-                                <Link className="list-everything" to={`/category/${category.id}`}>{category.category_name}</Link>
-                            </div>
-                        )
-                    })}
-                </div>
+                
                 <FooterContainer />
             </div>
         )
