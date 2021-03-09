@@ -147,7 +147,7 @@ class ProjectShow extends React.Component {
 
         let bodyPage = !projectExists ? null : this.state.bodyPage === "campaign" ? (
             <div className="show-campaign">
-                <section className="project-show-body">
+                <div className="project-show-body">
                     <div className="project-show-sidebar">
                         <h2 onClick={this.handleStoryScroll}>Story</h2>
                         <h2 onClick={this.handleRiskScroll}>Risks</h2>
@@ -224,7 +224,7 @@ class ProjectShow extends React.Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div> ) : this.state.bodyPage === "faq" ? (
                 <div className="show-faq">
                     <h3>Frequently Asked Questions</h3>
