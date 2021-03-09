@@ -242,11 +242,14 @@
         padding-left: 0px;
     }
 
+    .created-projects-container {
+        border-top: 1px solid rgb(41, 41, 41);
+    }
+
     .created-projects li {
         margin-bottom: 10px;
         display: flex; 
         align-items: center;
-        border-top: 1px solid rgb(41, 41, 41);
         padding-top: 10px;
     }
 

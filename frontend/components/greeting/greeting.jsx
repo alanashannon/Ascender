@@ -50,6 +50,7 @@ class Greeting extends React.Component {
                     </div>
                     <div className="created-projects">
                         <h3>Created Projects</h3>
+                        <div className="created-projects-container">
                             {projectsArr.slice(0, 3).map((project, i) => {
                                 return(
                                     <div key={i} className="user-projects-container">
@@ -60,12 +61,13 @@ class Greeting extends React.Component {
                                     </div>
                                 )
                             })}
-                            <ul>
-                                <li>
-                                    <AiOutlinePlus size={15} className="plus-icon"/>
-                                    <Link className="created-projects-links" to={"/projects/new"}>New</Link>
-                                </li>
-                            </ul>
+                        </div>
+                        <ul>
+                            <li>
+                                <AiOutlinePlus size={15} className="plus-icon"/>
+                                <Link className="created-projects-links" to={"/projects/new"}>New</Link>
+                            </li>
+                        </ul>
                     </div>
                     <div className="logout-footer">
                         <a onClick={this.props.logout}>Log Out</a>
