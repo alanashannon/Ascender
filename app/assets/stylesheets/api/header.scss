@@ -7,7 +7,7 @@
     border-bottom: 1px solid lightgray;
     height: 46px; 
 
-    a {
+    .header-links {
         padding: 15px; 
         color: black; 
         font-size: 14px;
@@ -226,21 +226,34 @@
 .user-projects-greeting-title {
     display: block; 
     flex-basis: 80%;
-    padding-left: 0px;
+    flex-wrap: initial;
+    // padding-left: 0px;
+    margin-left: 0px; 
+    text-align: left;
 }
 .projects-greeting-title-link {
+    margin-left: 0px;
     padding-left: 0px;
+    color: black; 
+    font-size: 14px;
 }
 
-.created-projects-container {
-    border-bottom: 1px solid rgb(41, 41, 41);
-}
 
 .created-projects li {
     margin-bottom: 10px;
     display: flex; 
     align-items: center;
     padding-top: 10px;
+    border-top: 1px solid rgb(41, 41, 41);
+}
+
+.created-projects-links {
+    color: black; 
+    font-size: 14px;
+}
+
+.created-projects-links:hover {
+    color: #028858;
 }
 
 .plus-icon {
@@ -249,6 +262,8 @@
     background-color: rgb(247, 247, 246);
     height: 30px; 
     width: 52px; 
+    margin-right: 8px;
+    margin-top: 8px; 
 }
 
 

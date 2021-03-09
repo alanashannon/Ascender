@@ -75,7 +75,7 @@ class Greeting extends React.Component {
                     </div>
                     <div className="created-projects">
                         <h3>Created Projects</h3>
-                        <div className="created-projects-container">
+                        {/* <div className="created-projects-container"> */}
                             {projectsArr.slice(0, 3).map((project, i) => {
                                 return(
                                     <div key={i} className="user-projects-container">
@@ -86,7 +86,7 @@ class Greeting extends React.Component {
                                     </div>
                                 )
                             })}
-                        </div>
+                        {/* </div> */}
                         <ul>
                             <li>
                                 <AiOutlinePlus size={15} className="plus-icon"/>
