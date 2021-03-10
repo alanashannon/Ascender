@@ -83,6 +83,15 @@ class SearchResults extends React.Component {
             return Math.floor(time_diff / (86400000)) //convert to days from milliseconds, rounded down 
         }
 
+        const percentFunded = (project) => {
+            let percentage = Math.floor((project.amount_pledged / project.funding_goal) * 100) 
+            if (percentage < 100) {
+                return percentage  
+            } else {
+                return 100
+            }
+        }
+
         return (
             <div>
                 <div className="search-intro-container">
@@ -123,8 +132,7 @@ class SearchResults extends React.Component {
                                     </div>
                                     <div className="project-search-progress-bar-container"> 
                                         <div className="project-search-show-progress-bar" 
-                                            style={{ width: `calc(1% * {(${Math.floor((project.amount_pledged / project.funding_goal) * 100)} < 100) 
-                                            ? ${Math.floor((project.amount_pledged / project.funding_goal) * 100)} : 100 })` }}>
+                                            style={{ width: `calc(1% * ${percentFunded(project)})`}}>
                                         </div>
                                     </div>
                                     <div className="project-search-amt">
