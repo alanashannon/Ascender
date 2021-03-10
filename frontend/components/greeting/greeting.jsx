@@ -13,6 +13,7 @@ class Greeting extends React.Component {
 
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this); 
+        this.handleClickInside = this.handleClickInside.bind(this); 
     }
 
     componentDidMount() {
@@ -32,7 +33,13 @@ class Greeting extends React.Component {
             this.setState({
                 open: false, 
             });
-        }
+        } 
+    }
+
+    handleClickInside() {
+        this.setState({
+            open: false 
+        })
     }
     
     render () {
@@ -49,7 +56,7 @@ class Greeting extends React.Component {
 
         const newSession = () => (
             <nav className="login-nav-link">
-                <Link to="/login">Log in</Link>
+                <Link className="login-header-link" to="/login">Log in</Link>
             </nav>
         );
         const greetingMessage = () => (
@@ -73,7 +80,7 @@ class Greeting extends React.Component {
                                 </div>
                             </ul>
                     </div>
-                    <div className="created-projects">
+                    <div className="created-projects" onClick={this.handleClickInside}>
                         <h3>Created Projects</h3>
                         {/* <div className="created-projects-container"> */}
                             {projectsArr.slice(0, 3).map((project, i) => {
@@ -94,7 +101,7 @@ class Greeting extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="logout-footer">
+                    <div className="logout-footer" onClick={this.handleClickInside}>
                         <a onClick={this.props.logout}>Log Out</a>
                     </div>
                 </div>)}
