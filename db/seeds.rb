@@ -187,70 +187,70 @@ project11 = Project.create!(title: "Tortelier's Tortellini",
     faq: "Q: What is your pasta recipe? A: That's a secret!", 
     risks: "Covid-19 has taken a toll on all of us, I'm afraid we may need to hold off on opening until there is a vaccine")
 
-project12 = Project.create!(title: "Test Project", 
-    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
-    funding_goal: 15000,
-    amount_pledged: 10580,
+project12 = Project.create!(title: "Silk Instrument Bags", 
+    campaign: "Help us establish our company, making the best 100% silk instrument bags for musicians all around the world", 
+    funding_goal: 1500,
+    amount_pledged: 580,
     end_date: Date.new(2021,6,1),
-    location: 'San Francisco', 
-    description: 'Test description', 
-    author_id: user1.id, 
+    location: 'Hong Kong', 
+    description: 'Keep your instruments safe from dry weather and scratches', 
+    author_id: user2.id, 
     category_id: category5.id, #food/craft
     updates: '', 
     faq: "", 
-    risks: "Covid-19")
+    risks: "Silk is very expensive and sometimes hard to supply, we need your help so we can provide only the best")
 
-project13 = Project.create!(title: "Test Project", 
-    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
-    funding_goal: 15000,
-    amount_pledged: 10580,
+project13 = Project.create!(title: "Musical Jigsaw Puzzle", 
+    campaign: "We have been working hard to fund production of our puzzles. We are passionate about our work and need your help to make it all happen!", 
+    funding_goal: 8500,
+    amount_pledged: 7530,
     end_date: Date.new(2021,7,1),
-    location: 'San Francisco', 
-    description: 'Test description', 
-    author_id: user1.id, 
-    category_id: category6.id, #food/craft
-    updates: '', 
+    location: 'Palo Alto', 
+    description: 'Pass the time with our new musical instrument jigsaw puzzle', 
+    author_id: user10.id, 
+    category_id: category6.id, #games
+    updates: "We're getting close to reaching our goal! Thank you all for your support!", 
     faq: "", 
     risks: "Covid-19")
 
-project14 = Project.create!(title: "Test Project", 
-    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
-    funding_goal: 15000,
-    amount_pledged: 10580,
+project14 = Project.create!(title: "Classical Revolution", 
+    campaign: "We're raising money for our musicians who are unable to perform at this time. If you can spare any, please consider donating to our fund to help them out.", 
+    funding_goal: 100000,
+    amount_pledged: 65520,
     end_date: Date.new(2021,8,1),
     location: 'San Francisco', 
-    description: 'Test description', 
+    description: 'Please support our musicians during this tough time', 
     author_id: user1.id, 
-    category_id: category7.id, #food/craft
-    updates: '', 
-    faq: "", 
-    risks: "Covid-19")
+    category_id: category7.id, #music
+    updates: "With the vaccine there is hope!", 
+    faq: "Q: What is Classical Revolution? A: We're a group of musicians that bring classical music to places you wouldn't normally expect. Look for us in major cities all around the country!", 
+    risks: "Stay strong everyone, and we'll get through this")
 
-project15 = Project.create!(title: "Test Project", 
-    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
-    funding_goal: 15000,
-    amount_pledged: 10580,
+project15 = Project.create!(title: "The World of Music According to Starker", 
+    campaign: "I have written an autobiography and am seeking funding to get it published. I would really appreciate your support.", 
+    funding_goal: 1500,
+    amount_pledged: 2580,
     end_date: Date.new(2021,10,1),
-    location: 'San Francisco', 
-    description: 'Test description', 
-    author_id: user1.id, 
-    category_id: category8.id, #food/craft
-    updates: '', 
+    location: 'Budapest', 
+    description: 'My autobiography', 
+    author_id: user5.id, 
+    category_id: category8.id, #publishing
+    updates: "We have reached our goal and then some, thank you all!", 
     faq: "", 
-    risks: "Covid-19")
+    risks: "There are no inherent risks, but I simply would like to tell my story and will find a way to do so")
 
-project16 = Project.create!(title: "Test Project", 
-    campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
-    funding_goal: 15000,
-    amount_pledged: 10580,
-    end_date: Date.new(2021,5,1),
-    location: 'San Francisco', 
-    description: 'Test description', 
-    author_id: user1.id, 
-    category_id: category2.id, #food/craft
+project16 = Project.create!(title: "Secret Lives of Great Composers", 
+    campaign: "We wrote a fun book about classical composers, and would love to see it published. Great for kids and adults!", 
+    funding_goal: 5000,
+    amount_pledged: 580,
+    end_date: Date.new(2021,12,1),
+    location: 'New York', 
+    description: "What your teachers never told you about the world's musical masters", 
+    author_id: user4.id, 
+    category_id: category2.id, #comics/illustration
     updates: '', 
     faq: "", 
-    risks: "Covid-19")
+    risks: "Not reaching our funding goal would cause significant delays")
 
 project17 = Project.create!(title: "Decomposer", 
     campaign: "Experiment with music and gain some insight on how composers make their decisions", 
@@ -330,13 +330,13 @@ project22 = Project.create!(title: "Celebrate Female Composers",
     faq: "", 
     risks: "Not receiving our full funding amount will cause significant delays")
 
-project23 = Project.create!(title: "Test Project", 
+project23 = Project.create!(title: "Sample Project", 
     campaign: "This is a sample project. Sign in as the demo user and you can edit this project for the purposes of demonstration.", 
     funding_goal: 5000,
     amount_pledged: 1580,
     end_date: Date.new(2021,5,1),
     location: 'Chicago, IL', 
-    description: 'Test description', 
+    description: 'Sample description', 
     author_id: user1.id, 
     category_id: category1.id, #arts
     updates: '', 
@@ -376,20 +376,20 @@ project10.photo.attach(io: file10, filename: "holocaust.jpg")
 file11 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/tortellini.jpg")
 project11.photo.attach(io: file11, filename: "tortellini.jpg")
 
-file12 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
-project12.photo.attach(io: file12, filename: "puppy_pic.jpg")
+file12 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/silk_bag.jpeg")
+project12.photo.attach(io: file12, filename: "silk_bag.jpeg")
 
-file13 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
-project13.photo.attach(io: file13, filename: "puppy_pic.jpg")
+file13 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puzzle.jpg")
+project13.photo.attach(io: file13, filename: "puzzle.jpg")
 
-file14 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
-project14.photo.attach(io: file14, filename: "puppy_pic.jpg")
+file14 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/classical_rev.jpg")
+project14.photo.attach(io: file14, filename: "classical_rev.jpg")
 
-file15 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
-project15.photo.attach(io: file15, filename: "puppy_pic.jpg")
+file15 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/starker_landscape.png")
+project15.photo.attach(io: file15, filename: "starker_landscape.png")
 
-file16 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/puppy_pic.jpg")
-project16.photo.attach(io: file16, filename: "puppy_pic.jpg")
+file16 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/secret_lives_landscape.png")
+project16.photo.attach(io: file16, filename: "secret_lives_landscape.png")
 
 file17 = open("https://project-ascender-seeds.s3-us-west-1.amazonaws.com/decomposer.png")
 project17.photo.attach(io: file17, filename: "decomposer.png")
@@ -423,17 +423,17 @@ reward8 = Reward.create!(project_id: project8.id, title: "A free signed copy of 
 reward9 = Reward.create!(project_id: project9.id, title: "A VIP ticket to the concert", description: "Sit in our special VIP box and meet the musicians at our exclusive post-concert reception", pledge_amount: 500, est_delivery: Date.new(2021,3,1), ships_to: "Anywhere in the world")
 reward10 = Reward.create!(project_id: project10.id, title: "A copy of our book", description: "Includes photographs from the exhibit and more", pledge_amount: 35, est_delivery: Date.new(2021,8,1), ships_to: "Anywhere in the world")
 reward11 = Reward.create!(project_id: project11.id, title: "Come to our opening night party!", description: "There will be live music and lots of champagne!", pledge_amount: 25, est_delivery: Date.new(2021,2,1), ships_to: "Anywhere in the world")
-reward12 = Reward.create!(project_id: project12.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward13 = Reward.create!(project_id: project13.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward14 = Reward.create!(project_id: project14.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward15 = Reward.create!(project_id: project15.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward16 = Reward.create!(project_id: project16.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward17 = Reward.create!(project_id: project17.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward18 = Reward.create!(project_id: project18.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward19 = Reward.create!(project_id: project19.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward20 = Reward.create!(project_id: project20.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward21 = Reward.create!(project_id: project21.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
-reward22 = Reward.create!(project_id: project22.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward12 = Reward.create!(project_id: project12.id, title: "One free bag of your choice", description: "Thank you for your support!", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward13 = Reward.create!(project_id: project13.id, title: "A free puzzle", description: "Pass the quarantine time with our new puzzle!", pledge_amount: 25, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward14 = Reward.create!(project_id: project14.id, title: "A copy of our album", description: "Thank you for your generosity", pledge_amount: 40, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward15 = Reward.create!(project_id: project15.id, title: "A copy of the book", description: "Thank you for your generosity", pledge_amount: 35, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward16 = Reward.create!(project_id: project16.id, title: "A copy of the book", description: "A very nice reward for your generosity", pledge_amount: 25, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward17 = Reward.create!(project_id: project17.id, title: "Free download of Dvorak New World Symphony", description: "Thank you for your generosity", pledge_amount: 15, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward18 = Reward.create!(project_id: project18.id, title: "Be a beta tester for our app", description: "We appreciate your generosity and would like your opinions", pledge_amount: 40, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward19 = Reward.create!(project_id: project19.id, title: "A free deck of IV-V-I", description: "Get the game for free!", pledge_amount: 35, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward20 = Reward.create!(project_id: project20.id, title: "Come to our red carpet premiere", description: "Come celebrate with us!", pledge_amount: 150, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward21 = Reward.create!(project_id: project21.id, title: "Come to our red carpet premiere", description: "Come celebrate with us!", pledge_amount: 150, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
+reward22 = Reward.create!(project_id: project22.id, title: "A copy of the book", description: "Thank you for your support", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
 reward23 = Reward.create!(project_id: project23.id, title: "Sample Reward", description: "A very nice reward for your generosity", pledge_amount: 50, est_delivery: Date.new(2021,6,1), ships_to: "Anywhere in the world")
 
 
@@ -449,15 +449,15 @@ backing9 = Backing.create!(backer_id: user3.id, backing_amount: 500, reward_id: 
 backing10 = Backing.create!(backer_id: user6.id, backing_amount: 35, reward_id: reward10.id, project_id: project10.id)
 backing11 = Backing.create!(backer_id: user7.id, backing_amount: 25, reward_id: reward11.id, project_id: project11.id)
 backing12 = Backing.create!(backer_id: user12.id, backing_amount: 50, reward_id: reward12.id, project_id: project12.id)
-backing13 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward13.id, project_id: project13.id)
-backing14 = Backing.create!(backer_id: user14.id, backing_amount: 50, reward_id: reward14.id, project_id: project14.id)
-backing15 = Backing.create!(backer_id: user15.id, backing_amount: 50, reward_id: reward15.id, project_id: project15.id)
-backing16 = Backing.create!(backer_id: user16.id, backing_amount: 50, reward_id: reward16.id, project_id: project16.id)
-backing17 = Backing.create!(backer_id: user13.id, backing_amount: 50, reward_id: reward17.id, project_id: project17.id)
-backing18 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward18.id, project_id: project18.id)
-backing19 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward19.id, project_id: project19.id)
-backing20 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward20.id, project_id: project20.id)
-backing21 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward21.id, project_id: project21.id)
+backing13 = Backing.create!(backer_id: user13.id, backing_amount: 25, reward_id: reward13.id, project_id: project13.id)
+backing14 = Backing.create!(backer_id: user14.id, backing_amount: 40, reward_id: reward14.id, project_id: project14.id)
+backing15 = Backing.create!(backer_id: user15.id, backing_amount: 35, reward_id: reward15.id, project_id: project15.id)
+backing16 = Backing.create!(backer_id: user16.id, backing_amount: 25, reward_id: reward16.id, project_id: project16.id)
+backing17 = Backing.create!(backer_id: user13.id, backing_amount: 15, reward_id: reward17.id, project_id: project17.id)
+backing18 = Backing.create!(backer_id: user8.id, backing_amount: 40, reward_id: reward18.id, project_id: project18.id)
+backing19 = Backing.create!(backer_id: user8.id, backing_amount: 35, reward_id: reward19.id, project_id: project19.id)
+backing20 = Backing.create!(backer_id: user8.id, backing_amount: 150, reward_id: reward20.id, project_id: project20.id)
+backing21 = Backing.create!(backer_id: user8.id, backing_amount: 150, reward_id: reward21.id, project_id: project21.id)
 backing22 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward22.id, project_id: project22.id)
 backing23 = Backing.create!(backer_id: user8.id, backing_amount: 50, reward_id: reward23.id, project_id: project23.id)
 

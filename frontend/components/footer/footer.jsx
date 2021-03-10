@@ -43,10 +43,10 @@ class Footer extends React.Component {
                         </ul>
                     </div>
                     <div className="footer-more">
-                        <h4>MORE FROM KICKSTARTER</h4>
+                        <h4>MORE FROM ASCENDER</h4>
                         <ul>
                             <li>Newsletters</li>
-                            <li>Kickstarter Magazine</li>
+                            <li>Ascender Magazine</li>
                             <li>The Creative Independent</li>
                             <li>Mobile apps</li>
                             <li>Research</li>

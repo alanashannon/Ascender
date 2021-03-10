@@ -114,6 +114,9 @@
     align-items: center; 
     font-size: 14px;
 }
+.login-header-link {
+    color: black; 
+}
 
 .icon img {
     border-radius: 30px;
@@ -215,8 +218,8 @@
     flex-direction: row;
     margin-bottom: 10px;
 }
-.user-projects-container img {
-    height: 34px; 
+.user-projects-image {
+    // height: 36px; 
     width: 68px; 
     border-radius: none;
     display: block; 

@@ -19,14 +19,14 @@ class CategoryShow extends React.Component {
     render() {
 
         const catInfoArr = [
-            { catName: "Arts", info: "Discover the artists and organizations using Kickstarter to realize ambitious projects in visual art and performance."},
-            { catName: "Comics & Illustration", info: "Explore fantastical worlds and original characters from Kickstarter’s community of comics creators and illustrators."},
+            { catName: "Arts", info: "Discover the artists and organizations using Ascender to realize ambitious projects in visual art and performance."},
+            { catName: "Comics & Illustration", info: "Explore fantastical worlds and original characters from Ascender’s community of comics creators and illustrators."},
             { catName: "Design & Tech", info: "From fine design to innovative tech, discover projects from creators working to build a more beautiful future."},
             { catName: "Film", info: "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen."},
-            { catName: "Food & Craft", info: "See how artisans and entrepreneurs are using Kickstarter to break new ground in food, fashion, and crafts."},
+            { catName: "Food & Craft", info: "See how artisans and entrepreneurs are using Ascender to break new ground in food, fashion, and crafts."},
             { catName: "Games", info: "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay."},
-            { catName: "Music", info: "Discover new albums, performances, and independent venues from creators using Kickstarter to shape the future of sound."},
-            { catName: "Publishing", info: "Explore how writers and publishers are using Kickstarter to bring new literature, periodicals, podcasts, and more to life."}
+            { catName: "Music", info: "Discover new albums, performances, and independent venues from creators using Ascender to shape the future of sound."},
+            { catName: "Publishing", info: "Explore how writers and publishers are using Ascender to bring new literature, periodicals, podcasts, and more to life."}
         ]
 
         const projectsArr = Object.values(this.props.projects)
