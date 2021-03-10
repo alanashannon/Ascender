@@ -82,18 +82,16 @@ class Greeting extends React.Component {
                     </div>
                     <div className="created-projects" onClick={this.handleClickInside}>
                         <h3>Created Projects</h3>
-                        {/* <div className="created-projects-container"> */}
-                            {projectsArr.slice(0, 3).map((project, i) => {
-                                return(
-                                    <div key={i} className="user-projects-container">
-                                        <img src={project.photo}/>
-                                        <div className="user-projects-greeting-title">
-                                            <Link to={`/projects/${project.id}`} className="projects-greeting-title-link">{project.title}</Link>
-                                        </div>
+                        {projectsArr.slice(0, 3).map((project, i) => {
+                            return(
+                                <div key={i} className="user-projects-container">
+                                    <img src={project.photo} className="user-projects-image"/>
+                                    <div className="user-projects-greeting-title">
+                                        <Link to={`/projects/${project.id}`} className="projects-greeting-title-link">{project.title}</Link>
                                     </div>
-                                )
-                            })}
-                        {/* </div> */}
+                                </div>
+                            )
+                        })}
                         <ul>
                             <li>
                                 <AiOutlinePlus size={15} className="plus-icon"/>
