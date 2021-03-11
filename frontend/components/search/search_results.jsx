@@ -28,6 +28,22 @@ class SearchResults extends React.Component {
                 resultsArr.push(project)
             }
         })
+
+        const percentFunded = (project) => {
+            let percentage = Math.floor((project.amount_pledged / project.funding_goal) * 100)
+            if (percentage < 100) {
+                return percentage
+            } else {
+                return 100
+            }
+        }
+
+        let daysLeft = (date) => {
+            let today = new Date();
+            let ending_date = new Date(date);
+            let time_diff = ending_date.getTime() - today.getTime(); //result in milliseconds
+            return Math.floor(time_diff / (86400000)) //convert to days from milliseconds, rounded down 
+        }
         
         let noResults = <div>
             <div className="no-results-message-container">
@@ -58,7 +74,7 @@ class SearchResults extends React.Component {
                                     by {this.props.users[project.author_id].name}
                                 </div>
                                 <div className="project-search-progress-bar-container">
-                                    <div className="project-search-show-progress-bar" style={{ width: `calc(1% * ${Math.floor((project.amount_pledged / project.funding_goal) * 100)})` }}></div>
+                                    <div className="project-search-show-progress-bar" style={{ width: `calc(1% * ${percentFunded(project)})` }}></div>
                                 </div>
                                 <div className="project-search-amt">
                                     ${project.amount_pledged} pledged
@@ -75,13 +91,6 @@ class SearchResults extends React.Component {
                 })}
             </div>
         </div>
-
-        let daysLeft = (date) => {
-            let today = new Date();
-            let ending_date = new Date(date);
-            let time_diff = ending_date.getTime() - today.getTime(); //result in milliseconds
-            return Math.floor(time_diff / (86400000)) //convert to days from milliseconds, rounded down 
-        }
 
         return (
             <div>
@@ -123,8 +132,7 @@ class SearchResults extends React.Component {
                                     </div>
                                     <div className="project-search-progress-bar-container"> 
                                         <div className="project-search-show-progress-bar" 
-                                            style={{ width: `calc(1% * {(${Math.floor((project.amount_pledged / project.funding_goal) * 100)} < 100) 
-                                            ? ${Math.floor((project.amount_pledged / project.funding_goal) * 100)} : 100 })` }}>
+                                            style={{ width: `calc(1% * ${percentFunded(project)})`}}>
                                         </div>
                                     </div>
                                     <div className="project-search-amt">
