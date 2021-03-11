@@ -14,7 +14,8 @@ class Api::RewardsController < ApplicationController
         @reward.pledge_amount = @reward.pledge_amount.to_i 
 
         if @reward.save
-            render :show
+            # render :show
+            render 'api/projects/show'
         else
             render json: @reward.errors.full_messages, status: 401 
         end
