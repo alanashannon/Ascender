@@ -99,18 +99,20 @@ class ProjectShow extends React.Component {
                 rewardsArr.push(rew)
             }
         });
+
         
         for (let i = 0; i < rewardsArr.length; i++) {
-            const projectUpdates = {
-                id: this.props.project.id,
-                amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
-            }
-            this.props.createBacking({
+            let backing = {
                 "backer_id": this.props.currentUser,
                 "backing_amount": rewardsArr[i].pledge_amount,
                 "project_id": this.props.project.id,
                 "reward_id": rewardsArr[i].id
-            })
+            }
+            const projectUpdates = {
+                id: this.props.project.id,
+                amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
+            }
+            this.props.createBacking(backing)
             .then(() => this.props.updateProject(projectUpdates))
         }
     };

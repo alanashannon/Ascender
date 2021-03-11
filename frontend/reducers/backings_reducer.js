@@ -7,7 +7,9 @@ const backingsReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_BACKINGS:
             return action.backings
         case RECEIVE_BACKING:
-            return Object.assign({}, newState, { [action.backing.id]: action.backing }) 
+            let backingKeys = Object.keys(action.backing.backings)
+            let newBacking = backingKeys[backingKeys.length - 1]
+            return Object.assign({}, newState, { [newBacking]: action.backing.backings[newBacking] }) 
         case REMOVE_BACKING:
             delete newState[action.backingId]
             return newState; 
