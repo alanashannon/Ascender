@@ -6,7 +6,6 @@ export const fetchBackings = () => {
 };
 
 export const createBacking = (backing) => {
-    console.log("in util:", backing)
     return $.ajax({
         method: 'POST', 
         url: `/api/backings`, 
