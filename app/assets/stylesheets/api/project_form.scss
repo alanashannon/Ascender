@@ -573,3 +573,14 @@
         font-weight: 500;
     }
 }
+
+@media screen and (max-width: 725px) {
+    .title, .category, .location, .image, .enddate, .goal, .risks, .description, .campaign {
+        display: block; 
+        
+        .title-input, .category-input, .location-input, .image-input, .enddate-input, .goal-input, .risks-input, .description-input, .campaign-input {
+            margin-left: 0px;
+        }
+    }
+
+}

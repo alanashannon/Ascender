@@ -46,6 +46,7 @@ class Searchbar extends React.Component {
                 value={this.state.input}
                 onChange={this.handleInput("input")}
                 onKeyDown={this.handleSearch}
+                autoFocus
             />
             <IoMdClose size={16} className="search-close" onClick={() => this.setState({clicked: false})}/>
         </div>

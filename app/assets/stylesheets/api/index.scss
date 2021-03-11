@@ -166,10 +166,22 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 890px) {
+    .index-container {
+        display: block; 
+    }
+
+    .featured-project {
+        border-right: none;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 60px;
+    }
+}
+
 .category-bar ul {
     display: flex; 
     align-items: center;
-    
+    overflow-x: auto;
 }
 
 .category-bar li {
@@ -177,7 +189,7 @@
     font-size: 16px;
     padding-left: 12px;
     padding-right: 12px;
-
+    white-space: nowrap;
 }
 
 .category-bar li:hover {

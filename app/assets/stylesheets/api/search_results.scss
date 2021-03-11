@@ -10,6 +10,7 @@
 .search-intro {
     font-size: 21px;
     margin-right: 12px;
+    white-space: nowrap;
 }
 
 .search-intro-input {
@@ -20,6 +21,23 @@
     padding-left: 18px;
     padding-right: 18px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    white-space: nowrap;
+
+}
+
+@media screen and (max-width: 875px) {
+    .search-intro-container {
+        display: flex; 
+        flex-wrap: wrap;
+        padding-top: 40px; 
+    }
+
+    .search-intro {
+        padding-top: 20px; 
+    }
+    .search-intro-input {
+        margin-top: 20px;
+    }
 }
 
 .search-results-container {
@@ -38,7 +56,8 @@
 }
 .project-search-each img {
     width: 100%;
-    height: 250px; 
+    height: auto;
+    overflow: hidden; 
     border-bottom: 1px solid lightgray;
 }
 
@@ -110,6 +129,14 @@
         padding: 60px; 
         display: grid; 
         grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .search-results-container {
+        padding: 60px; 
+        display: grid; 
+        grid-template-columns: 100%;
     }
 }
 
