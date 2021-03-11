@@ -565,12 +565,22 @@
     input {
         font-size: 14px;
         font-weight: 500;
-        border-bottom: 1px solid lightgray;
+        // margin: auto; 
     }
-
-    button {
+    
+    .delete {
+        border-top: 1px solid lightgray;
         font-size: 14px;
         font-weight: 500;
+        margin-left: -10px;
+        width: 100%;
+    }
+    
+    .update {
+        font-size: 14px;
+        font-weight: 500;
+        margin: auto;
+        width: 100%;
     }
 }
 

@@ -11,6 +11,13 @@ class CategoryIndex extends React.Component {
         this.props.fetchCategories(); 
     }
 
+    handleScroll(e) {
+        let collections = document.getElementById("collections-header")
+        collections.scrollIntoView({
+            behavior: "smooth"
+        })
+    }
+
     render() {
         let categoriesArr = Object.values(this.props.categories);
         let extendedCategories = [
@@ -32,9 +39,9 @@ class CategoryIndex extends React.Component {
         ];
 
         return (
-            <div className="categories-all">
+            <div className="categories-all" onClick={this.handleScroll}>
                 <div className="collections-container">
-                    <div className="collections-header">
+                    <div className="collections-header" id="collections-header">
                         <h1>Collections</h1>
                         <Link to={"/"} className="exit-button"><IoMdClose size={20} /></Link>
                     </div>
