@@ -54,7 +54,7 @@
 }
 
 .search-input-container {
-    margin-left: -360px; 
+    margin-left: -350px; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -73,7 +73,8 @@
 .search-input {
     font-size: 18px;
     border: 1px solid lightgray;
-    padding: 1px 2px 1px 52px;
+    border-left: none;
+    padding: 1px 2px 1px 42px;
     background: white;
     // box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
     position: relative;
