@@ -67,12 +67,19 @@ class ProjectShow extends React.Component {
         if (!this.props.currentUser) {
             this.props.history.push("/login")
         }
+
+        const projectUpdates = {
+            id: this.props.project.id, 
+            amount_pledged: (this.props.project.amount_pledged + parseInt(this.state.backing_amount))
+        }
+
         this.props.createBacking({
             "backer_id": this.props.currentUser, 
             "backing_amount": this.state.backing_amount, 
             "project_id": this.props.project.id
         })
-        this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(this.state.backing_amount)
+        .then(() => this.props.updateProject(projectUpdates))
+
         this.setState({
             backing_amount: ""
         });
@@ -94,14 +101,17 @@ class ProjectShow extends React.Component {
         });
         
         for (let i = 0; i < rewardsArr.length; i++) {
+            const projectUpdates = {
+                id: this.props.project.id,
+                amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
+            }
             this.props.createBacking({
                 "backer_id": this.props.currentUser,
                 "backing_amount": rewardsArr[i].pledge_amount,
                 "project_id": this.props.project.id,
                 "reward_id": rewardsArr[i].id
             })
-
-            this.props.project.amount_pledged = this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount)
+            .then(() => this.props.updateProject(projectUpdates))
         }
     };
 
