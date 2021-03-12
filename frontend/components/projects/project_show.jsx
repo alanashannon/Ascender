@@ -68,7 +68,7 @@ class ProjectShow extends React.Component {
             this.props.history.push("/login")
         }
 
-        const projectUpdates = {
+        const updates = {
             id: this.props.project.id, 
             amount_pledged: (this.props.project.amount_pledged + parseInt(this.state.backing_amount))
         }
@@ -78,7 +78,9 @@ class ProjectShow extends React.Component {
             "backing_amount": this.state.backing_amount, 
             "project_id": this.props.project.id
         })
-        .then(() => this.props.updateProject(projectUpdates))
+        .then(() => this.props.updateProject(updates))
+
+        window.scrollTo(0, 0)
 
         this.setState({
             backing_amount: ""
@@ -100,21 +102,21 @@ class ProjectShow extends React.Component {
             }
         });
 
-        
         for (let i = 0; i < rewardsArr.length; i++) {
-            let backing = {
+            const updates = {
+                id: this.props.project.id,
+                amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
+            }
+            this.props.createBacking({
                 "backer_id": this.props.currentUser,
                 "backing_amount": rewardsArr[i].pledge_amount,
                 "project_id": this.props.project.id,
                 "reward_id": rewardsArr[i].id
-            }
-            const projectUpdates = {
-                id: this.props.project.id,
-                amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
-            }
-            this.props.createBacking(backing)
-            .then(() => this.props.updateProject(projectUpdates))
+            })
+            .then(() => this.props.updateProject(updates))
         }
+
+        window.scrollTo(0, 0)
     };
 
     render() {
@@ -200,17 +202,6 @@ class ProjectShow extends React.Component {
                                     <input className="backing-submit" type="submit" value="Continue"/>
                                 </form>
                             </div>
-                            {peopleBacked.map((person, j) => {
-                                if (person === this.props.currentUser) {
-                                    return (
-                                        <div key={j} className="backing-thanks">
-                                            <p>Thank you for supporting our project!</p>
-                                        </div>
-                                    )
-                                } else {
-                                    return null
-                                }
-                            })}
                             <div>
                                 {rewardsArr.map((reward, i) => {
                                     return (
@@ -260,10 +251,20 @@ class ProjectShow extends React.Component {
             !projectExists ? <div></div> : (
                 <div className="project-show-page">
                     <div className="project-show-header">
+                        {peopleBacked.map((person, j) => {
+                            if (person === this.props.currentUser) {
+                                return (
+                                    <div key={j} className="backing-thanks" id="backing-thanks">
+                                        <p>You're a backer! Thank you for supporting our project!</p>
+                                    </div>
+                                )
+                            } else {
+                                return null
+                            }
+                        })}
                         <h1>{this.props.project.title}</h1>
                         <h2>{this.props.project.description}</h2>
                     </div>
-                    
                     <div className="project-show-mid">
                         <section className="project-show-pic">
                             <img src={this.props.project.photo} /> 
