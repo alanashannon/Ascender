@@ -68,7 +68,7 @@ class Greeting extends React.Component {
                 {this.state.open && (<div className="dropdown-nav" id="dropdown-nav">
                     <div className="account-list">
                         <h3>Your Account</h3>
-                            <ul>
+                            {/* <ul>
                                 <li>Saved projects</li>
                                 <li>Recommended for you</li>
                                 <li>Following</li>
@@ -78,6 +78,17 @@ class Greeting extends React.Component {
                                     <li>Messages</li>
                                     <li>Activity</li>
                                 </div>
+                            </ul> */}
+                            <ul>
+                                <li>
+                                    <a className="temp-links" href="https://github.com/alanashannon">Github</a>
+                                </li>
+                                <li>
+                                    <a className="temp-links" href="https://www.linkedin.com/in/alana-shannon/">Linkedin</a>
+                                </li>
+                                <li>
+                                    <a className="temp-links" href="https://angel.co/u/alana-shannon">Angel List</a>
+                                </li>
                             </ul>
                     </div>
                     <div className="created-projects" onClick={this.handleClickInside}>
@@ -93,10 +104,12 @@ class Greeting extends React.Component {
                             )
                         })}
                         <ul>
-                            <li>
-                                <AiOutlinePlus size={15} className="plus-icon"/>
-                                <Link className="created-projects-links" to={"/projects/new"}>New</Link>
-                            </li>
+                            <Link className="created-projects-links" to={"/projects/new"}>
+                                <li>
+                                    <AiOutlinePlus size={15} className="plus-icon"/>
+                                    New
+                                </li>
+                            </Link>
                         </ul>
                     </div>
                     <div className="logout-footer" onClick={this.handleClickInside}>
