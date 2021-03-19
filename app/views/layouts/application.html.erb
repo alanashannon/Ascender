@@ -5,6 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Ascender" />
+    <meta property='og:image' content="<%= image_url('home_page.png') %>"/>
+    <meta property="og:description"
+      content="A Kickstarter clone that helps users fund their projects and support others' projects"
+    />
+    <meta property="og:url"
+      content="http://project-ascender.herokuapp.com/"
+    />
+
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
