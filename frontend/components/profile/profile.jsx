@@ -77,39 +77,41 @@ class Profile extends React.Component {
         })
 
         let bodyPage = this.state.currentPage === "projects" ? (
-            <div>
+            <div className="profile-projects-outer">
                 {(userProjects.length > 0) ? userProjects.map((project, i) => {
                     return (
                         <div key={i} className="profile-projects-container">
-                            <div className="profile-projects-photo">
-                                <Link to={`/projects/${project.id}`}>
-                                    <img src={project.photo} />
-                                </Link>
+                            <div className="profile-projects-info">
+                                <div className="profile-projects-photo">
+                                    <Link to={`/projects/${project.id}`}>
+                                        <img src={project.photo} />
+                                    </Link>
+                                </div>
+                                <div className="profile-projects-title">
+                                    <Link className="profile-projects-title-link" to={`/projects/${project.id}`}>
+                                        {project.title}
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="project-search-title">
-                                <Link className="project-search-title" to={`/projects/${project.id}`}>
-                                    {project.title}
-                                </Link>
-                            </div>
-                            <div>
-                                <Link to={`/projects/${project.id}/edit`}>Edit Project</Link>
+                            <div className="profile-projects-edit">
+                                <Link to={`/projects/${project.id}/edit`} className="profile-projects-edit-link">Edit Project</Link>
                             </div>
                         </div>
                     )
                 }) : "You haven't started any projects yet"} 
             </div>
         ) : (
-            <div>
+            <div className="profile-projects-outer">
                 {(backedProjects.length > 0) ? backedProjects.map((project, j) => {
                     return (
-                        <div key={j} className="profile-projects-container">
+                        <div key={j} className="profile-backed-container">
                             <div className="profile-projects-photo">
                                 <Link to={`/projects/${project.id}`}>
                                     <img src={project.photo} />
                                 </Link>
                             </div>
-                            <div className="project-search-title">
-                                <Link className="project-search-title" to={`/projects/${project.id}`}>
+                            <div className="profile-projects-title">
+                                <Link className="profile-projects-title-link" to={`/projects/${project.id}`}>
                                     {project.title}
                                 </Link>
                             </div>

@@ -79,7 +79,7 @@ class Greeting extends React.Component {
                                     <li>Activity</li>
                                 </div>
                             </ul> */}
-                            <ul>
+                            <ul onClick={this.handleClickInside}>
                                 <li>
                                     <Link to={"/profile"} className="temp-links">Profile</Link>
                                 </li>
