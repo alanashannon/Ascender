@@ -6,20 +6,44 @@ class Profile extends React.Component {
         super(props) 
 
         this.state = {
-            page: "projects", 
+            currentPage: "projects", 
         }
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchProjects(); 
         this.props.fetchBackings(); 
         this.props.fetchUsers(); 
+
+        let projectPage = document.getElementById("projects")
+        projectPage.style.fontWeight = "bold"
+        projectPage.style.color = "green"
     }
 
-    handleClick(page) {
-        return () => {
-            this.setState({ page: page})
+    handleClick(e) {
+        e.preventDefault(); 
+        const clicked = e.target 
+        let projectsPage = document.getElementById("projects")
+        let backingPage = document.getElementById("backedProjects")
+
+        this.setState({ 
+            currentPage: clicked.id 
+        })
+
+        if (clicked.id === "projects") {
+            projectsPage.style.fontWeight = "bold"
+            projectsPage.style.color = "green"
+            backingPage.style.fontWeight = "normal"
+            backingPage.style.color = "black"
+        } else {
+            backingPage.style.fontWeight = "bold"
+            backingPage.style.color = "green"
+            projectsPage.style.fontWeight = "normal"
+            projectsPage.style.color = "black"
         }
+        
     }
 
     render() {
@@ -51,9 +75,8 @@ class Profile extends React.Component {
                 backedProjects.push(project) 
             }
         })
-        console.log(backedProjects)
 
-        let bodyPage = this.state.page === "projects" ? (
+        let bodyPage = this.state.currentPage === "projects" ? (
             <div>
                 {(userProjects.length > 0) ? userProjects.map((project, i) => {
                     return (
@@ -102,8 +125,8 @@ class Profile extends React.Component {
                     <h1>Hello, {this.props.users[this.props.currentUser].name}</h1>
                 </div>
                 <div className="option-links">
-                    <div onClick={this.handleClick("projects")}>Your Projects</div>
-                    <div onClick={this.handleClick("backedProjects")}>Your Backed Projects</div>
+                    <div className="toggle-each" id="projects" onClick={this.handleClick}>Your Projects</div>
+                    <div className="toggle-each" id="backedProjects" onClick={this.handleClick}>Your Backed Projects</div>
                 </div>
                 <div>
                     {bodyPage}

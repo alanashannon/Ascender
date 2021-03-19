@@ -81,7 +81,7 @@ class Greeting extends React.Component {
                             </ul> */}
                             <ul>
                                 <li>
-                                    <Link to={"/profile"}>Profile</Link>
+                                    <Link to={"/profile"} className="temp-links">Profile</Link>
                                 </li>
                                 <li>
                                     <a className="temp-links" href="https://github.com/alanashannon">Github</a>
