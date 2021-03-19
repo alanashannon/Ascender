@@ -79,16 +79,21 @@ class Greeting extends React.Component {
                                     <li>Activity</li>
                                 </div>
                             </ul> */}
-                            <ul>
+                            <ul onClick={this.handleClickInside}>
                                 <li>
-                                    <a className="temp-links" href="https://github.com/alanashannon">Github</a>
+                                    <Link to={"/profile"} className="temp-links">Profile</Link>
                                 </li>
-                                <li>
-                                    <a className="temp-links" href="https://www.linkedin.com/in/alana-shannon/">Linkedin</a>
-                                </li>
-                                <li>
-                                    <a className="temp-links" href="https://angel.co/u/alana-shannon">Angel List</a>
-                                </li>
+                                <div className="account-nav">
+                                    <li>
+                                        <a className="temp-links" href="https://github.com/alanashannon">Github</a>
+                                    </li>
+                                    <li>
+                                        <a className="temp-links" href="https://www.linkedin.com/in/alana-shannon/">Linkedin</a>
+                                    </li>
+                                    <li>
+                                        <a className="temp-links" href="https://angel.co/u/alana-shannon">Angel List</a>
+                                    </li>
+                                </div>
                             </ul>
                     </div>
                     <div className="created-projects" onClick={this.handleClickInside}>

@@ -10,6 +10,7 @@ import ProjectEditContainer from './projects/project_edit_container';
 import CategoryIndexContainer from './categories/category_index_container';
 import CategoryShowContainer from './categories/category_show_container';
 import SearchContainer from './search/search_container'; 
+import ProfileContainer from './profile/profile_container';
 import Header from './header/header';
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
             <ProtectedRoute exact path="/projects/new" component={ProjectCreateContainer}/>
             <ProtectedRoute exact path="/projects/:projectId/edit" component={ProjectEditContainer}/>
+            <ProtectedRoute exact path="/profile" component={ProfileContainer}/>
             <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/category/:categoryId" component={CategoryShowContainer}/>
             <Route exact path="/search/:input" component={SearchContainer}/>
