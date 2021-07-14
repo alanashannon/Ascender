@@ -7,7 +7,7 @@ import FooterContainer from '../footer/footer_container';
 
 class CategoryShow extends React.Component {
     constructor(props) {
-        super(props) 
+        super(props);
     }
 
     componentDidMount() {
