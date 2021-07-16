@@ -3,12 +3,12 @@ import { Redirect } from 'react-router-dom';
 
 class ProjectCreate extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = this.props.project
+        super(props);
+        this.state = this.props.project;
 
-        this.handleInput = this.handleInput.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleFile = this.handleFile.bind(this)
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     componentDidMount() {
@@ -18,8 +18,8 @@ class ProjectCreate extends React.Component {
     handleInput(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value})
-        }
-    }
+        };
+    };
 
     handleFile(e) {
         // this.setState({ photoFile: null })
@@ -40,9 +40,9 @@ class ProjectCreate extends React.Component {
         let categoryId; 
         this.props.categories.forEach(category => {
             if (this.state.category === category.category_name) {
-                categoryId = category.id 
-            }
-        })
+                categoryId = category.id;
+            };
+        });
 
         const formData = new FormData(); 
         formData.append('project[title]', this.state.title); 
@@ -62,8 +62,7 @@ class ProjectCreate extends React.Component {
             .then((response) => {
                 this.props.history.push('/')
                 this.props.history.push(`/projects/${response.project.project.id}`)
-            })
-            
+            });
     }
 
     render () {

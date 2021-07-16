@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
     constructor(props) {
-        super(props) 
+        super(props);
 
         this.state = {
             currentPage: "projects", 
@@ -17,64 +17,63 @@ class Profile extends React.Component {
         this.props.fetchBackings(); 
         this.props.fetchUsers(); 
 
-        let projectPage = document.getElementById("projects")
-        projectPage.style.fontWeight = "bold"
-        projectPage.style.color = "green"
+        let projectPage = document.getElementById("projects");
+        projectPage.style.fontWeight = "bold";
+        projectPage.style.color = "green";
     }
 
     handleClick(e) {
         e.preventDefault(); 
-        const clicked = e.target 
-        let projectsPage = document.getElementById("projects")
-        let backingPage = document.getElementById("backedProjects")
+        const clicked = e.target;
+        let projectsPage = document.getElementById("projects");
+        let backingPage = document.getElementById("backedProjects");
 
         this.setState({ 
-            currentPage: clicked.id 
-        })
+            currentPage: clicked.id
+        });
 
         if (clicked.id === "projects") {
-            projectsPage.style.fontWeight = "bold"
-            projectsPage.style.color = "green"
-            backingPage.style.fontWeight = "normal"
-            backingPage.style.color = "black"
+            projectsPage.style.fontWeight = "bold";
+            projectsPage.style.color = "green";
+            backingPage.style.fontWeight = "normal";
+            backingPage.style.color = "black";
         } else {
-            backingPage.style.fontWeight = "bold"
-            backingPage.style.color = "green"
-            projectsPage.style.fontWeight = "normal"
-            projectsPage.style.color = "black"
-        }
-        
-    }
+            backingPage.style.fontWeight = "bold";
+            backingPage.style.color = "green";
+            projectsPage.style.fontWeight = "normal";
+            projectsPage.style.color = "black";
+        };
+    };
 
     render() {
 
-        let projects = Object.values(this.props.projects) 
+        let projects = Object.values(this.props.projects);
         let userProjects = []; 
         if (this.props.currentUser) {
             projects.forEach((project) => {
                 if (project.author_id === this.props.currentUser) {
-                    userProjects.push(project) 
-                }
-            })
-        }
+                    userProjects.push(project);
+                };
+            });
+        };
 
-        let backings = Object.values(this.props.backings) 
+        let backings = Object.values(this.props.backings);
         let userBackings = []; 
         if (this.props.currentUser) {
             backings.forEach((backing) => {
                 if (backing.backer_id === this.props.currentUser) {
-                    userBackings.push(backing) 
-                }
-            })
-        }
+                    userBackings.push(backing);
+                };
+            });
+        };
          
         let backedProjects = []; 
         userBackings.forEach((back) => {
             let project = this.props.projects[back.project_id]
             if (!backedProjects.includes(project)) {
-                backedProjects.push(project) 
-            }
-        })
+                backedProjects.push(project);
+            };
+        });
 
         let bodyPage = this.state.currentPage === "projects" ? (
             <div className="profile-projects-outer">
@@ -119,7 +118,7 @@ class Profile extends React.Component {
                     )
                 }) : "You haven't backed any projects yet"}
             </div>
-        )
+        );
 
         return (
             <div>

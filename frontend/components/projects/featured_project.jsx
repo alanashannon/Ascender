@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class FeaturedProject extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     
@@ -18,7 +18,7 @@ class FeaturedProject extends React.Component {
         //for progress bar under pic
         let percentFunded = Math.floor((this.props.project.amount_pledged / this.props.project.funding_goal) * 100)
         if (percentFunded > 100) {
-            percentFunded = 100
+            percentFunded = 100;
         }
 
         return (
@@ -53,8 +53,6 @@ class FeaturedProject extends React.Component {
             )
         )
     }
-
-
 }
 
 export default FeaturedProject; 

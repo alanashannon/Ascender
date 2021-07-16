@@ -2,42 +2,42 @@ import React from 'react';
 
 class ProjectEdit extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.handleInput = this.handleInput.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
-    }
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+    };
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId)
-            .then(() => this.setState(this.props.project))
-    }
+            .then(() => this.setState(this.props.project));
+    };
 
     handleInput(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value })
         }
-    }
+    };
 
     handleDelete() {
         this.props.deleteProject(this.props.match.params.projectId)
-            .then(() => this.props.history.push(`/`))
-    }
+            .then(() => this.props.history.push(`/`));
+    };
 
     handleSubmit(e) {
         e.preventDefault(); 
 
         if (!this.props.currentUser) {
-            this.props.history.push('/login')
+            this.props.history.push('/login');
         }
 
         this.props.updateProject(this.state)
             .then(() => {
                 this.props.history.push('/')
                 this.props.history.push(`/projects/${this.props.project.id}`)
-            })
-    }
+            });
+    };
 
     render () {
         if (!this.props.project || !this.state) {
@@ -45,7 +45,7 @@ class ProjectEdit extends React.Component {
         }
 
         if (this.props.project.author_id !== this.props.currentUser) {
-            this.props.history.push('/')
+            this.props.history.push('/');
         }
 
         return (
