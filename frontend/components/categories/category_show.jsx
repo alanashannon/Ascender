@@ -29,13 +29,13 @@ class CategoryShow extends React.Component {
             { catName: "Publishing", info: "Explore how writers and publishers are using Ascender to bring new literature, periodicals, podcasts, and more to life."}
         ]
 
-        const projectsArr = Object.values(this.props.projects)
-        const categoriesArr = Object.values(this.props.categories)
+        const projectsArr = Object.values(this.props.projects);
+        const categoriesArr = Object.values(this.props.categories);
 
         let categoryProjects = [];
         projectsArr.forEach(project => {
             if (project.category_id === this.props.category.id) {
-                categoryProjects.push(project)
+                categoryProjects.push(project);
             }
         })
 

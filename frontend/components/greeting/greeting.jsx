@@ -4,7 +4,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 class Greeting extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.container = React.createRef(); 
         this.state = {
@@ -18,41 +18,41 @@ class Greeting extends React.Component {
 
     componentDidMount() {
         this.props.fetchProjects(); 
-        document.addEventListener("mouseup", this.handleClickOutside)
+        document.addEventListener("mouseup", this.handleClickOutside);
     }
 
     handleDropdown(e) {
         e.preventDefault(); 
         this.setState({
             open: !this.state.open 
-        })
-    }
+        });
+    };
 
     handleClickOutside(e) {
         if (this.container.current && !this.container.current.contains(e.target)) {
             this.setState({
                 open: false, 
             });
-        } 
-    }
+        };
+    };
 
     handleClickInside() {
         this.setState({
             open: false 
-        })
-    }
+        });
+    };
     
     render () {
 
-        let projects = Object.values(this.props.projects)
+        let projects = Object.values(this.props.projects);
         let projectsArr = []; 
         {if (this.props.currentUser) {
             projects.forEach((project) => {
                 if (project.author_id === this.props.currentUser.id) {
-                    projectsArr.push(project)
+                    projectsArr.push(project);
                 }
-            })}
-        }
+            })};
+        };
 
         const newSession = () => (
             <nav className="login-nav-link">
