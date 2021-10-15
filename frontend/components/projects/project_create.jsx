@@ -1,5 +1,4 @@
 import React from 'react'; 
-import { Redirect } from 'react-router-dom';
 
 class ProjectCreate extends React.Component {
     constructor(props) {
@@ -22,7 +21,6 @@ class ProjectCreate extends React.Component {
     };
 
     handleFile(e) {
-        // this.setState({ photoFile: null })
         const file = e.currentTarget.files[0]; 
         const reader = new FileReader();
         reader.onloadend = () => {
