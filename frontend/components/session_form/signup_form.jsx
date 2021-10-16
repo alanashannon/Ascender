@@ -25,12 +25,12 @@ class SignupForm extends React.Component {
             name: '', 
             email: '', 
             password: ''
-        })
+        });
     };
 
     handleInput(field) {
         return (e) => {
-            this.setState({ [field]: e.currentTarget.value })
+            this.setState({ [field]: e.currentTarget.value });
         }
     }
 
