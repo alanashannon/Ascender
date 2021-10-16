@@ -2,7 +2,7 @@ export const fetchCategories = () => {
     return $.ajax({
         method: 'GET', 
         url: '/api/categories'
-    })
+    });
 };
 
 export const createCategory = (category) => {
@@ -10,5 +10,5 @@ export const createCategory = (category) => {
         method: 'POST', 
         url: '/api/categories', 
         data: { category }
-    })
+    });
 };

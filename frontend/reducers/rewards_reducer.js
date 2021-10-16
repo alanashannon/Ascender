@@ -8,9 +8,9 @@ const rewardsReducer = (state = {}, action) => {
         case RECEIVE_ALL_REWARDS: 
             return action.rewards;
         case RECEIVE_REWARD:
-            return Object.assign({}, state, action.reward.reward)
+            return Object.assign({}, state, action.reward.reward);
         case REMOVE_REWARD: 
-            delete newState[action.rewardId]
+            delete newState[action.rewardId];
             return newState; 
         default: 
             return state; 
