@@ -14,8 +14,8 @@ const mapStateToProps = (state, ownProps) => {
         rewards: state.entities.rewards, 
         backings: Object.values(state.entities.backings), 
         categories: Object.values(state.entities.categories)
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchBackings: () => dispatch(fetchBackings()), 
         createBacking: (backing) => dispatch(createBacking(backing)), 
         fetchCategories: () => dispatch(fetchCategories())
-    }
-}
+    };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectShow)); 

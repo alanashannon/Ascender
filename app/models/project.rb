@@ -1,6 +1,5 @@
 class Project < ApplicationRecord
     validates :title, :category_id, :description, :end_date, :campaign, :funding_goal, :amount_pledged, :risks, presence: true
-    #TODO add validation/association later for category id
 
     belongs_to :author, 
         primary_key: :id,

@@ -1,5 +1,4 @@
 class Api::ProjectsController < ApplicationController
-
     before_action :logged_in?, only: [:create, :update, :destroy]
 
     def index
@@ -15,7 +14,6 @@ class Api::ProjectsController < ApplicationController
     def create
         @project = Project.new(project_params)
         @project.author_id = current_user.id 
-        # @project.category_id = @project.category_id.to_i
         @project.amount_pledged = @project.amount_pledged.to_i
         @project.funding_goal = @project.funding_goal.to_i
 
@@ -45,7 +43,6 @@ class Api::ProjectsController < ApplicationController
     end
 
     private
-
     def project_params 
         params.require(:project).permit(:title, :description, :location, :category_id, :author_id, :end_date, :campaign, :funding_goal, :amount_pledged, :risks, :updates, :faq, :photo)
     end
@@ -53,5 +50,4 @@ class Api::ProjectsController < ApplicationController
     def project_update_params
         params.require(:project).permit(:title, :description, :location, :category_id, :author_id, :campaign, :funding_goal, :amount_pledged, :risks)
     end
-    
 end
