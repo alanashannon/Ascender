@@ -9,7 +9,7 @@ const Root = ({ store }) => (
             <App />
         </HashRouter>
     </Provider>
-)
+);
 //App will be rendered for all routes in app, routes defined in App 
 
 export default Root; 
