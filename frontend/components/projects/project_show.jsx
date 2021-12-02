@@ -91,32 +91,32 @@ class ProjectShow extends React.Component {
     handleReward(e) {
         e.preventDefault(); 
         if (!this.props.currentUser) {
-            this.props.history.push("/login")
-        }
+            this.props.history.push("/login");
+        };
 
-        let allRewards = Object.values(this.props.rewards)
+        let allRewards = Object.values(this.props.rewards);
         let rewardsArr = [];
         allRewards.forEach((rew) => {
             if (rew.project_id === this.props.project.id) {
-                rewardsArr.push(rew)
-            }
+                rewardsArr.push(rew);
+            };
         });
 
         for (let i = 0; i < rewardsArr.length; i++) {
             const updates = {
                 id: this.props.project.id,
                 amount_pledged: (this.props.project.amount_pledged + parseInt(rewardsArr[i].pledge_amount))
-            }
+            };
             this.props.createBacking({
                 "backer_id": this.props.currentUser,
                 "backing_amount": rewardsArr[i].pledge_amount,
                 "project_id": this.props.project.id,
                 "reward_id": rewardsArr[i].id
             })
-            .then(() => this.props.updateProject(updates))
-        }
+            .then(() => this.props.updateProject(updates));
+        };
 
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     };
 
     render() {
