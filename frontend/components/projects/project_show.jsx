@@ -66,21 +66,21 @@ class ProjectShow extends React.Component {
         e.preventDefault(); 
         if (!this.props.currentUser) {
             this.props.history.push("/login")
-        }
+        };
 
         const updates = {
             id: this.props.project.id, 
             amount_pledged: (this.props.project.amount_pledged + parseInt(this.state.backing_amount))
-        }
+        };
 
         this.props.createBacking({
             "backer_id": this.props.currentUser, 
             "backing_amount": this.state.backing_amount, 
             "project_id": this.props.project.id
         })
-        .then(() => this.props.updateProject(updates))
+        .then(() => this.props.updateProject(updates));
 
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
 
         this.setState({
             backing_amount: ""
